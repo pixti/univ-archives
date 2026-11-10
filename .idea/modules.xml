@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week05-arrays/assignment/assignment.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week05-arrays/assignment/assignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week07-classes/assignment/assignment2.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week07-classes/assignment/assignment2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week03-conditionals/assignment/assignment3.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week03-conditionals/assignment/assignment3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week04-iteration/assignment/assignment4.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week04-iteration/assignment/assignment4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week02-basics/assignment/assignment5.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week02-basics/assignment/assignment5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week06-strings/assignment/assignment6.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week06-strings/assignment/assignment6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/java-programming.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/java-programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week05-arrays/practice/practice.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week05-arrays/practice/practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week02-basics/practice/practice2.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week02-basics/practice/practice2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week06-strings/practice/practice3.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week06-strings/practice/practice3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week09-constructors/practice/practice4.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week09-constructors/practice/practice4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week03-conditionals/practice/practice5.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week03-conditionals/practice/practice5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week04-iteration/practice/practice6.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week04-iteration/practice/practice6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week07-classes/practice/practice7.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week07-classes/practice/practice7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/univ-archives.iml" filepath="$PROJECT_DIR$/.idea/univ-archives.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week02-basics/week02-basics.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week02-basics/week02-basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week03-conditionals/week03-conditionals.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week03-conditionals/week03-conditionals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week04-iteration/week04-iteration.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week04-iteration/week04-iteration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week05-arrays/week05-arrays.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week05-arrays/week05-arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week06-strings/week06-strings.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week06-strings/week06-strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week07-classes/week07-classes.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week07-classes/week07-classes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week09-constructors/week09-constructors.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week09-constructors/week09-constructors.iml" />
+    </modules>
+  </component>
+</project>
