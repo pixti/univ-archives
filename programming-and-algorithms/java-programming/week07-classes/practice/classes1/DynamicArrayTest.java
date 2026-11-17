@@ -21,7 +21,7 @@
  *      shrink()                    cap 3  [3, _, _]          size 1   ← 1 < 6/2 이므로 반으로
  *      delete() → 3                cap 3  [_, _, _]          size 0
  *
- * 📝 필기 (AI 설명) 논리적 삭제 vs 물리적 삭제
+ * 📝 필기 : 논리적 삭제 vs 물리적 삭제
  *   - delete() 는 size-- 만 한다. 배열 안의 값은 그대로 남아 있지만 size 밖이라 "없는 값" 으로 취급된다.
  *     → 논리적 삭제 : 빠르다. 나중에 append 하면 그 자리를 덮어쓴다.
  *   - 실제로 메모리에서 없애려면(물리적 삭제) 더 작은 새 배열을 만들어 복사해야 한다. (= shrink() 가 하는 일)
@@ -35,13 +35,11 @@
  *          int[] newArray = new int[capacity];
  *          ...
  *      }
- * 📝 필기 (AI 설명)
+ * 📝 필기
  *   - 원래 코드에서 (double) 을 쓴 이유 : 문제의 "반 미만" 을 그대로 옮기면서 정수 나눗셈(3 / 2 = 1)을 피하려고.
  *   - 하지만 나눗셈은 비용이 큰 연산이라, 나눗셈 횟수를 줄이고 계산한 값을 재사용하는 것이 최적화다.
- *   → 아래 shrink() 는 내가 작성한 원래 코드, shrinkOptimized() 는 교수님 팁 버전이다.
+ *   → 아래 shrink() 는 처음 작성한 코드, shrinkOptimized() 는 교수님 팁 버전이다.
  *
- * ⚠ 문제의 main 코드는 DynamicArray arr = new MyArray(); 로 되어 있다. MyArray 는 없는 클래스라서
- *    new DynamicArray() 로 고쳤다. (main 이 있던 클래스 이름 SayHello 는 DynamicArrayTest 로 바꿈)
  * 💡 두 shrink 의 조건은 경계값에서 조금 다르다.
  *      capacity = 3, size = 1 : 원래  1 < 1.5 → 줄임 (용량 1)     /  팁 버전  1 <= 1 → 줄임 (용량 1)
  *      capacity = 6, size = 3 : 원래  3 < 3.0 → 그대로             /  팁 버전  3 <= 3 → 줄임 (용량 3, 꽉 참)
@@ -117,7 +115,7 @@ class DynamicArray {
     public int getCapacity() { return capacity; }
     public int getSize() { return size; }
 
-    // 내가 작성한 코드 : "반 미만" 을 그대로 (double 로 실수 나눗셈)
+    // 처음 작성한 코드 : "반 미만" 을 그대로 (double 로 실수 나눗셈)
     public int shrink() {
         if (size < (double) capacity / 2) {
             capacity /= 2;

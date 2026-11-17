@@ -71,7 +71,7 @@ public class ClassQuiz {
     /**
      * 1. ❶ 클래스와 객체의 차이점
      *
-     * 📝 필기 (AI 답변)
+     * 📝 필기
      *   - 클래스 (Class) : 객체를 생성하기 위한 "설계도" 또는 "틀(BluePrint)".
      *                      메모리에 직접 할당되지 않는 추상적인 개념이다.
      *   - 객체 (Object / Instance) : 클래스를 바탕으로 메모리(Heap)에 실제로 생성된 실체.
@@ -83,7 +83,7 @@ public class ClassQuiz {
      *
      *    ❷ 데이터 멤버(필드)와 지역 변수의 차이점
      *
-     * 📝 필기 (AI 답변)
+     * 📝 필기
      *      구분          필드 (데이터 멤버)                        지역 변수
      *      선언 위치     클래스 블록 내부, 메서드 외부              메서드 · 생성자 · 블록 내부
      *      생성 / 소멸   객체 생성 시 Heap 에 생성,                 블록이 실행될 때 Stack 에 생성,
@@ -119,7 +119,7 @@ public class ClassQuiz {
     /**
      * 2. getter / setter 를 사용하는 이유
      *
-     * 📝 필기 (AI 답변) : 객체 지향 프로그래밍(OOP)의 핵심 원칙인 캡슐화(Encapsulation)와
+     * 📝 필기 : 객체 지향 프로그래밍(OOP)의 핵심 원칙인 캡슐화(Encapsulation)와
      *    정보 은닉(Data Hiding)을 위해서
      *   ① 데이터 무결성 및 유효성 검사
      *      필드를 public 으로 열어 두면 아무 값이나 들어갈 수 있다. (예: 나이에 -10)
@@ -143,7 +143,7 @@ public class ClassQuiz {
     /**
      * 3. 다음 코드의 오류를 모두 찾으시오.
      *
-     *  ❌ 원본
+     *  ❌ 문제 코드
      *      class Audio {
      *          private int volume;
      *          public void setVolume(int level) {volume = level;};
@@ -155,7 +155,7 @@ public class ClassQuiz {
      *          }
      *      };
      *
-     * 📝 필기 (AI 답변)
+     * 📝 필기
      *   (1) 객체 미생성 : Audio bose; 는 레퍼런스 변수만 선언한 것. 객체가 없다.
      *        → Audio bose = new Audio();
      *        (error: variable bose might not have been initialized)
@@ -168,12 +168,12 @@ public class ClassQuiz {
      *   (4) 불필요한 세미콜론 : setVolume 메서드 뒤의 ; 와 클래스 끝의 };
      *        → 문법 오류는 아니지만 쓰지 않는 것이 관례
      *
-     * ⚠ (2) 에 대해 : AI 는 main 을 "외부" 로 보고 오류라고 했지만, 이 main 은 Audio 클래스 "안" 에 있다.
+     * ⚠ 자주 틀리는 부분 : (2) 는 main 을 "외부" 로 보고 오류라고 답하기 쉽지만, 이 main 은 Audio 클래스 "안" 에 있다.
      *    private 은 클래스 단위로 접근을 막으므로 같은 클래스 안의 main 에서는 bose.volume = 50; 도
      *    실제로 컴파일된다. (JDK 25 로 확인 : (1), (3) 만 오류) 다만 main 을 다른 클래스로 옮기면
      *    오류가 되므로 setter 를 쓰는 편이 좋은 습관이다. (실습 클래스1 3번 📝 필기와 같은 내용)
      *
-     *  ✅ 수정 (아래 Audio 클래스)
+     *  ✅ 고친 코드 (아래 Audio 클래스)
      */
     static void q3() {
         Audio.main(new String[0]);
@@ -230,7 +230,7 @@ public class ClassQuiz {
      *   - 하나의 .java 소스 파일 안에는 public class 를 단 하나만 선언할 수 있다.
      *   - public class 의 이름은 파일명과 정확히 일치해야 한다.
      *
-     * 📝 필기 (AI 답변) ❹ 를 작성하는 두 가지 방법
+     * 📝 필기 : ❹ 를 작성하는 두 가지 방법
      *   방법 1 : 파일을 2개로 나눈다.  (둘 다 public 가능)
      *       Point.java       → public class Point { ... }
      *       PointTest.java   → public class PointTest { main ... }
@@ -251,7 +251,7 @@ public class ClassQuiz {
     /**
      * 6. (a) static 필드와 일반 필드의 차이  (b) 정적 메서드와 일반 메서드의 차이
      *
-     * 📝 필기 (AI 답변)
+     * 📝 필기
      *   (a) static 필드 (클래스 변수)
      *       - 클래스가 메모리에 로드될 때 메서드(static) 영역에 "단 한 번" 생성된다.
      *       - 해당 클래스로 만든 모든 객체가 공유한다.
@@ -318,7 +318,7 @@ public class ClassQuiz {
      *     가장 마지막에 대입된 ob3.z = 5 즉 z=5
      *   - ob1.z++, ob2.z++, ob3.z++ 하게 되면 6,7,8 로 ++ 가 3번 증가하게 되어 8, 8, 8이 출력 됨.
      *   - A.z = 5; A.z++; 로 이렇게 클래스명으로도 접근이 가능함. static 이므로.
-     *     (⚠ 필기에는 a.z =5; 로 적혀 있었는데, 클래스명으로 접근한다는 뜻이므로 A.z 로 고쳤다)
+     *     (⚠ 자주 틀리는 부분 : 소문자 a 라는 변수는 없다. 클래스명 A 로 써야 한다 → A.z = 5;)
      *
      *      ob1 ──▶ [ x: 3 → 4 ]
      *      ob2 ──▶ [ x: 4 → 5 ]          A.z (하나뿐) : 3 → 4 → 5 → 6 → 7 → 8
@@ -349,13 +349,13 @@ public class ClassQuiz {
     /**
      * 8. 다음 코드의 오류를 모두 찾아 고치시오.
      *
-     *  ❌ 원본
+     *  ❌ 문제 코드
      *      public class Test {
      *          private int x, y;
      *          private static int z;
      *          public static void f1() {
      *              int r = f2();
-     *              System.out.println(“결과 : ” + r);
+     *              System.out.println("결과 : " + r);
      *          }
      *          public int f2() { return z++; }
      *          public static int f3() { return x + y; }
@@ -366,25 +366,24 @@ public class ClassQuiz {
      *          }
      *      }
      *
-     * 📝 필기 (AI 답변) 주요 오류
+     * 📝 필기 : 주요 오류
      *   (1) static 메서드 f1() 에서 인스턴스 메서드 f2() 호출
      *       (error: non-static method f2() cannot be referenced from a static context)
      *   (2) static 메서드 f3() 에서 인스턴스 필드 x, y 참조
      *       (error: non-static variable x cannot be referenced from a static context)
      *   (3) static 메서드 main 에서 인스턴스 필드 x, y 에 값 대입
-     *   (4) 스마트 따옴표 “ ” → 일반 따옴표 " "
-     *  ✅ 수정 : private static int x, y;  /  public static int f2()  /  따옴표 수정  /  f4() 는 그대로
+     *  ✅ 고친 코드 : private static int x, y;  /  public static int f2()  /  f4() 는 그대로
      *
      * 📝 필기
      *   - f2() 는 static 메서드가 아니다. 따라서 static 메서드 f1() 에서 호출할 수 없다.
-     *     (⚠ 필기에는 "static 필드 접근이 안된다" 로 적혀 있었다. f2() 가 일반 메서드라도 static 필드 z 에는
+     *     (⚠ 자주 틀리는 부분 : "static 필드 접근이 안 된다" 가 원인이 아니다. f2() 가 일반 메서드라도 static 필드 z 에는
      *      접근할 수 있다. 문제는 static 인 f1() 이 객체 없이 일반 메서드 f2() 를 부르는 것이다.)
      *   - f2()를 스태틱으로 변경하게 되면 사용할 수 있는게 지역변수거나 static 필드거나
      *     static 메서드만 사용가능하게 제약이 변경. z가 static 변수이므로 잘 작동함.
      *   - static메서드 안에서는 일반 필드로 접근 할 수 없음. x와 y는 일반 필드임.
      *     x와 y를 static 필드로 변경해야 f3()이 접근 가능해짐.
      *
-     * 📝 필기 (AI 답변) static 메서드와 멤버 접근 제약 정리
+     * 📝 필기 : static 메서드와 멤버 접근 제약 정리
      *   - static 메서드 안에서는 인스턴스 필드 / 인스턴스 메서드에 직접 접근할 수 없다. (this 도 없음)
      *   - static 메서드 안에서 사용 가능한 것 : 지역 변수, static 필드, static 메서드
      *
@@ -404,7 +403,7 @@ public class ClassQuiz {
     /**
      * 9. 다음 코드에서 클래스 B 를 클래스 A 의 내부 클래스로 바꾸어 작성하시오.
      *
-     *  ❌ 원본
+     *  문제 코드
      *      public class Main {
      *          public static void main(String[] args) {
      *              A outer = new A();
@@ -428,7 +427,7 @@ public class ClassQuiz {
      *          System.out.println("B class : " + ob.getNum());
      *      }
      *
-     * ⚠ 원본의 B 는 System.out.println(...) 문이 메서드 밖(클래스 몸체)에 바로 있어서 컴파일 오류가 난다.
+     * ⚠ 문제 코드의 B 는 System.out.println(...) 문이 메서드 밖(클래스 몸체)에 바로 있어서 컴파일 오류가 난다.
      *    (error: <identifier> expected) 또 main 에서 부르는 inner.print() 메서드도 B 에 없다.
      *    답안에서는 이 부분을 print() 메서드로 만들었다.
      *
@@ -452,7 +451,7 @@ public class ClassQuiz {
      *     A outer = new A(); B inner = new B(); 에서 B 클래스를 접근할 때 아래 처럼 변경한다.
      *         A.B inner = outer.new B();
      *
-     * 📝 필기 (AI 답변)
+     * 📝 필기
      *   - 내부 클래스(인스턴스 멤버 클래스)는 외부 클래스의 객체가 먼저 존재해야 생성할 수 있다.
      *     그래서 outer.new B() 처럼 외부 객체를 통해 만들고, 타입은 A.B 로 쓴다.
      *
@@ -493,7 +492,7 @@ class Age {
     }
 }
 
-// ───────────────────────── 3번 (✅ 수정) ─────────────────────────
+// ───────────────────────── 3번 (✅ 고친 코드) ─────────────────────────
 class Audio {
     private int volume;
     public void setVolume(int level) { volume = level; }          // (4) 메서드 뒤 ; 제거
@@ -589,14 +588,14 @@ class A {
     public static int z;
 }
 
-// ───────────────────────── 8번 (✅ 수정) ─────────────────────────
+// ───────────────────────── 8번 (✅ 고친 코드) ─────────────────────────
 class Test {
     private static int x, y;                  // ✅ static 추가 → f3(), main 에서 사용 가능
     private static int z;
 
     public static void f1() {
         int r = f2();
-        System.out.println("결과 : " + r);     // ✅ 스마트 따옴표 → 일반 따옴표
+        System.out.println("결과 : " + r);
     }
 
     public static int f2() { return z++; }    // ✅ static 추가 → f1() 에서 호출 가능

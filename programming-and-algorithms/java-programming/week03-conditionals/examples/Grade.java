@@ -6,7 +6,7 @@ import java.util.Scanner;
  * else if 는 "순차적으로 진행" 된다!
  *  → 어느 조건이 true 이면 그 블록만 실행하고, 다음 조건문들은 실행(검사)되지 않는다.
  *
- * 슬라이드의 첫 번째 버전 (불필요한 조건 포함)
+ * 첫 번째 버전 (불필요한 조건 포함)
  *   if (score >= 90) ...A
  *   else if (score < 90 && score >= 80) ...B
  *   else if (score < 80 && score >= 70) ...C

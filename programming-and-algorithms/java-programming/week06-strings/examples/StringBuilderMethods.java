@@ -13,7 +13,7 @@
  *  - charAt(i) / setCharAt(i, c) / deleteCharAt(i) : 한 문자 읽기 / 수정 / 삭제
  *  - toString()         : String 객체로 변환
  *
- * 📝 필기 (퀴즈 8번, AI 설명) String.replace vs StringBuilder.replace
+ * 📝 필기 (퀴즈 8번) String.replace vs StringBuilder.replace
  *      구분            String.replace("llo", "love")       StringBuilder.replace(2, 5, "love")
  *      바꿀 대상 지정  찾을 "문자열"                        "인덱스 범위" (시작, 끝)
  *      원본            그대로 (새 String 반환)              원본이 직접 바뀜
@@ -24,8 +24,7 @@
  * 💡 sb.delete(4, 7) 의 그림
  *      Tutorials →  T u t o [r i a] l s   인덱스 4,5,6 제거  →  Tutols
  *
- * ⚠ 슬라이드의 “Love”, “I Leve You.!”, ‘o’ 는 스마트 따옴표라 일반 따옴표로 수정.
- *    또 슬라이드는 String s 를 두 번 선언해서 그대로는 컴파일되지 않는다. s1, s2 로 나눴다.
+ * ⚠ 자주 틀리는 부분 : 한 메소드 안에서 String s 를 두 번 선언하면 컴파일되지 않는다. 그래서 s1, s2 로 나눴다.
  *
  * 실행 결과
  *  hello12333.333

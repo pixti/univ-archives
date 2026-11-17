@@ -9,8 +9,6 @@ import java.util.Scanner;
  *  - nextLine() 으로 한 줄 전체 → split(" ") 로 숫자 문자열 배열 → Integer.parseInt 로 정수 변환 후 합산
  *  - 개수를 몰라도 split 결과 배열의 길이만큼 for each 로 돌면 된다.
  *
- * ⚠ 슬라이드의 클래스 이름은 ConditionOperation (3주차 조건 연산 예제 이름이 그대로 남은 것으로 보임).
- *    내용에 맞게 VariableSum 으로 바꿨다.
  * ⚠ split(" ") 는 공백 "한 칸" 만 구분자로 쓴다. "1  2" 처럼 공백이 두 칸이면 빈 문자열 "" 이 생기고
  *    Integer.parseInt("") 에서 NumberFormatException 이 난다. 앞에 공백이 있어도 마찬가지.
  *    → trim().split("\\s+") 를 쓰면 안전하다. (실습 문자열1 1번 · 과제 문자열1 1번 필기 참고)

@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * 💡 String 버전과 달리 정규식이 아니라 "글자 그대로" 찾는다. "1+1" 같은 단어도 문제없다.
  *
- * ⚠ 슬라이드 코드는 찾는 단어가 문장에 없을 때를 처리하지 않는다.
+ * ⚠ 자주 틀리는 부분 : 찾는 단어가 문장에 없을 때를 처리하지 않으면 예외가 난다.
  *    indexOf 가 -1 을 돌려주면 replace(-1, ...) 에서 StringIndexOutOfBoundsException 이 난다.
  *    아래처럼 if (start != -1) 로 검사를 추가했다.
  *

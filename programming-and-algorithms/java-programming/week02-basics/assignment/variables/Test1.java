@@ -4,7 +4,7 @@ import java.util.Scanner; // ⑥ Scanner 를 쓰려면 import 필요
  * [2강 과제] 변수와 자료형 - 1번
  * 다음 프로그램의 오류를 수정하시오.
  *
- * ── 원본 코드 ──────────────────────────────────────────
+ * ── 문제 코드 ──────────────────────────────────────────
  *   public class Test1 {
  *       public static void main(String[] args) {
  *           String s = 'abc';

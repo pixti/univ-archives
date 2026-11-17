@@ -7,7 +7,7 @@
  *   - intersect(Rectangle other): 두 사각형이 겹치는 영역을 새 Rectangle 로 반환, 겹치지 않으면 null
  *  main 에서 두 사각형의 면적을 비교하고, 겹치는 영역을 출력한다.
  *
- * 📝 필기 (AI 설명) 핵심 개념
+ * 📝 필기 : 핵심 개념
  *   - Point 클래스      : x, y 좌표를 저장
  *   - Rectangle 클래스  : Point 를 필드로 가진다 → 포함 관계 (Composition, "has-a")
  *                         getX() / getY() 는 startPoint.getX() 를 대신 불러 주는 편의 메서드
@@ -25,10 +25,6 @@
  *        r1 : (10, 10) 에서 5 x 5  → x 10 ~ 15, y 10 ~ 15, 면적 25
  *        r2 : ( 3,  7) 에서 6 x 4  → x  3 ~  9, y  7 ~ 11, 면적 24
  *        left = max(10, 3) = 10,  right = min(15, 9) = 9   → left >= right → 겹치지 않음
- *
- * ⚠ 문제의 출력 코드는 둥근 따옴표(“ ”)를 쓰고, 마지막 문자열 "만큼 겹칩니다. 의 닫는 따옴표가 빠져 있다.
- *        ❌ 원본 : ... + “ 만큼 겹칩니다.);
- *        ✅ 수정 : ... + " 만큼 겹칩니다.");
  *
  * 💡 intersect 가 null 을 돌려줄 수 있으므로 main 에서 반드시 if (inter == null) 을 먼저 검사해야 한다.
  *    검사 없이 inter.getX() 를 부르면 NullPointerException 이 난다.

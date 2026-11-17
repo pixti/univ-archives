@@ -8,7 +8,7 @@ import java.util.Scanner;
  *    → 공백뿐 아니라 쉼표, 콜론, 느낌표 같은 특수문자까지 모두 제거
  *  - 먼저 toLowerCase() 를 했기 때문에 대문자는 이미 없다. (순서가 바뀌면 대문자가 다 지워진다!)
  *
- * 📝 필기 (AI 설명) 두 방법 비교
+ * 📝 필기 : 두 방법 비교
  *      입력                                방법 1 : replaceAll(" ", "")    방법 2 : replaceAll("[^a-z0-9]", "")
  *      A man, a plan, a canal: Panama!     "aman,aplan,acanal:panama!"     "amanaplanacanalpanama"
  *                                          → 회문 아님!                    → 회문 !
@@ -28,7 +28,7 @@ import java.util.Scanner;
  *  문장 ? No, on!
  *  회문 !
  *  문장 ? 가나다
- *  회문 !          ← ⚠ 한글이 모두 지워져서 생기는 오답 ([^a-z0-9가-힣] 이면 회문 아님!)
+ *  회문 !          ← ⚠ 한글이 모두 지워져서 생기는 잘못된 결과 ([^a-z0-9가-힣] 이면 회문 아님!)
  */
 public class PalindromeRegex {
     public static void main(String[] args) {

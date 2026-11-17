@@ -17,7 +17,7 @@ import java.time.ZonedDateTime;
  *    ZonedDateTime 이 자동으로 처리하므로 직접 계산할 필요가 없다.
  * 💡 원래 이클립스에서 Main 클래스로 작성한 코드. NewYorkTime 으로 이름을 바꿨다.
  *
- * 실행 결과 (실행 시각에 따라 다름 - 내가 실행했을 때)
+ * 실행 결과 (실행 시각에 따라 다름 - 실행 예)
  *  Time in New York: 1:12:44
  *  💡 Time in New York: 01:12:44
  */

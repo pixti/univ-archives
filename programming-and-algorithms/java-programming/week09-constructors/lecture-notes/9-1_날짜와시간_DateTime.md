@@ -1,6 +1,5 @@
 # 9-1. 날짜와 시간 다루기 (DateTime)
 
-> 원본: `9-1 DateTime.pptx`
 > 관련 코드: [`examples/OldDateProblem.java`](../examples/OldDateProblem.java), [`examples/InstantTest.java`](../examples/InstantTest.java), [`examples/LocalDateTimeTest.java`](../examples/LocalDateTimeTest.java), [`examples/ZonedDateTimeTest.java`](../examples/ZonedDateTimeTest.java), [`examples/ElapsedTimeTest.java`](../examples/ElapsedTimeTest.java), [`practice/datetime-enum/`](../practice/datetime-enum/) (4~7번)
 
 ---
@@ -25,8 +24,8 @@ birthDay.getTime();
 System.out.println(birthDay.getTime()); // Thu Sep 24 10:00:45 KST 1964
 ```
 
-> 참고:
-> - 💡 `Calendar.MONTH`에 `8`을 넣었는데 출력은 `Sep`(9월)이다. `Calendar`는 월을 **0부터** 센다(0 = 1월). 그래서 9월을 원하면 `8` 또는 `Calendar.SEPTEMBER`를 넣어야 한다. 슬라이드가 말하는 "월이 0부터 시작하는 불편함"이 바로 이것이다.
+> 💡 **보충:**
+> - 💡 `Calendar.MONTH`에 `8`을 넣었는데 출력은 `Sep`(9월)이다. `Calendar`는 월을 **0부터** 센다(0 = 1월). 그래서 9월을 원하면 `8` 또는 `Calendar.SEPTEMBER`를 넣어야 한다. 수업에서 말한 "월이 0부터 시작하는 불편함"이 바로 이것이다.
 > - 💡 `date.getTime()`은 1970-01-01 00:00:00 UTC(epoch)부터 지난 시간을 **밀리초**(long)로 돌려준다.
 > - 💡 시각(`10:00:45`)은 `set`으로 바꾸지 않았으므로 `getInstance()`를 호출한 현재 시각이 그대로 남는다.
 > - 💡 "thread safe하지 않다"는 것은 여러 스레드가 같은 `Date`/`Calendar` 객체를 동시에 바꾸면 값이 꼬일 수 있다는 뜻이다. `java.time`의 클래스들은 **불변(immutable)** 객체라 이런 문제가 없다. (값을 바꾸는 메소드가 새 객체를 돌려준다. 4절 참고)
@@ -70,10 +69,10 @@ zonedDateTime = instant.atZone(zone);
 System.out.println(zonedDateTime); // 2024-05-29T18:42:13.804485700-07:00[America/Los_Angeles]
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `Instant`를 그냥 출력하면 끝에 `Z`가 붙는다. `Z`는 UTC(협정 세계시, +00:00)라는 뜻이다. 그래서 한국 시각 10:42가 `01:42Z`로 찍힌다(한국은 UTC+9).
 > - 💡 `atZone(zone)`으로 **같은 순간**을 원하는 시간대의 날짜·시각으로 바꿔 볼 수 있다. 서울 10:42와 LA 전날 18:42는 같은 순간이다.
-> - 💡 슬라이드의 `getNano()` 값(98150300)은 위 `instant`(…804485700)와 다른 실행에서 나온 값이라 숫자가 맞지 않는다. 같은 실행이라면 `804485700`이 나온다.
+> - 💡 강의 예시의 `getNano()` 값(98150300)은 위 `instant`(…804485700)와 다른 실행에서 나온 값이라 숫자가 맞지 않는다. 같은 실행이라면 `804485700`이 나온다.
 > - 💡 7강 과제 클래스1 4번 Stopwatch에서 `Instant`와 `Duration`을 이미 사용했다.
 
 ---
@@ -118,7 +117,7 @@ public final class LocalDateTime implements ... {
 }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 모든 필드가 `private final`이다. 한 번 만들어진 객체의 값은 **바꿀 수 없다(불변)**. 9-3에서 배우는 상수 필드(`final`)가 여기서 쓰인다.
 > - 💡 클래스도 `final`이라 상속할 수 없다. (상속은 10강)
 > - 💡 `LocalDateTime`은 `LocalDate`와 `LocalTime`을 **필드로 가진다**(포함 관계). 7강의 `MyRectangle`이 `MyPoint`를 필드로 가진 것과 같은 구조다.
@@ -136,9 +135,9 @@ public static LocalDateTime ofInstant(Instant instant, ZoneId zone)
 …
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 **팩토리 메소드**: `new LocalDateTime(...)` 대신 객체를 만들어 돌려주는 **static 메소드**다. `LocalDateTime`의 생성자는 `private`이라서 밖에서 `new`를 쓸 수 없다. 9-3의 "생성자가 `private`이면 같은 클래스 안에서만 생성 가능"이 실제로 쓰이는 예다.
-> - 💡 `of(...)`가 여러 개인 것은 **메소드 오버로딩**이다. (7강 8-3, 퀴즈 📝 필기 참고)
+> - 💡 `of(...)`가 여러 개인 것은 **메소드 오버로딩**이다. (7-3, 퀴즈 📝 필기 참고)
 
 ### 5-2. 주요 메소드
 
@@ -188,7 +187,7 @@ public LocalDateTime withSecond(int second)
 public LocalDateTime withNano(int nanoOfSecond)
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `plus~`, `minus~`, `with~`는 원래 객체를 바꾸지 않고 **새 객체를 돌려준다**(불변). 그래서 반드시 결과를 받아야 한다.
 >   ```java
 >   LocalDateTime d = LocalDateTime.now();
@@ -222,7 +221,7 @@ datetime3 = 2017-05-14T10:34      (120일 후)
 datetime4 = 2016-10-06T10:34      (100일 전)
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `java.util.Calendar`와 달리 `LocalDateTime.of(2017, 1, ...)`의 `1`은 **1월**이다. 월을 숫자 대신 `Month.MARCH`처럼 열거형(9-2)으로 넘길 수도 있다.
 > - 💡 마지막 인수 `000000`은 나노초다. 0으로 시작하는 정수 리터럴은 8진수로 해석되지만 값이 0이라 문제는 없다. (`010`을 쓰면 10이 아니라 8이 되니 주의)
 > - 💡 `DateTimeFormatter` 패턴 문자:
@@ -268,7 +267,7 @@ Calcutta time : 05-Nov-2026 11:42 AM IST
 New_York time : 05-Nov-2026 01:12 AM EST
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `IST`는 인도 표준시(UTC+5:30), `EST`는 미국 동부 표준시(UTC-5)다. 서머타임 기간(3월~11월 초)에는 뉴욕이 `EDT`(UTC-4)가 된다. `ZonedDateTime`이 이것을 자동으로 처리한다.
 > - 💡 `Asia/Calcutta`는 옛 이름이고 지금 정식 이름은 `Asia/Kolkata`다. 둘 다 동작한다.
 > - 💡 `MMM`, `a`, `z`는 **로케일**에 따라 글자가 달라진다. 한국어 Windows에서 실행하면 `05-11월-2026 11:42 오전 IST`처럼 나온다. 영어로 고정하려면 `DateTimeFormatter.ofPattern("dd-MMM-yyyy hh:mm a z", Locale.ENGLISH)`처럼 로케일을 넘긴다.
@@ -307,8 +306,8 @@ Instant finish = Instant.now();
 long timeElapsed = Duration.between(start, finish).toMillis();
 ```
 
-> 참고:
-> - 💡 슬라이드에는 `System. nanoTime()`처럼 점 뒤에 공백이 있다. 자바는 `.` 앞뒤의 공백을 허용하므로 컴파일은 되지만 보통 붙여 쓴다.
+> 💡 **보충:**
+> - 💡 `System. nanoTime()`처럼 점 뒤에 공백이 있어도 된다. 자바는 `.` 앞뒤의 공백을 허용하므로 컴파일은 되지만 보통 붙여 쓴다.
 > - 💡 `currentTimeMillis()`는 "지금이 몇 시인지"(벽시계)를 알려 준다. 그래서 컴퓨터 시계가 바뀌면 측정값이 틀어질 수 있다. `nanoTime()`은 **경과 시간 측정 전용**이라 이런 영향이 없어 더 정확하다. 단, `nanoTime()` 값 자체는 날짜와 관계없는 숫자라 차이(`finish - start`)만 의미가 있다.
 > - 💡 `Duration.between(start, finish)`는 `toMillis()` 외에도 `toNanos()`, `toSeconds()`, `toMinutes()` 등으로 원하는 단위를 꺼낼 수 있다.
 > - 💡 세 방법을 한 번에 비교하는 코드는 [`examples/ElapsedTimeTest.java`](../examples/ElapsedTimeTest.java)에 있다.

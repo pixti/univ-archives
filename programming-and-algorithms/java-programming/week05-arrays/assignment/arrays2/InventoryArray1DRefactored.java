@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * [5강 과제] 배열(2) - 1번 문제 (실습 5번 1차원 버전의 리팩터링 버전)
  *
- * InventoryArray1D.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * InventoryArray1D.java 를 리팩터링한 코드.
  *
  * 바뀐 점
  *  - 상수 : LOCATION_COUNT(10), MIN_PRODUCT_NUMBER(0), MAX_PRODUCT_NUMBER(99)

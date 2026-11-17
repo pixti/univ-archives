@@ -1,7 +1,7 @@
 /**
  * [5강 과제] 배열(1) - 5번 문제 (리팩터링 버전)
  *
- * RandomFrequency.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * RandomFrequency.java 를 리팩터링한 코드.
  *
  * 바뀐 점
  *  - 숫자 20, 1000 → 상수 VALUE_COUNT, GENERATION_COUNT  (1_000 : 숫자 사이의 _ 는 읽기 쉽게 하는 구분자)

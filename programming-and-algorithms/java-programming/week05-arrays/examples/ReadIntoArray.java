@@ -13,7 +13,6 @@ import java.util.Scanner;
  *
  * 💡 100 개보다 많이 넣으면 array[100] 에서 ArrayIndexOutOfBoundsException.
  *    안전하게 하려면 while (val >= 0 && idx < MAX_SIZE)
- * ⚠ 슬라이드의 둥근 따옴표 “ “ 를 " " 로 고쳤다. 입력 안내 문구는 슬라이드에 없어서 그대로 두었다.
  *
  * 실행 예
  *  10 20 30 -1

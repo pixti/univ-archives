@@ -21,10 +21,10 @@ import java.util.Collections;
  *    💡 int[] 에는 못 쓴다. Comparator 는 객체끼리 비교하는 규칙이라 기본형 int 에는 적용되지 않는다.
  *       (Integer[] 로 만들면 가능)
  *
- * 3) 두 변수 교환 (슬라이드 오른쪽 그림)
+ * 3) 두 변수 교환
  *      a = b; b = a;          ❌ a 의 원래 값이 사라져 둘 다 3
  *      tmp = a; a = b; b = tmp;  ✅ 덮어쓰기 전에 tmp 에 옮겨 둔다
- *    ⚠ 슬라이드의 int a=0; b=3; 은 문법 오류 (b 가 선언되지 않음) → int a = 0, b = 3;
+ *    ⚠ 자주 틀리는 부분 : int a=0; b=3; 은 문법 오류 (b 가 선언되지 않음) → int a = 0, b = 3;
  *
  * 📝 필기 (실습 배열(1) 4번) : 배열의 대칭성을 이용해 arr.length/2 의 값을 이용해 스왑시켜주면 된다.
  *    [7, 6, 5, 4, 3] 이라 하면 중앙 5 를 기준으로 0번째 - 4번째, 1번째 - 3번째 끼리 대칭 관계.
@@ -54,7 +54,7 @@ public class DescendingSort {
         System.out.println("String 내림차순 : " + Arrays.toString(b));
 
         // 3) 두 변수 교환
-        int x = 0, y = 3;      // ⚠ 슬라이드는 int a=0; b=3; (문법 오류)
+        int x = 0, y = 3;      // ⚠ int x=0; y=3; 로 쓰면 y 가 선언되지 않아 문법 오류
         x = y;
         y = x;
         System.out.println("잘못된 교환 : a = " + x + ", b = " + y);

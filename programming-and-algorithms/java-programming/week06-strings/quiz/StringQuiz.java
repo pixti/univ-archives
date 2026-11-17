@@ -21,8 +21,8 @@ import java.util.regex.Pattern;
  * 10. 핸드폰 번호 형식 검사 코드의 빈칸을 채우시오.                                   → q10()
  * 11. StringBuilder 메소드를 차례로 호출한 코드의 출력 결과를 쓰시오.                 → q11()
  *
- * ⚠ 퀴즈 문제의 코드에는 스마트 따옴표(“ ”)와 오타(startWith, 정의되지 않은 변수 s, Str1/str1 대소문자)가
- *    섞여 있어 그대로는 컴파일되지 않는다. 각 메소드에 ❌ 원문 / ✅ 수정 으로 표시했다.
+ * 표시
+ *   📝 필기 : 채점 후 정리한 내용 / ⚠ 자주 틀리는 부분 : 헷갈리기 쉬운 오답과 그 이유
  *
  * 실행 결과
  *  ===== 1 =====
@@ -100,21 +100,19 @@ public class StringQuiz {
      * 1. String 생성
      *
      * 📝 필기
-     *  - "String str1 에 초기에는 쓰레기값이 들어있고 str1 = "" 로 지정하면 "" 의 레퍼런스값이
-     *     String str1 에 쓰레기값 대신 들어가게 됨. 변수에는 지칭하는 레퍼런스 값이 들어가게 되고 객체는 별도로 있다.
-     *       str1 -> [Hi, Byeong Man]
-     *       str2 -> [Hi, Byeong Man]"
-     *  - (AI 정정) 자바에는 C 언어 같은 "쓰레기값" 이 없다.
-     *      · 지역 변수를 선언만 하고 값을 넣지 않은 채 사용하면 → 컴파일 에러 (variable might not have been initialized)
-     *      · 클래스의 필드(멤버 변수) 는 → 자동으로 null 로 초기화
+     *  - 변수에는 객체를 지칭하는 레퍼런스 값이 들어가고, 객체는 별도로 있다.
      *    str1 = "" 을 하면 String Constant Pool 에 있는 빈 문자열 객체의 "참조값" 이 str1 에 저장된다.
-     *    변수(str1) 에는 참조값만 들어 있고, 실제 객체는 힙(Heap) 메모리에 따로 있다. ← 필기의 핵심은 맞음
+     *    변수(str1) 에는 참조값만 들어 있고, 실제 객체는 힙(Heap) 메모리에 따로 있다.
      *
      *       str1 ──→ [ "Hi, Byeong Man" ]   (상수 풀)
      *       str2 ──→ [ "Hi, Byeong Man" ]   (new 로 만든 별도의 객체)
      *
+     *  ⚠ 자주 틀리는 부분 : "str1 에는 처음에 쓰레기값이 들어 있다" 는 틀린 말이다. 자바에는 C 언어 같은 쓰레기값이 없다.
+     *      · 지역 변수를 선언만 하고 값을 넣지 않은 채 사용하면 → 컴파일 에러 (variable might not have been initialized)
+     *      · 클래스의 필드(멤버 변수) 는 → 자동으로 null 로 초기화
+     *
      *  - 📝 char [] charArray = new char[] {'I', ' ', 'L', ...}; 에서 문법적으로 new char[] 가 생략된 것.
-     *    (AI 설명) 이 생략형은 "선언과 동시에" 초기화할 때만 쓸 수 있다.
+     *    이 생략형은 "선언과 동시에" 초기화할 때만 쓸 수 있다.
      *      char[] a = {'a', 'b'};          // ✅
      *      char[] b;  b = {'a', 'b'};      // ❌ 컴파일 에러
      *      char[] c;  c = new char[] {'a', 'b'};   // ✅ 따로 대입할 때는 new char[] 필요
@@ -142,12 +140,12 @@ public class StringQuiz {
     /**
      * 2. "I lobe You" 의 b 를 v 로 바꾸기
      *
-     * 📝 필기 (내 답안)
+     * 정답
      *      char[] t = str.toCharArray();
      *      t[4] = 'v';
      *      str = new String(t);
      *
-     * 📝 필기 (AI 설명)
+     * 📝 필기
      *  - 문자(char) 는 작은따옴표 'v'. 큰따옴표 "v" 는 String 이라 char 배열 원소에 넣을 수 없다.
      *  - 인덱스 :  I(0) ' '(1) l(2) o(3) b(4) e(5)  → b 는 4번
      *  - String 은 불변(immutable) 이라 str.charAt(4) = 'v' 같은 직접 수정이 불가능하다.
@@ -179,8 +177,8 @@ public class StringQuiz {
      *        Str2 ──┘
      *        Str3 ─────→ [ "I Love You!!" ]     ← 내용은 같지만 다른 객체 : Str1 == Str3 false
      *
-     * ⚠ 문제 코드는 String Str1 으로 선언하고 if(str1 == str2) 처럼 소문자로 비교해서 컴파일 에러.
-     *    (자바는 대소문자를 구분한다) 또한 “true” 는 스마트 따옴표. 아래는 Str1 로 통일했다.
+     * ⚠ 자주 틀리는 부분 : String Str1 으로 선언하고 if(str1 == str2) 처럼 소문자로 비교하면 컴파일 에러다.
+     *    (자바는 대소문자를 구분한다) 아래는 Str1 로 통일했다.
      */
     static void q3() {
         String Str1 = new String("I Love You!!");
@@ -195,8 +193,7 @@ public class StringQuiz {
         System.out.println("Returned Value = " + retVal);
 
         // (오른쪽) ==
-        // ❌ if(str1 == str2) System.out.println(“true”);
-        // ✅
+        // ⚠ if (str1 == str2) 처럼 소문자로 쓰면 컴파일 에러 (변수 이름은 Str1)
         if (Str1 == Str2) System.out.println("true");   // true
         if (Str1 == Str3) System.out.println("true");   // false → 출력 없음
         // 문자의 구성은 같지만, 다른 객체이기 때문
@@ -205,7 +202,7 @@ public class StringQuiz {
     /**
      * 4. compareTo
      *
-     * 📝 필기 (AI 설명)
+     * 📝 필기
      *  - a.compareTo(b) : 같으면 0, a 가 사전 순서상 뒤면 양수, 앞이면 음수
      *    → 처음으로 "다른 글자" 를 찾아 그 두 글자의 유니코드(ASCII) 값의 차이를 돌려준다.
      *      "Apple".compareTo("Banana")      → 'A'(65) - 'B'(66) = -1
@@ -216,7 +213,7 @@ public class StringQuiz {
      *      인덱스  0  1  2
      *              I ' ' L     ← L(76)
      *              I ' ' H     ← H(72)     76 - 72 = 4 > 0 → Greater
-     *    ⚠ AI 설명에는 "3번째 인덱스에서 차이" 라고 되어 있으나, 인덱스로는 2번 (세 번째 글자) 이다.
+     *    ⚠ 자주 틀리는 부분 : "3번째 인덱스에서 차이" 라고 세기 쉽지만, 인덱스로는 2번 (세 번째 글자) 이다.
      */
     static void q4() {
         String Str1 = new String("I Love You!!");
@@ -234,11 +231,7 @@ public class StringQuiz {
     /**
      * 5. 문자열 검색 · 조작
      *
-     *  ❌ 문제 코드 (그대로는 컴파일 X)
-     *      String str1 = “  abcisabc isabc ”;
-     *      System.out.println(str1.startWith("abc"));      ← startsWith 의 오타
-     *      ...
-     *      String str3 = s.replaceAll("^\\s+", "");         ← s 는 선언되지 않은 변수 → str1
+     *  ⚠ 자주 틀리는 부분 : 메소드 이름은 startWith 가 아니라 startsWith 다. (s 가 붙는다, endsWith 도 같다)
      *
      *  풀이 (앞에 공백 2개, 뒤에 공백 1개)
      *      인덱스  0   1   2 3 4 5 6 7 8 9  10  11 12 13 14 15  16
@@ -246,7 +239,7 @@ public class StringQuiz {
      *  - startsWith("abc")   → 맨 앞이 공백이므로 false
      *  - indexOf('i', 4)     → 인덱스 4 부터 찾음 → 5
      *  - substring(20)       → 길이(17) 보다 큰 시작 인덱스 → StringIndexOutOfBoundsException
-     *      ⚠ AI 설명은 "문자열 길이가 20 이고 인덱스 19 가 공백이므로 빈 문자열" 이라고 했는데,
+     *      ⚠ 자주 틀리는 부분 : "인덱스 19 가 공백이므로 빈 문자열" 이라고 답하기 쉽지만,
      *        문제의 문자열은 17글자라 실제로는 예외가 발생한다. (길이 20 이라면 "" 출력)
      *        substring(길이) 는 "" 로 허용되고, 길이보다 크면 예외.
      *    📝 필기 : 그래서 substring(2) 로 바꿔서 확인 → "abcisabc isabc "
@@ -259,7 +252,7 @@ public class StringQuiz {
      *    → replace, toUpperCase, trim 등은 모두 "새 String" 을 반환할 뿐, str1 자체는 바뀌지 않는다.
      *      바꾼 결과를 쓰려면 str1 = str1.replace('a', 'A'); 처럼 재대입해야 한다.
      *
-     * 📝 필기 (AI 설명) 정규식 기호 정리
+     * 📝 필기 : 정규식 기호 정리
      *      .      아무 문자 1개              ^      문자열의 시작
      *      $      문자열의 끝                \d     숫자 [0-9]
      *      \D     숫자가 아닌 것             \w     영문자·숫자·_  [a-zA-Z0-9_]
@@ -274,8 +267,7 @@ public class StringQuiz {
      */
     static void q5() {
         String str1 = "  abcisabc isabc ";
-        // ❌ System.out.println(str1.startWith("abc"));
-        System.out.println(str1.startsWith("abc"));     // ✅ false
+        System.out.println(str1.startsWith("abc"));     // false   (⚠ startWith 가 아니다)
         System.out.println(str1.indexOf('i', 4));       // 5
 
         try {
@@ -294,8 +286,7 @@ public class StringQuiz {
         String str2 = str1.trim();
         System.out.println("[" + str2 + "]");
 
-        // ❌ String str3 = s.replaceAll("^\\s+", "");
-        String str3 = str1.replaceAll("^\\s+", "");    // ✅
+        String str3 = str1.replaceAll("^\\s+", "");
         System.out.println("[" + str3 + "]");
     }
 
@@ -305,7 +296,7 @@ public class StringQuiz {
      *  - delimStr = " " (공백 하나) 로만 자르므로 쉼표 · 콜론 · 점은 구분자가 아니다.
      *    → "two,three:four.five" 는 한 덩어리로 남는다.
      *
-     * 📝 필기 (AI 설명)
+     * 📝 필기
      *  - split 의 인자는 "정규식" 이다. 그래서 . + * ? | 같은 특수문자로 자르려면 \\. 처럼 이스케이프해야 한다.
      *      "a.b.c".split(".")    → 길이 0  (. 은 "모든 문자" 라서 전부 구분자가 되어 빈 문자열만 남고, 끝의 빈 문자열은 제거됨)
      *      "a.b.c".split("\\.")  → [a, b, c]
@@ -325,7 +316,7 @@ public class StringQuiz {
      *
      * 📝 필기  01[078] → 010, 017, 018 중 하나
      *
-     * 📝 필기 (AI 설명)
+     * 📝 필기
      *  - "01[078]-\\d{4}-\\d{4}"
      *      01       "01" 그대로
      *      [078]    0, 7, 8 중 한 글자
@@ -357,7 +348,7 @@ public class StringQuiz {
      *
      * 📝 필기 : 재대입하지 않아서 그대로
      *
-     * 📝 필기 (AI 설명) 비교표
+     * 📝 필기 : 비교표
      *      구분          String.replace            StringBuilder.replace
      *      대상 지정     찾을 문자열 ("llo")        인덱스 범위 (2, 5)
      *      원본          변하지 않음 (새 객체 반환) 직접 변경
@@ -378,7 +369,7 @@ public class StringQuiz {
     /**
      * 9. capacity / ensureCapacity
      *
-     * 📝 필기 (AI 설명)
+     * 📝 필기
      *  - length() 는 실제 들어 있는 글자 수, capacity() 는 확보된 공간의 크기
      *  - new StringBuilder("hello") → 16 + 5 = 21
      *  - ensureCapacity(min) 의 내부 계산 : newCapacity = (value.length << 1) + 2  (현재 x 2 + 2)
@@ -414,7 +405,7 @@ public class StringQuiz {
      *      }
      *      System.out.println("형식에 맞게 입력하셨습니다.");
      *
-     * 📝 필기 (AI 설명)
+     * 📝 필기
      *  - 앞에서 변수를 선언하지 않았다면 Pattern pattern = Pattern.compile(...) 처럼 타입을 써야 한다.
      *  - Pattern.compile : 정규식을 미리 해석(컴파일)해 두어 같은 패턴을 여러 번 검사할 때 효율적
      *  - m.matches()     : 문자열 "전체" 가 패턴과 일치해야 true → 형식에 맞지 않을 때 !m.matches()
@@ -468,7 +459,7 @@ public class StringQuiz {
      *   ⑦ setCharAt(3, 'o')               →                                  "333o.lleh"
      *   ⑧ deleteCharAt(3)                 →                                  "333.lleh"
      *
-     * 📝 필기 (AI 설명) 의 번호 매기기에서 6번(charAt) 이 빠져 있었다. 위에 ⑥ 으로 보충.
+     * 💡 charAt(3) 도 출력이 있는 단계라 ⑥ 으로 따로 셌다. 단계를 셀 때 빠뜨리기 쉽다. (출력은 모두 8줄)
      */
     static void q11() {
         StringBuilder sb = new StringBuilder();

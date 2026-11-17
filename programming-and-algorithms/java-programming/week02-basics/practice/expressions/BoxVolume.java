@@ -3,7 +3,6 @@ import java.util.Scanner;
 /**
  * [2강 실습] 수식 - 1번 문제
  * 상자의 높이, 너비, 길이를 입력받아 체적(부피)을 구하는 프로그램
- * (Eclipse 에서는 Problem1.java 로 작성했던 코드)
  *
  * 📝 필기
  *  - import 없이 Scanner 를 쓰면 빨간 줄이 생긴다.

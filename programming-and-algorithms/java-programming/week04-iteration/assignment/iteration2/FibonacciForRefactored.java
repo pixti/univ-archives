@@ -2,7 +2,7 @@
  * [4강 과제] 반복문2 - 3번 문제 (리팩터링 버전)
  * 📝 반복문2 과제는 for문으로 작성.
  *
- * FibonacciFor.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * FibonacciFor.java 를 리팩터링한 코드.
  *
  * 바뀐 점
  *  - 상한 5000 → 상수 MAX_TERMINAL (5000L : 끝의 L 은 long 리터럴)

@@ -1,13 +1,13 @@
 /**
- * [9-3 생성자와 소멸자] [실습] 학생 성적 클래스 정의하기 – 전체, 과목별 평균 (슬라이드 4~6)
+ * [9-3 생성자와 소멸자] [실습] 학생 성적 클래스 정의하기 – 전체, 과목별 평균
  *
  * 포인트
- *  - 7강(8-1, 8-2)에서 setInfo(...) 로 값을 넣던 학생 성적 예제를 "생성자"로 바꿨다.
+ *  - 7-1, 7-2에서 setInfo(...) 로 값을 넣던 학생 성적 예제를 "생성자"로 바꿨다.
  *      7강 : students[0] = new Student();  students[0].setInfo("bmkim1", 2016001, 70, 80, 90);  (2단계)
  *      9강 : students[0] = new StudentScore("bmkim1", 2016001, 70, 80, 90);                   (1단계)
  *  - 생성자를 쓰면 "값이 비어 있는 객체"가 생기는 순간이 없고, setInfo 를 깜빡하는 실수도 막을 수 있다.
  *
- * ⚠ 슬라이드 5 의 "public StudentScoreTest {" 에는 class 가 빠져 있다.
+ * ⚠ 자주 틀리는 부분 : 클래스 선언에서 class 키워드를 빠뜨리기 쉽다.
  *    ❌ public StudentScoreTest {
  *    ✅ public class StudentScoreTest {
  *

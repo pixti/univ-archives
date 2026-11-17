@@ -5,7 +5,7 @@ import java.util.Scanner;
  * [4강 과제] 반복문1 - 4번 문제 (리팩터링 버전)
  * ※ 반복 시 while 이나 do while 문만 사용하시오.
  *
- * RockPaperScissorsRepeat.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * RockPaperScissorsRepeat.java 를 리팩터링한 코드.
  *
  * 바뀐 점
  *  - 1, 2, 3 → 상수 SCISSOR, ROCK, PAPER  /  "y", "n" → CONTINUE_YES, CONTINUE_NO
@@ -21,12 +21,12 @@ import java.util.Scanner;
  *    → answer 가 null 이어도 NullPointerException 이 나지 않는 습관적인 작성법.
  *  - Random 대신 Math.random() 사용 : 0.0 이상 1.0 미만 실수 → × 3 → 0.0 ~ 2.999… → (int) 로 0 ~ 2 → + 1.
  *
- * ⚠ 캡처에서 isValidMove() 부분(65 ~ 72 행)이 잘려 있어서, 반복문2 리팩터링 버전과 같은 코드로 채웠다.
+ * 💡 isValidMove() 는 반복문2 리팩터링 버전과 같은 코드다.
  * ⚠ "컴퓨팅 엔트로피를 위한 난수 생성기" 주석은 남아 있지만 Random 필드가 없다.
  *   (Math.random() 으로 바꾸면서 주석만 남은 것. 반복문2 버전에는 RANDOM 필드가 있다)
  * 💡 반복은 모두 while → 반복문1 과제 조건은 지켰다.
  *
- * 내 코드 실행 예
+ * 실행 예
  *  가위(1), 바위(2), 보(3) : 2
  *  컴퓨터 : 보
  *  졌습니다.
@@ -96,7 +96,6 @@ public class RockPaperScissorsRepeatRefactored {
 
     /**
      * 입력된 값이 가위/바위/보(1/2/3) 중 하나인지 검사합니다.
-     * (⚠ 캡처에서 잘린 부분 - 반복문2 리팩터링 버전의 isValidMove 와 같은 코드로 채움)
      */
     private static boolean isValidMove(int move) {
         return move == SCISSOR || move == ROCK || move == PAPER;

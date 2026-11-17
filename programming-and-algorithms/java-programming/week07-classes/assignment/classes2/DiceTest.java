@@ -10,7 +10,7 @@
  * 포인트
  *  - face 는 private → roll() 로만 바뀌고 getFace() 로만 읽을 수 있다.
  *
- * 📝 필기 (AI 설명) Math.random() 으로 1~6 만들기
+ * 📝 필기 : Math.random() 으로 1~6 만들기
  *      Math.random()                  0.0 <= x < 1.0      (1.0 은 나오지 않음)
  *      Math.random() * 6              0.0 <= x < 6.0
  *      (int)(Math.random() * 6)       0, 1, 2, 3, 4, 5    (소수점 버림)

@@ -21,7 +21,7 @@ import java.util.Scanner;
  *  입력 요일 : 월요일
  *  출력 요일 : Monday
  *
- * 내 코드 실행 예
+ * 이 코드 실행 예
  *  입력 요일 : 화요일
  *  출력 요일 : Tuesday
  */

@@ -8,7 +8,7 @@ import java.util.Scanner; // ← 이 줄이 없으면 "Scanner cannot be resolve
  *  2) 프로젝트 탐색기(Project Explorer)에서 프로젝트 우클릭 -> New -> Class
  *  3) 클래스 이름(SayHello)과 main 메소드 자동 생성 옵션(public static void main) 선택
  *
- * 슬라이드 코드처럼 import 없이 입력하면 Scanner 클래스 위치를 몰라서 컴파일 에러.
+ * import 없이 Scanner 를 쓰면 Scanner 클래스 위치를 몰라서 컴파일 에러.
  *  → import java.util.Scanner; 를 맨 윗줄에 추가하면 해결
  *  → 이클립스: 빨간 줄 위에 마우스를 올리면 해결 창이 뜨는데,
  *    가장 위의 "'Scanner' (java.util) 가져오기" 를 선택하면 자동으로 import 추가
@@ -27,7 +27,6 @@ public class SayHello {
         sc.close();
 
         // + 기호로 긴 문자열 연결 (문자열 + 변수 + 문자열)
-        // ⚠ 슬라이드에는 두 번째 줄 따옴표가 “ (전각 따옴표)로 되어 있어 그대로 복사하면 에러
         String helloMessage = "안녕하세요. " + name +
                 " 님, 자바 세계에 오실 것을 축하드립니다.";
         System.out.println(helloMessage);

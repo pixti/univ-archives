@@ -1,40 +1,43 @@
 /**
- * [7강 실습] 클래스(2) - 1번 문제 ❷ (Point 를 Circle 의 내부 클래스로)
+ * [7강 실습] 클래스(2) - 1번 문제 ❷ (Point 를 CircleInner 의 내부 클래스로)
  *
  * 문제
- *  ❶ 의 Point 클래스를 Circle 클래스의 내부 클래스로 정의하여 같은 결과를 출력하시오.
+ *  ❶ 의 Point 클래스를 CircleInner 클래스의 내부 클래스로 정의하여 같은 결과를 출력하시오.
  *
  * 포인트
- *  - Point 를 Circle 의 { } 안으로 옮긴다. → 타입 이름은 Circle.Point
+ *  - Point 를 CircleInner 의 { } 안으로 옮긴다. → 타입 이름은 CircleInner.Point
  *  - 내부 클래스 객체는 외부 클래스 객체가 먼저 있어야 만들 수 있다.
- *        Circle c1 = new Circle();
- *        Circle.Point p1 = c1.new Point();     ← 외부객체.new 내부클래스()
+ *        CircleInner c1 = new CircleInner();
+ *        CircleInner.Point p1 = c1.new Point();     ← 외부객체.new 내부클래스()
  *
  * 📝 필기
- *   - Point 클래스를 Circle 클래스의 내부 클래스로 정의
+ *   - Point 클래스를 CircleInner 클래스의 내부 클래스로 정의
  *   - 내부 클래스의 객체는 '외부객체.new 내부클래스()' 형태로 생성
  *
  * 📝 필기 (퀴즈 9번과 같은 문법) : A.B inner = outer.new B();
  *
- * 💡 Point 가 Circle 안에 있으므로 Circle 에서는 center.x 처럼 Point 의 private 필드에 직접 접근할 수도 있다.
- *    (8-5 MyRectangleInnerPoint.java 와 같은 구조) 여기서는 ❶ 과 똑같이 getter 를 썼다.
+ * 💡 Point 가 CircleInner 안에 있으므로 CircleInner 에서는 center.x 처럼 Point 의 private 필드에 직접 접근할 수도 있다.
+ *    (7-5 MyRectangleInnerPoint.java 와 같은 구조) 여기서는 ❶ 과 똑같이 getter 를 썼다.
  * 💡 문제의 main 클래스 이름은 CircleTest. ❶ 파일과 겹쳐서 CircleInnerPointTest 로 바꿨다.
  *
  * 실행 결과
  *  중심 : 3, 5 반지름 : 7
  *  중심 : 8, 8 반지름 : 4
+ *
+ * 💡 같은 모듈의 다른 예제에도 같은 이름의 클래스가 있어서 IntelliJ 에서 함께 빌드하면 중복 오류가 난다.
+ *    그래서 클래스 이름을 바꿨다. (Circle → CircleInner, 강의 코드에서는 바꾸기 전 이름)
  */
 public class CircleInnerPointTest {
     public static void main(String[] args) {
-        Circle c1 = new Circle();
-        Circle.Point p1 = c1.new Point();       // 외부 객체 c1 을 통해 생성
+        CircleInner c1 = new CircleInner();
+        CircleInner.Point p1 = c1.new Point();       // 외부 객체 c1 을 통해 생성
         p1.setX(3);
         p1.setY(5);
         c1.setCenter(p1);
         c1.setRadius(7);
         System.out.println(c1.toString());
 
-        Circle.Point p2 = c1.new Point();
+        CircleInner.Point p2 = c1.new Point();
         p2.setX(8);
         p2.setY(8);
         c1.move(p2);
@@ -43,7 +46,7 @@ public class CircleInnerPointTest {
     }
 }
 
-class Circle {
+class CircleInner {
     private Point center;
     private double radius;
 

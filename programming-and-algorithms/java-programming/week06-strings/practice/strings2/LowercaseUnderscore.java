@@ -16,13 +16,13 @@
  *      $        문자열의 끝
  *
  * 📝 필기 처음 작성한 정규식 "[a-z]+[a-z]+" → No No No No (전부 실패)
- *  - (AI 설명) 이 정규식에는 밑줄(_) 이 들어 있지 않다.
+ *  - 이 정규식에는 밑줄(_) 이 들어 있지 않다.
  *    matches() 는 문자열 "전체" 가 정규식과 일치해야 true 인데,
  *    "java_exercises" 의 가운데 _ 를 [a-z] 가 받아 줄 수 없으므로 정답이어야 할 첫 번째 문자열까지 실패한다.
  *    → 정규식에 _ 를 넣어 "^[a-z]+_[a-z]+$" 로 수정 → Yes No No No
  *
- * 💡 문제의 기대 출력은 "Found a match!" / "Not matched!" 인데, 내 코드는 Yes / No 로 출력했다.
- *    아래 코드는 문제의 출력 형식에 맞췄다. (내 원래 출력은 주석으로 남김)
+ * 💡 문제의 기대 출력은 "Found a match!" / "Not matched!" 인데, 처음에는 Yes / No 로 출력했다.
+ *    아래 코드는 문제의 출력 형식에 맞췄다. (처음 출력은 주석으로 남김)
  * 💡 String.matches 는 자동으로 전체 일치를 검사하므로 ^ $ 는 생략해도 결과가 같다.
  *
  * 실행 결과
@@ -31,7 +31,7 @@
  *  Java_exercises : No
  *  java_Exercises : No
  *  Java_Exercises : No
- *  ---- ^[a-z]+_[a-z]+$ (수정) ----
+ *  ---- ^[a-z]+_[a-z]+$ (고친 코드) ----
  *  Found a match!
  *  Not matched!
  *  Not matched!
@@ -47,14 +47,14 @@ public class LowercaseUnderscore {
             System.out.println(s + " : " + (s.matches("[a-z]+[a-z]+") ? "Yes" : "No"));
         }
 
-        // ✅ 수정 : 소문자 + _ + 소문자
-        System.out.println("---- ^[a-z]+_[a-z]+$ (수정) ----");
+        // ✅ 고친 코드 : 소문자 + _ + 소문자
+        System.out.println("---- ^[a-z]+_[a-z]+$ (고친 코드) ----");
         String regex = "^[a-z]+_[a-z]+$";
         for (String s : strs) {
             if (s.matches(regex)) {
-                System.out.println("Found a match!");   // 내 코드 : Yes
+                System.out.println("Found a match!");   // 처음 출력 : Yes
             } else {
-                System.out.println("Not matched!");     // 내 코드 : No
+                System.out.println("Not matched!");     // 처음 출력 : No
             }
         }
     }

@@ -1,5 +1,5 @@
 /**
- * [8-5] 내부 클래스 (inner class)
+ * [7-5] 내부 클래스 (inner class)
  *
  * 포인트
  *  - 클래스 내부(outer class)에 다시 클래스(inner class)를 정의할 수 있다.
@@ -19,10 +19,10 @@
  *  - 📝 퀴즈 9번 필기 : B가 내부 클래스 inner class가 되면 B inner = new B(); 를
  *    A.B inner = outer.new B(); 로 변경한다.
  *
- * ⚠ 슬라이드 4 는 "앞의 Inner 클래스의 접근자를 private 에서 public 으로 바꾼 후 실행" 하라고 한다.
+ * ⚠ 자주 틀리는 부분 : 바깥에서 Outer.Inner 를 쓰려면 Inner 의 접근자를 private 에서 public 으로 바꿔야 한다.
  *    private class Inner 그대로면 InnerTest 에서 Outer.Inner 를 쓸 수 없다.
  *      error: Outer.Inner has private access in Outer
- *    그래서 아래에서는 public class Inner 로 바꿨다. (슬라이드의 "privat" 은 private 의 오타)
+ *    그래서 아래에서는 public class Inner 로 바꿨다.
  *
  * 실행 결과
  *  5
@@ -32,9 +32,9 @@
 public class InnerTest {
     public static void main(String[] args) {
         Outer outer = new Outer();
-        outer.display_Inner();                       // 슬라이드 2, 3 : Outer 안에서 Inner 사용
+        outer.display_Inner();                       // (1) Outer 안에서 Inner 사용
 
-        Outer.Inner inner = outer.new Inner();       // 슬라이드 4 : 바깥에서 Inner 객체 생성
+        Outer.Inner inner = outer.new Inner();       // (2) 바깥에서 Inner 객체 생성
         inner.print();
     }
 }
@@ -42,7 +42,7 @@ public class InnerTest {
 class Outer {
     int num = 10;
 
-    public class Inner {                             // ⚠ 슬라이드 2, 3 은 private class Inner
+    public class Inner {                             // ⚠ 처음 코드는 private class Inner (바깥에서 쓰려고 public 으로 바꿈)
         private int x = 5;
         public void print() {
             System.out.println("This is an inner class : " + num);   // outer의 num 사용

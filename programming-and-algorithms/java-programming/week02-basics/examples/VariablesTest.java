@@ -1,26 +1,25 @@
 /**
- * [2-2 변수와 자료형2] 변수와 자료형 - 변수 저장 예제
+ * [2-2] 변수와 자료형 - 변수 저장 예제
  *
  * 기본 자료형 8가지
  * | 자료형  | 값의 유형   | 크기 / 범위                                         |
  * |---------|-------------|-----------------------------------------------------|
  * | boolean | true, false | 1 byte                                              |
  * | byte    | 정수        | 1 byte (-128 ~ 127)                                 |
- * | char    | 문자        | 2 byte (유니코드)                                   |
+ * | char    | 문자        | 2 byte (유니코드 0 ~ 65535)                         |
  * | short   | 정수        | 2 byte (-32768 ~ 32767)                             |
  * | int     | 정수        | 4 byte (-2147483648 ~ 2147483647)                   |
  * | long    | 정수        | 8 byte (-9223372036854775808 ~ 9223372036854775807) |
  * | float   | 실수        | 4 byte (약 ±3.40282347E38)                          |
  * | double  | 실수        | 8 byte (약 ±1.79769313486231570E308)                |
  *
- * ⚠ 슬라이드 코드를 그대로 쓰면 컴파일 에러가 나는 부분 (아래에서 수정함)
- *  1) long val4 = 9223372036854775807;
- *     → 정수 리터럴은 기본이 int 라서 int 범위를 넘으면 에러. 끝에 L 을 붙여야 함.
- *  2) float val5 = 3.40292347E38;
- *     → 실수 리터럴은 기본이 double 이라서 float 에 넣으려면 f 를 붙여야 함.
- *     → 또 슬라이드 값 3.40292347E38 은 오타. float 최대값은 3.40282347E38 (Float.MAX_VALUE)
- *       3.4029...E38 은 float 범위를 넘어서 f 를 붙여도 "floating-point number too large" 에러.
- *  3) 슬라이드의 "3. 40292347E38" 처럼 숫자 사이에 공백이 있으면 안 됨.
+ * ⚠ 자주 틀리는 부분: 리터럴 접미사
+ *  1) long val4 = 9223372036854775807;    → 컴파일 에러 (integer number too large)
+ *     정수 리터럴은 기본이 int 라서 int 범위를 넘으면 안 된다. 끝에 L 을 붙인다.
+ *  2) float val5 = 3.40282347E38;         → 컴파일 에러 (possible lossy conversion from double to float)
+ *     소수점 리터럴은 기본이 double 이라서 float 에 넣으려면 끝에 f 를 붙인다.
+ *  3) float 최대값(Float.MAX_VALUE)은 3.40282347E38 이다.
+ *     이보다 큰 3.4029E38f 같은 값은 f 를 붙여도 "floating-point number too large" 에러가 난다.
  */
 public class VariablesTest {
     public static void main(String[] args) {
@@ -28,7 +27,7 @@ public class VariablesTest {
         byte val1 = 127;                          // byte 최대값
         char ch = 'a';                            // ch = '한'; 처럼 한글도 저장 가능 (2byte 유니코드)
         short val2 = 32767;                       // short 최대값
-        int val3 = 214748364;                     // (int 최대값은 2147483647)
+        int val3 = 2147483647;                    // int 최대값
         long val4 = 9223372036854775807L;         // long 최대값 - L 필수!
         float val5 = 3.40282347E38f;              // float 최대값 - f 필수!
         double val6 = 1.79769313486231570E308;    // double 최대값
@@ -42,7 +41,7 @@ public class VariablesTest {
         System.out.println("float   : " + val5);
         System.out.println("double  : " + val6);
 
-        // 변수 선언 방법 (슬라이드 2)
+        // 변수 선언 방법
         int x, y, z;          // 같은 타입은 한 줄에 여러 개 선언 가능
         x = 1;
         y = 0;
@@ -51,7 +50,7 @@ public class VariablesTest {
         System.out.println(x + " " + y + " " + z + " " + a + " " + b);
         // 동일 변수에 대해 선언은 한 번만! (int x; 를 또 쓰면 에러)
 
-        // 참조 자료형 String (슬라이드 6)
+        // 참조 자료형 String
         String s1 = new String("bmkim");   // 선언 시에 객체 생성하여 초기화
         String s2;
         s2 = new String("bmkim");          // 선언 후에 객체 생성하여 초기화

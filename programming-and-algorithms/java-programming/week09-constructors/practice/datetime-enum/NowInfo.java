@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  * 💡 getDay() 가 아니라 getDayOfMonth() 다. (getDayOfYear() : 1월 1일부터 며칠째, getDayOfWeek() : 요일)
  * 💡 원래 이클립스에서 Main 클래스로 작성한 코드. NowInfo 로 이름을 바꿨다.
  *
- * 실행 결과 (실행 시각에 따라 다름 - 내가 실행했을 때)
+ * 실행 결과 (실행 시각에 따라 다름 - 실행 예)
  *  Year: 2026
  *  Month: 11
  *  Day: 5

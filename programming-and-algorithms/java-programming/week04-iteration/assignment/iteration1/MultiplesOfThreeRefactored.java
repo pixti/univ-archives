@@ -5,7 +5,7 @@ import java.util.Scanner;
  * [4강 과제] 반복문1 - 1번 문제 (리팩터링 버전)
  * ※ 반복 시 while 이나 do while 문만 사용하시오.
  *
- * MultiplesOfThree.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * MultiplesOfThree.java 를 리팩터링한 코드.
  *
  * 바뀐 점
  *  - 매직 넘버 3 → 상수 MULTIPLE (private static final)
@@ -23,10 +23,10 @@ import java.util.Scanner;
  * ⚠ readPositiveInteger() 는 양수를 받을 때까지 while (true) 로 반복하므로 null 을 반환하는 경우가 없다.
  *   → main 의 if (inputNumber == null) 은 실행될 일이 없는 코드(dead code).
  *   Javadoc 의 "음수이거나 0인 경우에는 null을 반환" 도 실제 동작(재입력 요청)과 다르다.
- * ⚠ 문제는 "0 보다 작으면 오류" 인데, 이 버전은 0 도 오류로 처리한다. (원본은 0 이면 아무것도 출력 안 함)
+ * ⚠ 문제는 "0 보다 작으면 오류" 인데, 이 버전은 0 도 오류로 처리한다. (MultiplesOfThree.java 는 0 이면 아무것도 출력 안 함)
  *   0 은 출력할 3 의 배수가 없으니 결과 차이는 오류 메시지뿐.
  *
- * 내 코드 실행 예
+ * 실행 예
  *  정수를 입력하세요 : 19
  *  [3]
  *  [6]

@@ -21,7 +21,7 @@ import java.util.Scanner;
  *
  * 💡 리팩터링 버전 → RockPaperScissorsForRefactored.java
  *
- * 내 코드 실행 예
+ * 실행 예
  *  가위(1), 바위(2), 보(3) : 1
  *  컴퓨터 : 가위
  *  비겼습니다.

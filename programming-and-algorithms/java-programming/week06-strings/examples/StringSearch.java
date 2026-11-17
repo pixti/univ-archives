@@ -13,9 +13,7 @@
  *    indexOf("abc") = 0, indexOf('i') = 3, indexOf('i', 4) = 8 (4번부터 찾으니 3번 i 는 건너뜀),
  *    lastIndexOf("abc") = 10, lastIndexOf('z') = -1
  *
- * ⚠ 슬라이드의 If (string1.startsWith(＂st“)) 는 If 가 대문자(자바 키워드는 소문자 if)이고
- *    따옴표가 전각/스마트 따옴표(＂ “)라 컴파일되지 않는다. 여기서는 실행 가능하게 고쳤다.
- *    ‘i’, ‘z’ 도 일반 작은따옴표로 수정.
+ * ⚠ 자주 틀리는 부분 : 자바 키워드는 소문자다. If (string1.startsWith("st")) 처럼 쓰면 컴파일되지 않는다.
  *
  * 실행 결과
  *  string1 = started

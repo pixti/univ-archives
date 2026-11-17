@@ -14,7 +14,7 @@
  *   3 6 9
  *   0 1 0
  *
- * 📝 필기 (AI 설명) : 핵심은 딱 이 부분입니다
+ * 📝 필기 : 핵심은 딱 이 부분입니다
  *     transpose[col][row] = arr[row][col];
  *   예를 들어
  *     arr[0][0] → transpose[0][0]
@@ -36,7 +36,7 @@
  *    new int[3][4] 로 만들면 transpose[3][0] 에서 ArrayIndexOutOfBoundsException.
  *  - 출력은 "\t" (탭) 으로 칸을 맞춘다.
  *
- * ⚠ 문제는 행렬을 "입력받으라" 고 했는데(예시 화면의 "0번째 행 ?"), 내 코드는 배열을 코드에 직접 적었다.
+ * ⚠ 문제는 행렬을 "입력받으라" 고 했는데(예시 화면의 "0번째 행 ?"), 이 코드는 배열을 코드에 직접 적었다.
  *   입력으로 바꾸려면 아래처럼 Scanner 로 채우면 된다.
  *     Scanner sc = new Scanner(System.in);
  *     int[][] arr = new int[3][4];

@@ -1,5 +1,5 @@
 /**
- * [9-3 생성자와 소멸자] [실습] 생성자 중복 (슬라이드 8~11)
+ * [9-3 생성자와 소멸자] [실습] 생성자 중복
  *
  * 포인트
  *  - MyPoint : 생성자 2개 (기본 / 좌표 지정)
@@ -9,10 +9,9 @@
  *      MyRectangle(int x, int y, int w, int h) → 좌표(정수)만 받아 생성자 안에서 MyPoint 를 만듦
  *    → 사용하는 쪽이 편한 방법을 고를 수 있는 것이 생성자 오버로딩의 장점.
  *
- * 💡 7강 8-5 의 MyRectangle 은 필드 선언에서 corner = new MyPoint() 를 하고 값은 setter 로 넣었다.
+ * 💡 7-5 의 MyRectangle 은 필드 선언에서 corner = new MyPoint() 를 하고 값은 setter 로 넣었다.
  *    여기서는 생성자 세 개 중 어떤 것으로 만들어도 corner 가 반드시 채워진다.
- * 💡 this(...) 를 써서 같은 코드를 줄인 버전은 MyRectangleThisTest.java (슬라이드 14)
- * ⚠ 슬라이드의 “r1 면적은 ” 등은 스마트 따옴표. " 로 고쳤다.
+ * 💡 this(...) 를 써서 같은 코드를 줄인 버전은 MyRectangleThisTest.java
  *
  * 실행 결과
  *  r1 면적은 0입니다.
@@ -76,7 +75,7 @@ class MyRectangle {
     public int getWidth() { return width; }
     public void setWidth(int newW) { width = newW; }
     public int getHeight() { return height; }
-    public void setHeight(int newY) { height = newY; }   // 💡 슬라이드 그대로 (newH 가 더 자연스러움)
+    public void setHeight(int newY) { height = newY; }   // 💡 강의 코드 그대로 (newH 가 더 자연스러움)
 
     public void resize(int newW, int newH) {
         width = newW;

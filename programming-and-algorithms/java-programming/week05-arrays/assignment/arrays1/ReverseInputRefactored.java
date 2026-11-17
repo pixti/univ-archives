@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * [5강 과제] 배열(1) - 1번 문제 (리팩터링 버전)
  *
- * ReverseInput.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * ReverseInput.java 를 리팩터링한 코드.
  *
  * 바뀐 점
  *  - try-with-resources : try (Scanner scanner = ...) { } 블록이 끝나면 Scanner 가 자동으로 닫힌다.

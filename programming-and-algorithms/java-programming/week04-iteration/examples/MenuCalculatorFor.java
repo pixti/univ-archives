@@ -11,8 +11,6 @@ import java.util.Scanner;
  *  💡 반복 횟수가 정해지지 않은 문제라 while / do-while 이 더 자연스럽다.
  *     "for 로도 쓸 수 있다 (표현력이 같다)" 를 보여 주는 예제.
  *
- * ⚠ 슬라이드의 "휴효하지 않는 메뉴입니다." → "유효" 오타 수정.
- *
  * 실행 예
  *  a : 덧셈, s : 뺄셈, m : 곱셈, d : 나눗셈, q : 종료
  *  d
@@ -43,7 +41,7 @@ public class MenuCalculatorFor {
             else {
                 System.out.println("첫 번째 숫자 (음수도 가능) >> ");
                 int a = sc.nextInt();
-                // ----- 슬라이드에서 생략(…)된 부분 -----
+                // ----- 강의 코드에서 생략(…)된 부분 -----
                 System.out.println("두 번째 숫자 (음수도 가능) >> ");
                 int b = sc.nextInt();
 

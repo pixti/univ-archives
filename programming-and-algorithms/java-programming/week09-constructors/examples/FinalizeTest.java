@@ -1,5 +1,5 @@
 /**
- * [9-3 생성자와 소멸자] 소멸자와 finalize (슬라이드 17~19)
+ * [9-3 생성자와 소멸자] 소멸자와 finalize
  *
  * 포인트
  *  - 소멸자 : 객체가 소멸될 때 자동으로 호출되는 메소드. C++ 은 ~클래스명() 형태.
@@ -9,10 +9,10 @@
  *
  * 📝 필기 (퀴즈) : 객체가 소멸될 때 소멸자. 자바에서는 가비지 컬렉터가 결정함. → 파이널라이즈(finalize)
  *
- * 💡 슬라이드 코드(① 부분)만 실행하면 "고양이가 소멸됨" 은 출력되지 않는다. c = null; 주석을 풀어도 마찬가지.
+ * 💡 강의 코드(① 부분)만 실행하면 "고양이가 소멸됨" 은 출력되지 않는다. c = null; 주석을 풀어도 마찬가지.
  *    프로그램이 너무 빨리 끝나 GC 가 돌 기회가 없고, 종료 시에는 finalize 를 호출해 주지 않기 때문이다.
  *    그래서 ② 에서 System.gc() 로 GC 를 "요청"하고 잠깐 기다렸다. 보통은 호출되지만 이것도 보장은 아니다.
- * 💡 null 대입 외에도 다른 객체를 대입하거나(c = new Cat()) 지역 변수의 블록이 끝나면 GC 대상이 된다.
+ * 💡 null 대입 외에도 다른 객체를 대입하거나(c = new CatFinalize()) 지역 변수의 블록이 끝나면 GC 대상이 된다.
  * 💡 throws Throwable 은 Object 의 finalize() 가 throws Throwable 로 선언되어 있어서 붙인 것. (예외 처리는 11강)
  * 💡 Object 의 finalize() 는 protected 인데 public 으로 재정의했다. 접근 범위를 넓히는 재정의는 허용(10강 상속).
  * ⚠ finalize() 는 Java 9 부터 deprecated, Java 18 부터 삭제 예정(for removal, JEP 421).
@@ -28,15 +28,18 @@
  *  이쁜이 고양이가 소멸됨
  *  영순이 고양이가 소멸됨
  *  ----- main 끝 -----
+ *
+ * 💡 같은 모듈의 다른 예제에도 같은 이름의 클래스가 있어서 IntelliJ 에서 함께 빌드하면 중복 오류가 난다.
+ *    그래서 클래스 이름을 바꿨다. (Cat → CatFinalize, 강의 코드에서는 바꾸기 전 이름)
  */
 public class FinalizeTest {
     public static void main(String[] args) throws Throwable {
-        // ① 슬라이드 18 코드 (원래 클래스 이름 ConstructorExample)
-        Cat c = new Cat("이쁜이", 45);
-        Cat c2 = new Cat();
+        // ① 강의 코드 (강의에서는 클래스 이름이 ConstructorExample)
+        CatFinalize c = new CatFinalize("이쁜이", 45);
+        CatFinalize c2 = new CatFinalize();
         System.out.println(c.toString() + "의 몸무게는 " + c.getSize());
         System.out.println(c2.toString() + "의 몸무게는 " + c2.getSize());
-        c = null;     // 슬라이드에서는 주석 처리됨
+        c = null;     // 강의 코드에서는 주석 처리됨
         c2 = null;
 
         // ② 💡 GC 요청 후 잠깐 기다리기
@@ -47,15 +50,15 @@ public class FinalizeTest {
     }
 }
 
-class Cat {
+class CatFinalize {
     int size;
     String name;
 
-    public Cat() {
+    public CatFinalize() {
         this("영순이", 50);
     }
 
-    public Cat(String n, int s) {
+    public CatFinalize(String n, int s) {
         name = n;
         size = s;
     }
@@ -68,7 +71,7 @@ class Cat {
         return name;
     }
 
-    @SuppressWarnings("removal")   // 💡 위 ⚠ 경고를 숨김 (원본에는 없음)
+    @SuppressWarnings("removal")   // 💡 위 ⚠ 경고를 숨김 (강의 코드에는 없음)
     public void finalize() {
         System.out.println(name + " 고양이가 소멸됨");
     }

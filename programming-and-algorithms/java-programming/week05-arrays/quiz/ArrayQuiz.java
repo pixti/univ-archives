@@ -21,9 +21,8 @@
  *      1 2 3 / 6 5 / 7 4 5 8
  * 8. 7번에서 만든 배열의 각 행의 원소 개수를 for 문을 사용하여 출력하시오. → q8()
  *
- * 채점 결과 (📝 필기)
- *   1 ~ 3  필기로 정리      4  오답 (왼쪽 · 오른쪽 답을 반대로 씀)      5  오답 (clone 과 대입을 반대로 이해)
- *   6 ~ 8  필기로 정리
+ * 표시
+ *   📝 필기 : 채점 후 정리한 내용 / ⚠ 자주 틀리는 부분 : 헷갈리기 쉬운 오답과 그 이유
  *
  * 실행 결과
  *  ===== 1-① =====
@@ -33,8 +32,8 @@
  *  ===== 1-③ =====
  *  [1.0, 2.0, 3.0, 4.0, 5.0]
  *  ===== 2 =====
- *  원래 코드 → java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 10
- *  수정 코드 → [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+ *  틀린 코드 → java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 10
+ *  고친 코드 → [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
  *  ===== 3 =====
  *  h o u s e
  *  → java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
@@ -123,7 +122,7 @@ public class ArrayQuiz {
      * 📝 필기 : for (int i = 0; i < 10; i++) 또는 for (int i = 0; i <= 9; i++) 로 수정해야 함.
      *          index 는 0 ~ array.length-1 까지.
      *
-     * 💡 원래 코드는 두 가지가 틀렸다.
+     * ⚠ 자주 틀리는 부분 : 이 코드는 두 가지가 틀렸다.
      *    - i = 1 부터 시작 → test[0] 을 건너뛴다. (값이 0 이라 티는 안 나지만 의도와 다름)
      *    - i <= 10        → test[10] 에서 ArrayIndexOutOfBoundsException.
      * 💡 숫자 10 대신 test.length 를 쓰면 배열 크기가 바뀌어도 고칠 곳이 없다.
@@ -133,22 +132,22 @@ public class ArrayQuiz {
     static void q2() {
         int[] test = new int[10];
         try {
-            for (int i = 1; i <= 10; i++) test[i] = 0;   // ❌ 원래 코드
+            for (int i = 1; i <= 10; i++) test[i] = 0;   // ❌ 틀린 코드
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("원래 코드 → " + e);
+            System.out.println("틀린 코드 → " + e);
         }
 
-        for (int i = 0; i < test.length; i++) test[i] = 0;   // ✅ 수정 코드
-        System.out.println("수정 코드 → " + java.util.Arrays.toString(test));
+        for (int i = 0; i < test.length; i++) test[i] = 0;   // ✅ 고친 코드
+        System.out.println("고친 코드 → " + java.util.Arrays.toString(test));
     }
 
     /**
      * 3.  char[] array = {'h','o','u','s','e'};  for (int i = 0; i <= array.length; i++) print(array[i] + " ");
      *
-     * 내 답안 : 출력은 h(공백)o(공백)u(공백)s(공백)e(공백) 되다가 i=5 에서 에러가 날 것임.
-     *          배열의 index 는 array.length-1 까지임. 따라서
-     *          for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
-     *          로 고쳐야 하는 것임. 그래야 i 가 0 에서 4 까지, 그러니까 배열 끝까지만 순회 후 종료됨.
+     * 정답 : h(공백)o(공백)u(공백)s(공백)e(공백) 까지 출력되다가 i = 5 에서 에러가 난다.
+     *        배열의 index 는 array.length-1 까지이므로
+     *        for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
+     *        로 고쳐야 한다. 그래야 i 가 0 에서 4 까지, 그러니까 배열 끝까지만 순회 후 종료된다.
      * 📝 필기 : outOfRange 에러가 날 것임.
      *
      * 💡 정확한 이름은 ArrayIndexOutOfBoundsException (실행 중 예외).
@@ -171,12 +170,12 @@ public class ArrayQuiz {
      *        (왼쪽)  myArray2 = myArray1.clone();  myArray2[1] = 0;  println(myArray1[1]);
      *        (오른쪽) myArray2 = myArray1;          myArray2[1] = 0;  println(myArray1[1]);
      *
-     * 내 답안 : 왼쪽 0, 오른쪽 1
-     * ⚠ 오답. 정답은 왼쪽 1, 오른쪽 0. (두 답을 반대로 씀)
+     * 정답 : 왼쪽 1, 오른쪽 0
+     * ⚠ 자주 틀리는 부분 : clone 과 대입을 반대로 이해해서 "왼쪽 0, 오른쪽 1" 로 답하기 쉽다.
      *
      * 💡 왼쪽 : clone → 새 배열. myArray2 를 바꿔도 myArray1 은 그대로 → myArray1[1] = 1
      *    오른쪽 : 대입 → 같은 배열 공유. myArray2[1] 이 곧 myArray1[1] → 0
-     *    (5-3 강의 "배열 복사" 1 · 2절 슬라이드와 같은 코드. 슬라이드는 {1,2,3} 이라 0 / 2)
+     *    (5-3 강의 "배열 복사" 1 · 2절과 같은 코드. 강의 예제는 {1,2,3} 이라 0 / 2)
      */
     static void q4() {
         int[] myArray1 = new int[]{3, 1, 2, 3};
@@ -193,13 +192,14 @@ public class ArrayQuiz {
     /**
      * 5. 4번과 같은 결과가 나오는 이유
      *
-     * 내 답안 : 깊은 복사와 얕은 복사의 차이임. clone 를 하면 값이 복사가 되는 게 아니라 레퍼런스 주소가
-     *          복사되는 것임. 그래서 메모리의 값을 불러오므로 myArray2 의 레퍼런스와 myArray1 의 레퍼런스는
-     *          동일하므로 index1 을 참조하는 0 이 출력될 것임.
-     * ⚠ 오답. clone 과 = 대입을 반대로 이해했다. 레퍼런스(주소)가 복사되는 것은 = 대입이고,
-     *   clone 은 값이 복사된 "새 배열" 을 만든다.
+     * 정답 : 레퍼런스(주소)가 복사되는 것은 = 대입이고, clone 은 값이 복사된 "새 배열" 을 만든다.
+     *   그래서 clone 한 배열을 바꿔도 원래 배열은 그대로이고, 대입한 배열을 바꾸면 원래 배열도 바뀐다.
      *
-     * 📝 필기 (정정)
+     * ⚠ 자주 틀리는 부분 : clone 과 = 대입을 반대로 이해하는 경우
+     *   "clone 을 하면 값이 아니라 레퍼런스 주소가 복사되어, myArray1 과 myArray2 의 레퍼런스가 같다" (✗)
+     *   → 주소가 복사되는 것은 = 대입이다.
+     *
+     * 📝 필기
      *   myarray1 -> 레퍼런스 1 (3,1,2,3)
      *   .clone() 하면 myarray2 -> 레퍼런스 2 (3,1,2,3)
      *   값을 바꾸면 myarray2 -> 레퍼런스 2 (3,0,2,3) / myarray1 -> 레퍼런스 1 (3,1,2,3) 값은 유지됨
@@ -209,7 +209,7 @@ public class ArrayQuiz {
      *   myarray2 -> 레퍼런스 1 (3,1,2,3) 가 되게 됨.
      *   따라서 값을 바꾸면 myarray1 -> 레퍼런스 1 (3,0,2,3)
      *                      myarray2 -> 레퍼런스 1 (3,0,2,3)
-     *   ⚠ 필기에는 마지막 줄이 "myarray2 -> 레퍼런스 2" 로 적혀 있었다. 대입이면 둘 다 레퍼런스 1 이다.
+     *   ⚠ 주의 : 대입이면 myarray1, myarray2 둘 다 레퍼런스 1 이다. (레퍼런스 2 가 아니다)
      *
      *   그림으로 보면
      *     clone : myArray1 ──▶ [3|1|2|3]      대입 : myArray1 ──┐

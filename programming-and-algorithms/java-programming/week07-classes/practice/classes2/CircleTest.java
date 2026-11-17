@@ -23,7 +23,7 @@
  *
  * 📝 필기 : this.center.getX()  center.getX() 로 해도되고
  *    아니면 this.getCenter().getX()  getCenter().getX() 로 메서드 이중으로 해도된다. 메서드 체이닝.
- * 📝 필기 (AI 설명) 클래스 안에서는 네 가지 모두 같은 결과다.
+ * 📝 필기 : 클래스 안에서는 네 가지 모두 같은 결과다.
  *      this.center.getX()        ← 필드 center 에 this 를 붙여 명시
  *      center.getX()             ← this 생략
  *      this.getCenter().getX()   ← getter 가 돌려준 Point 에 바로 .getX() (메서드 체이닝)

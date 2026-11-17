@@ -1,43 +1,46 @@
 /**
- * [8-5 실습] 내부 클래스와 일반 클래스로 선언할 경우의 차이
- *            (1) MyPoint 클래스를 MyRectangle 의 "내부 클래스" 로 작성
+ * [7-5 실습] 내부 클래스와 일반 클래스로 선언할 경우의 차이
+ *            (1) MyPoint 클래스를 MyRectangleInner 의 "내부 클래스" 로 작성
  *
  * 포인트
- *  - MyPoint 클래스를 MyRectangle 클래스의 내부 클래스로 정의하여 MyRectangle 클래스에서 MyPoint 사용
- *  - 내부 클래스이므로 MyRectangle 에서 MyPoint 의 private 필드에 "직접" 접근할 수 있다.
+ *  - MyPoint 클래스를 MyRectangleInner 클래스의 내부 클래스로 정의하여 MyRectangleInner 클래스에서 MyPoint 사용
+ *  - 내부 클래스이므로 MyRectangleInner 에서 MyPoint 의 private 필드에 "직접" 접근할 수 있다.
  *        public int getX() { return corner.x; }     ← corner.getX() 를 거치지 않아도 됨
  *  - main 에서 MyPoint 를 사용할 경우 외부 클래스 객체 생성 후 내부 클래스 생성
- *        MyRectangle.MyPoint p = r1.new MyPoint();
+ *        MyRectangleInner.MyPoint p = r1.new MyPoint();
  *
  *  (2) 일반 클래스 버전(MyRectangleOuterPoint.java)과 비교
  *      ┌────────────────────┬──────────────────────────────┬───────────────────────────────┐
  *      │                    │ (1) 내부 클래스              │ (2) 일반 클래스               │
  *      ├────────────────────┼──────────────────────────────┼───────────────────────────────┤
- *      │ MyRectangle 에서   │ corner.x  (private 직접 접근)│ corner.getX() (getter 필요)   │
+ *      │ MyRectangleInner 에서   │ corner.x  (private 직접 접근)│ corner.getX() (getter 필요)   │
  *      │ main 에서 생성     │ r1.new MyPoint()             │ new MyPoint()                 │
- *      │ 타입 이름          │ MyRectangle.MyPoint          │ MyPoint                       │
+ *      │ 타입 이름          │ MyRectangleInner.MyPoint          │ MyPoint                       │
  *      └────────────────────┴──────────────────────────────┴───────────────────────────────┘
  *
  * 📝 실습 클래스2 1-❷ 필기 : 내부 클래스의 객체는 '외부객체.new 내부클래스()' 형태로 생성
  *
- * 💡 슬라이드의 public class 이름은 MyRectangleTest (8-3 예제, (2) 버전과 겹쳐서 바꿈)
+ * 💡 강의 코드의 public class 이름은 MyRectangleTest (7-3 예제, (2) 버전과 겹쳐서 바꿈)
  *
  * 실행 결과
  *  면적은 20입니다.
  *  3, 5
+ *
+ * 💡 같은 모듈의 다른 예제에도 같은 이름의 클래스가 있어서 IntelliJ 에서 함께 빌드하면 중복 오류가 난다.
+ *    그래서 클래스 이름을 바꿨다. (MyRectangle → MyRectangleInner, 강의 코드에서는 바꾸기 전 이름)
  */
 public class MyRectangleInnerPoint {
     public static void main(String[] args) {
-        MyRectangle r1 = new MyRectangle();
+        MyRectangleInner r1 = new MyRectangleInner();
         r1.setX(10); r1.setY(10); r1.setWidth(5); r1.setHeight(4);
         System.out.println("면적은 " + r1.getArea() + "입니다.");
-        MyRectangle.MyPoint p = r1.new MyPoint();    // 외부 객체(r1)를 통해 내부 클래스 객체 생성
+        MyRectangleInner.MyPoint p = r1.new MyPoint();    // 외부 객체(r1)를 통해 내부 클래스 객체 생성
         p.setX(3); p.setY(5);
         System.out.println(p.getX() + ", " + p.getY());
     }
 }
 
-class MyRectangle {
+class MyRectangleInner {
     private MyPoint corner = new MyPoint();   // 필드 정의
     private int width, height;
 

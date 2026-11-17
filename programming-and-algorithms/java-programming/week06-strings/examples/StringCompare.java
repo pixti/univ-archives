@@ -14,7 +14,7 @@
  *      Str2 ──┘
  *      Str3 ─────▶ ["I Love You!!"]      new String(...) → 내용만 같은 다른 객체
  *
- * 📝 필기 (퀴즈 4번, AI 설명) compareTo 의 반환값
+ * 📝 필기 (퀴즈 4번) compareTo 의 반환값
  *  - 처음으로 다른 문자가 나온 위치에서 두 문자의 코드값(유니코드/ASCII) 차이를 돌려준다.
  *      "Apple".compareTo("Banana")      → 'A'(65) - 'B'(66) = -1
  *  - 한쪽이 다른 쪽의 앞부분(접두사)이면 길이 차이를 돌려준다.
@@ -23,10 +23,10 @@
  *      "apple".compareTo("APPLE")             → 'a'(97) - 'A'(65) = 32
  *      "apple".compareToIgnoreCase("APPLE")   → 0
  *  - "I Love You!!" vs "I Hate You!!" : 인덱스 2 에서 처음 다름. 'L'(76) - 'H'(72) = 4 > 0 → Greater
- *    ⚠ AI 설명에는 "3번째 인덱스" 라고 되어 있었는데, 0 부터 세면 인덱스 2 (세 번째 문자) 이다.
+ *    ⚠ 자주 틀리는 부분 : "3번째 인덱스" 라고 세기 쉽지만, 0 부터 세면 인덱스 2 (세 번째 문자) 이다.
  *
- * ⚠ 슬라이드의 == 예제는 변수를 Str1 (대문자 S) 로 선언하고 if (str1 == str2) (소문자 s) 로 써서 컴파일되지 않는다.
- *    자바는 대소문자를 구분한다. 여기서는 Str1 · Str2 · Str3 로 통일했다. (“true” 스마트 따옴표도 수정)
+ * ⚠ 자주 틀리는 부분 : 변수를 Str1 (대문자 S) 로 선언하고 if (str1 == str2) (소문자 s) 로 쓰면 컴파일되지 않는다.
+ *    자바는 대소문자를 구분한다. 여기서는 Str1 · Str2 · Str3 로 통일했다.
  *
  * 💡 왜 == 가 가끔 true 처럼 "보이는" 경우가 있을까?
  *    String a = "hi"; String b = "hi"; 처럼 리터럴로 만들면 String Constant Pool 의 같은 객체를 공유해서 a == b 가 true.
@@ -81,7 +81,7 @@ public class StringCompare {
         else if (Str1.compareTo(Str3) < 0) System.out.println("Less");
         else                               System.out.println("Equal");
 
-        // 💡 실제 반환값 확인 (📝 AI 설명의 예)
+        // 💡 실제 반환값 확인 (📝 필기의 예)
         System.out.println("Str1.compareTo(Str3) = " + Str1.compareTo(Str3));
         System.out.println("\"Apple\".compareTo(\"Banana\") = " + "Apple".compareTo("Banana"));
         System.out.println("\"Java\".compareTo(\"JavaScript\") = " + "Java".compareTo("JavaScript"));

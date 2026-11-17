@@ -10,7 +10,7 @@
  *
  * 포인트
  *  - 포함 관계 : Rectangle 이 Point 객체를 필드로 가진다. (7강 MyRectangle / MyPoint)
- *  - 정적 필드 rectCount : 객체끼리 공유하는 "클래스당 하나" 의 변수 (7강 8-2)
+ *  - 정적 필드 rectCount : 객체끼리 공유하는 "클래스당 하나" 의 변수 (7-2)
  *
  * 💡 생성자 체이닝 덕분에 rectCount++ 를 마지막 생성자 Rectangle(Point, int, int) 한 곳에만 쓰면 된다.
  *    어떤 생성자로 만들어도 결국 그 생성자를 거치므로 개수가 빠짐없이 세어진다.

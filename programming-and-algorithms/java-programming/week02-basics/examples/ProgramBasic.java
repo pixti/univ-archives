@@ -8,9 +8,14 @@
  *  - public        : 외부(JVM)에서 호출 가능
  *  - static        : 객체 생성 없이 호출할 수 있음을 의미
  *  - void          : 반환값 없음
- *                    (슬라이드에는 "public static int main"으로 오타가 있음 → 반드시 void 여야 실행됨)
  *  - String[] args : 실행 파일명과 함께 주어지는 인라인(명령행) 인수를 받아들여 사용할 수 있게 함
  *                    예) java ProgramBasic aaa bbb  →  args[0] = "aaa", args[1] = "bbb"
+ *
+ * ⚠ 자주 틀리는 부분
+ *  - C 처럼 public static int main(...) 으로 쓰면 컴파일은 되지만 실행되지 않는다.
+ *    ("Main method not found") main 의 반환형은 반드시 void 다.
+ *  - JDK 25 부터는 static 없는 void main() 도 실행된다(JEP 512).
+ *    하지만 수업과 시험의 기준은 public static void main(String[] args) 이다.
  *
  * 📝 필기 (실습 시간)
  *  - 파이썬은 들여쓰기로 명령어의 레벨(블록)을 구분하지만, 자바는 중괄호 { } 로 구분한다.
@@ -23,7 +28,7 @@ public class ProgramBasic {
            여러 줄짜리
            주석 */
 
-        // 명령행 인수 확인용 (슬라이드에는 없는 추가 코드)
+        // 명령행 인수 확인용 (추가 코드)
         // 실행 예) java ProgramBasic.java aaa bbb
         System.out.println("전달된 인수 개수 : " + args.length);
         for (String arg : args) {

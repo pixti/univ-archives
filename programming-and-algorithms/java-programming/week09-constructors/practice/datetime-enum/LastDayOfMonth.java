@@ -16,8 +16,8 @@ import java.util.Locale;
  *
  * ⚠ getMonth() 를 그대로 출력하면 열거형 이름(대문자) NOVEMBER 가 나온다. 필기처럼 "November" 로 쓰려면
  *    month.getDisplayName(TextStyle.FULL, Locale.ENGLISH) 를 쓴다.
- *    ❌ 원본 : System.out.println(year + "년 " + month + " " + lastDay);        → 2026년 NOVEMBER 30
- *    ✅ 수정 : System.out.println(year + "년 " + monthName + " " + lastDay);    → 2026년 November 30
+ *    ❌ 틀린 코드 : System.out.println(year + "년 " + month + " " + lastDay);        → 2026년 NOVEMBER 30
+ *    ✅ 고친 코드 : System.out.println(year + "년 " + monthName + " " + lastDay);    → 2026년 November 30
  * 💡 TextStyle.SHORT 는 "Nov", Locale.KOREAN 이면 "11월" 이 된다.
  * 💡 다른 방법 : today.withDayOfMonth(today.lengthOfMonth()) 는 마지막 날의 LocalDate 를 만든다. (9-1 with~)
  *    윤년도 자동으로 처리된다. (2028년 2월 → 29)
@@ -37,10 +37,10 @@ public class LastDayOfMonth {
         Month month = today.getMonth();
         int lastDay = today.lengthOfMonth();
 
-        System.out.println(year + "년 " + month + " " + lastDay);       // ❌ 원본 (대문자)
+        System.out.println(year + "년 " + month + " " + lastDay);       // ❌ 대문자로 나온다
 
         String monthName = month.getDisplayName(TextStyle.FULL, Locale.ENGLISH);
-        System.out.println(year + "년 " + monthName + " " + lastDay);   // ✅ 수정
+        System.out.println(year + "년 " + monthName + " " + lastDay);   // ✅ November 로 나온다
 
         System.out.println("💡 원래 문제 형식 : " + month + " : " + lastDay);
         System.out.println("💡 마지막 날 : " + today.withDayOfMonth(today.lengthOfMonth()));

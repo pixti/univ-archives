@@ -14,29 +14,29 @@ import java.util.Scanner;
  *   계속 ? y
  *   값? ...
  *
- * 📝 필기 (AI 설명) : 코드 흐름
+ * 📝 필기 : 코드 흐름
  *   입력 1.5 → y → 2.5 → y → 3.5 → n 이면
  *     data[0] = 1.5,  data[1] = 2.5,  data[2] = 3.5,  count = 3
  *
- * 📝 필기 (AI 설명) : 평균
+ * 📝 필기 : 평균
  *   입력받을 때마다  sum = sum + data[count];
  *   입력이 끝나면    average = sum / count;
  *
- * 📝 필기 (AI 설명) : 표준편차
+ * 📝 필기 : 표준편차
  *   for (int i = 0; i < count; i++)
  *       variance = variance + (data[i] - average) * (data[i] - average);
  *   여기서 (data[i] - average) 가 x_i − m 이고, 그것을 두 번 곱한 것이 (x_i − m)² 이다.
  *   variance = variance / count;          → 분산 (1/n Σ ...)
  *   standardDeviation = Math.sqrt(variance); → 표준편차 (분산의 제곱근)
  *
- * 📝 필기 (AI 설명) : 이 문제에서 배열이 필요한 이유
+ * 📝 필기 : 이 문제에서 배열이 필요한 이유
  *   입력받는 순간 평균만 구한다면 배열이 없어도 됩니다.
  *   하지만 표준편차를 구하려면 평균을 먼저 구한 다음, 각각의 값에 대해 (값 - 평균)² 을 계산해야 합니다.
  *   그래서 흐름이
  *     입력 → 배열에 저장 → 평균 계산 → 배열을 다시 처음부터 확인 → 표준편차 계산
  *   이 됩니다. (5-1 강의 "일단 저장 → 나중에 처리" 와 같은 이유)
  *
- * 📝 필기 (AI 설명) : 자료형과 크기
+ * 📝 필기 : 자료형과 크기
  *   - 입력이 실수이므로 double[] 을 사용.
  *   - "30 개 이하" 조건 때문에 double[] data = new double[30];
  *   - while (count < 30) 으로 30 개를 넘게 입력하는 것을 막는다.

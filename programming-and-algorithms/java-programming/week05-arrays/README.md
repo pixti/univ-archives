@@ -1,20 +1,22 @@
 # Week 05: 배열
 
 자바프로그래밍(GA1001) 5주차 정리입니다.
-교재는 『자바만 잡아도』입니다.
 
-- 강의 자료(.pptx)는 Markdown으로 정리했습니다.
-- 실습, 퀴즈, 과제는 `.java` 코드로 정리했습니다.
-- 수업 중 필기와 AI에게 받은 설명은 **📝 필기** 표시로 주석과 노트에 넣었습니다.
-- 💡 표시는 정리하면서 덧붙인 설명입니다. 직접 풀지 않은 문제는 💡 참고 답안으로 채웠습니다.
-- ⚠ 표시는 원본 자료의 오타나 버그, 내 답안의 틀린 부분, AI 리팩터링 코드의 문제점을 바로잡은 곳입니다.
+- 강의 내용은 `lecture-notes/`에 Markdown으로 정리했습니다.
+- 강의 예제, 실습, 퀴즈, 과제는 `.java` 코드로 정리했습니다.
+
+| 표시 | 의미 |
+|---|---|
+| 📝 **필기** | 수업 중 필기한 내용, 질문하며 정리한 설명 |
+| 💡 **보충** | 정리하면서 덧붙인 설명, 참고 답안 |
+| ⚠ **주의** | 자주 틀리는 부분, 헷갈리기 쉬운 부분 |
 
 ## 📁 구조
 
 ```
 week05-arrays/
-├── lecture-notes/          강의 자료 (.pptx → .md)
-├── examples/               강의 슬라이드 속 예제 코드
+├── lecture-notes/          강의 노트
+├── examples/               강의 예제 코드
 ├── practice/               실습
 │   ├── arrays1/            ├ 배열(1)
 │   └── arrays2/            └ 배열(2)
@@ -42,7 +44,7 @@ week05-arrays/
 | [ReferenceArray.java](examples/ReferenceArray.java) | 5-1 | 레퍼런스형(객체) 배열 |
 | [ArrayTypicalUsage.java](examples/ArrayTypicalUsage.java) | 5-1 | 배열의 전형적인 사용 예 (출력 · 합 · 최대값 · 최소값) |
 | [ReadIntoArray.java](examples/ReadIntoArray.java) | 5-1 | 값을 배열에 읽어들이기 |
-| [ScoreStatistics.java](examples/ScoreStatistics.java) | 5-1 | [실습] 학생 성적 처리 (평균, 최대·최소). ⚠ 슬라이드의 합계 버그 수정 |
+| [ScoreStatistics.java](examples/ScoreStatistics.java) | 5-1 | [실습] 학생 성적 처리 (평균, 최대·최소). ⚠ 합계에서 `array[0]`이 빠지는 실수 |
 | [ArraySort.java](examples/ArraySort.java) | 5-2 | `Arrays.sort` |
 | [DescendingSort.java](examples/DescendingSort.java) | 5-2 | 내림차순 정렬 + 두 변수 교환(swap) |
 | [ScoreSort.java](examples/ScoreSort.java) | 5-2 | [실습] 학생 성적 정렬. ⚠ `sort(array, 0, cnt-1)` → `cnt` |
@@ -75,19 +77,19 @@ week05-arrays/
 | [arrays2/SpiralArray.java](practice/arrays2/SpiralArray.java) | 4. 💡 n × n 나선형 배열 |
 | [assignment/arrays2/InventoryArray1D.java](assignment/arrays2/InventoryArray1D.java) | 5. 재고 관리 (1차원). 과제 배열(2) 1번의 출발점이라 과제 폴더에 있음 |
 | [arrays2/Box2D.java](practice/arrays2/Box2D.java) | 6. `box[5][3]`에 입력받아 출력 |
-| [arrays2/TicTacToe.java](practice/arrays2/TicTacToe.java) | 7. 틱택토 (📝 AI 설명, ⚠ 개선점) |
+| [arrays2/TicTacToe.java](practice/arrays2/TicTacToe.java) | 7. 틱택토 (📝 코드 흐름 설명, ⚠ 개선점) |
 | [arrays2/SeatReservation.java](practice/arrays2/SeatReservation.java) | 8. 극장 좌석 예약 (10행 8열) |
 
 ### 퀴즈 (`quiz/`)
 
 | 파일 | 내용 |
 |---|---|
-| [ArrayQuiz.java](quiz/ArrayQuiz.java) | 배열 1~8번: 선언·초기화 오류 수정, 범위를 벗어난 인덱스, `clone()` vs 대입(⚠ 4·5번 오답 정리), 2차원 배열·Jagged 배열 생성, 행마다 원소 개수 |
+| [ArrayQuiz.java](quiz/ArrayQuiz.java) | 배열 1~8번: 선언·초기화 오류 수정, 범위를 벗어난 인덱스, `clone()` vs 대입(⚠ 4·5번 자주 틀리는 부분), 2차원 배열·Jagged 배열 생성, 행마다 원소 개수 |
 
 ### 과제 (`assignment/`)
 
-각 문제마다 내가 작성한 코드와, 그 코드를 AI로 리팩터링한 코드(`...Refactored.java`)가 있습니다.
-리팩터링 코드는 원본 그대로 옮겼고, 머리 주석에 바뀐 점과 남은 문제(⚠)를 정리했습니다.
+각 문제마다 직접 작성한 코드와, 그 코드를 리팩터링한 버전(`...Refactored.java`)이 있습니다.
+리팩터링 버전의 머리 주석에 바뀐 점과 남은 문제(⚠)를 정리했습니다.
 
 | 파일 | 문제 |
 |---|---|
@@ -96,7 +98,7 @@ week05-arrays/
 | [arrays1/DecimalToBinary.java](assignment/arrays1/DecimalToBinary.java) · [Refactored](assignment/arrays1/DecimalToBinaryRefactored.java) | 3. 10진수 → 2진수 (📝 역순 저장과 index, ⚠ 0·음수 입력) |
 | [arrays1/MeanStdDev.java](assignment/arrays1/MeanStdDev.java) | 4. 실수 30개 이하의 평균과 표준편차 (📝 배열이 필요한 이유) |
 | [arrays1/RandomFrequency.java](assignment/arrays1/RandomFrequency.java) · [Refactored](assignment/arrays1/RandomFrequencyRefactored.java) | 5. 0 ~ 19 난수 1000개 중 가장 많이 나온 수 (📝 count 배열, ⚠ 숫자 대신 횟수 출력) |
-| [arrays2/InventoryArray1D.java](assignment/arrays2/InventoryArray1D.java) · [Refactored](assignment/arrays2/InventoryArray1DRefactored.java) · [💡 2D](assignment/arrays2/InventoryArray2D.java) | 1. 재고 관리를 2차원 배열로 확장 (내가 작성한 것은 1차원 버전, 2차원은 💡 참고 답안) |
+| [arrays2/InventoryArray1D.java](assignment/arrays2/InventoryArray1D.java) · [Refactored](assignment/arrays2/InventoryArray1DRefactored.java) · [💡 2D](assignment/arrays2/InventoryArray2D.java) | 1. 재고 관리를 2차원 배열로 확장 (직접 작성한 것은 1차원 버전, 2차원은 💡 참고 답안) |
 | [arrays2/RowColumnSum.java](assignment/arrays2/RowColumnSum.java) · [Refactored](assignment/arrays2/RowColumnSumRefactored.java) | 2. 2차원 배열의 행 합계 · 열 합계 |
 | [arrays2/Transpose.java](assignment/arrays2/Transpose.java) · [Refactored](assignment/arrays2/TransposeRefactored.java) | 3. 전치 행렬 (📝 `transpose[col][row] = arr[row][col]`, ⚠ 입력 대신 코드에 직접 작성) |
 | [arrays2/MatrixMultiply.java](assignment/arrays2/MatrixMultiply.java) · [Refactored](assignment/arrays2/MatrixMultiplyRefactored.java) | 4. 임의 크기 행렬의 곱셈 (0 ~ 99 난수, 곱할 수 없는 크기 검사) |

@@ -1,5 +1,5 @@
 /**
- * [8-3 실습] 사각형 클래스 - private 필드 + getter / setter
+ * [7-3 실습] 사각형 클래스 - private 필드 + getter / setter
  *
  * 포인트
  *  - 필드(x, y, width, height)를 private 로 선언하여 외부 접근 불가
@@ -7,22 +7,24 @@
  *  - resize(newW, newH) : 크기를 한 번에 변경하는 기능
  *  - getArea() : 면적을 계산하는 기능 (필드에 저장하지 않고 필요할 때 계산)
  *
- * ⚠ 슬라이드 main 의 스마트 따옴표(“ ”)는 일반 따옴표로 바꿨다.
- * 💡 setHeight(int newY) 의 매개변수 이름 newY 는 newH 가 자연스럽다. (동작은 같음, 슬라이드 그대로 둠)
+ * 💡 setHeight(int newY) 의 매개변수 이름 newY 는 newH 가 자연스럽다. (동작은 같음, 강의 코드 그대로 둠)
  *
  * 실행 결과
  *  면적은 20입니다.
+ *
+ * 💡 같은 모듈의 다른 예제에도 같은 이름의 클래스가 있어서 IntelliJ 에서 함께 빌드하면 중복 오류가 난다.
+ *    그래서 클래스 이름을 바꿨다. (MyRectangle → MyRectanglePrivate, 강의 코드에서는 바꾸기 전 이름)
  */
 public class MyRectangleTest {
     public static void main(String[] args) {
-        MyRectangle r1 = new MyRectangle();
+        MyRectanglePrivate r1 = new MyRectanglePrivate();
         r1.setX(10); r1.setY(10); r1.setWidth(5); r1.setHeight(4);
         System.out.println("면적은 " + r1.getArea() + "입니다.");
-        // r1.width = 5;   // ❌ 컴파일 오류 : width has private access in MyRectangle
+        // r1.width = 5;   // ❌ 컴파일 오류 : width has private access in MyRectanglePrivate
     }
 }
 
-class MyRectangle {
+class MyRectanglePrivate {
     // 필드 정의, private로 선언하여 외부접근 불가.
     private int x, y;               // 왼쪽 코너 좌표
     private int width, height;      // 사각형의 폭과 높이

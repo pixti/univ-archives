@@ -1,6 +1,5 @@
-# 8-2. 클래스 2: this 키워드 · 정적 필드 · 정적 메소드
+# 7-2. 클래스 2: this 키워드 · 정적 필드 · 정적 메소드
 
-> 원본: `8-2 클래스2.pptx`
 > 관련 코드: [`examples/MyIntegerThis.java`](../examples/MyIntegerThis.java), [`examples/StaticFieldTest.java`](../examples/StaticFieldTest.java), [`examples/StudentScoreStatic.java`](../examples/StudentScoreStatic.java), [`examples/MyMathDemo.java`](../examples/MyMathDemo.java), [`quiz/ClassQuiz.java`](../quiz/ClassQuiz.java) (6, 7, 8번)
 
 ---
@@ -31,14 +30,14 @@ ob1.add(ob2)  →  this = ob1,  ob = ob2  →  ob1.val + ob2.val
 ob2.add(ob1)  →  this = ob2,  ob = ob1  →  ob2.val + ob1.val
 ```
 
-> 참고:
-> - 📝 **필기 (실습 클래스1 1번, AI 설명) this가 필요한 이유:**
+> 💡 **보충:**
+> - 📝 **필기 (실습 클래스1 1번) this가 필요한 이유:**
 >   - 같은 클래스로 만든 객체들은 메소드 코드를 따로 갖지 않는다. 메소드 코드는 메모리(Method Area)에 **한 번만** 올라가고 모든 객체가 공유한다.
 >   - 그래서 메소드 안에서 "**어느 객체의** 필드인지" 알려 줘야 한다. 그 역할을 하는 것이 `this`다.
 >   - `b.setTitle("Great C++")`를 호출하면 JVM이 `b`의 주소를 **숨겨진 매개변수**로 몰래 넘겨준다. 그 값이 바로 `this`(메소드를 호출한 객체)다.
 >   - 매개변수 이름을 필드 이름과 똑같이 짓는 것이 표준 관례다. 메소드 안에서는 **매개변수가 우선**하기 때문에 `title = title;`이라고 쓰면 매개변수에 자기 자신을 넣는 셈이 된다. 그래서 `this.title = title;`로 필드임을 밝혀야 한다.
 >   - getter(`return title;`)처럼 이름이 겹치지 않을 때는 보통 `this`를 생략한다.
-> - ⚠ 슬라이드의 `this.val – ob.val`에서 `–`는 빼기 기호(`-`)가 아니라 en dash다. 그대로 쓰면 컴파일 오류가 난다. `Int r`은 `int`의 오타다.
+> - ⚠ **자주 틀리는 부분:** 문서에서 복사한 `this.val – ob.val`의 `–`는 빼기 기호(`-`)가 아니라 en dash다. 그대로 쓰면 컴파일 오류가 난다.
 
 ---
 
@@ -62,7 +61,7 @@ public class Student {
 }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 여기서는 매개변수 이름(`name`, `k`, …)과 필드 이름(`sname`, `kor`, …)이 달라서 `this`를 빼도 의미가 같다. 매개변수 이름이 필드 이름과 같을 때(`this.kor = kor;`)는 `this`를 꼭 써야 한다.
 
 ---
@@ -113,13 +112,13 @@ ob1 ──▶ [ instVal = 5 ]
 ob2 ──▶ [ instVal = 0 ]     ← 객체마다 따로 있음
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 📝 **필기 (퀴즈 6번) 보충 설명:**
 >   - 일반 필드는 객체를 생성할 때마다 **따로따로** 할당된다.
 >   - 일반 필드는 객체 생성 없이는 접근할 수 없다. 객체를 생성해야 한다.
 >   - 스태틱 필드는 같은 클래스 안에서 객체마다가 아니라 **하나만 공유**되는 형태로 할당된다.
 >   - 스태틱 필드는 객체 생성 없이도 접근이 가능하다.
-> - 📝 **필기 (퀴즈 6번, AI 설명) static 필드 vs 일반 필드:**
+> - 📝 **필기 (퀴즈 6번) static 필드 vs 일반 필드:**
 >
 >   | 구분 | static 필드 (클래스 변수) | 일반 필드 (인스턴스 변수) |
 >   |---|---|---|
@@ -186,10 +185,10 @@ public class StudentScore {
 }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 주석의 `students[0].count++`처럼 객체로 접근해도 **같은 변수 하나**를 가리킨다. 다만 static임이 잘 드러나도록 `Student.count`처럼 클래스명으로 쓰는 것을 권장한다. (퀴즈 7번의 `A.z++`)
 > - 💡 반복문을 `students.length`(100)까지 돌리면 비어 있는 칸(`null`)에서 `NullPointerException`이 난다. 그래서 `Student.count`까지만 돈다.
-> - 💡 실행 결과는 8-1 예제와 같다. 실행해 볼 수 있도록 두 파일을 [`examples/StudentScoreStatic.java`](../examples/StudentScoreStatic.java) 한 파일로 합쳤다.
+> - 💡 실행 결과는 7-1 예제와 같다. 실행해 볼 수 있도록 두 파일을 [`examples/StudentScoreStatic.java`](../examples/StudentScoreStatic.java) 한 파일로 합쳤다.
 
 ---
 
@@ -212,9 +211,9 @@ public class MyApp {
 error: non-static variable x cannot be referenced from a static context
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 📝 **필기 (퀴즈 6번) 보충 설명:** 메서드도 필드와 마찬가지로 non-static 메서드와 static 메서드가 있다. 일반 메서드는 반드시 객체를 생성하고 `객체.메서드명()`으로 접근한다. 스태틱 메서드는 `클래스명.메서드명()`으로 객체 생성 없이 접근할 수 있다.
-> - 📝 **필기 (퀴즈 8번, AI 설명) static 메서드와 멤버 접근 제약:**
+> - 📝 **필기 (퀴즈 8번) static 메서드와 멤버 접근 제약:**
 >
 >   | 메소드 안에서 | 일반 필드 | 일반 메소드 | static 필드 | static 메소드 | `this` |
 >   |---|---|---|---|---|---|
@@ -222,7 +221,7 @@ error: non-static variable x cannot be referenced from a static context
 >   | **일반 메소드** | ✅ | ✅ | ✅ | ✅ | ✅ |
 >
 >   static 메소드 안에서는 지역 변수, static 필드, static 메소드만 바로 쓸 수 있다.
-> - 📝 **필기 (실습 클래스2 3·4번, AI 설명):** `main`이 static인 이유는 JVM이 **객체 없이** 프로그램 시작점을 호출해야 하기 때문이다. 그래서 main에서 일반 메소드를 쓰려면 먼저 `new`로 객체를 만들고 `객체.메소드()`로 호출한다. ("static에서 non-static을 아예 못 부르는 것"이 아니라 "**객체 없이** 바로는 못 부르는 것"이다.)
+> - 📝 **필기 (실습 클래스2 3·4번):** `main`이 static인 이유는 JVM이 **객체 없이** 프로그램 시작점을 호출해야 하기 때문이다. 그래서 main에서 일반 메소드를 쓰려면 먼저 `new`로 객체를 만들고 `객체.메소드()`로 호출한다. ("static에서 non-static을 아예 못 부르는 것"이 아니라 "**객체 없이** 바로는 못 부르는 것"이다.)
 > - 💡 위 오류를 고치려면 `x`를 `static int x = 3;`으로 바꾸거나, `MyApp app = new MyApp(); System.out.println(app.x);`처럼 객체를 통해 접근한다.
 
 ---
@@ -272,7 +271,6 @@ class MyMath {
 10.0마일에 해당합니다.
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `MyMath`에는 일반 필드가 없다. 모든 기능이 인수만으로 계산되므로 static 메소드로 만들기 딱 맞다. 자바의 `Math` 클래스(`Math.max`, `Math.round`, `Math.random` …)도 같은 방식이라 `new Math()` 없이 쓴다.
 > - 💡 `static final`은 객체마다 가질 필요가 없는 **상수**다. 상수 이름은 보통 대문자와 밑줄로 짓는다. (`PI`, `KM_PER_MILE`)
-> - 💡 슬라이드 12의 실행 화면 이미지는 위 실행 예로 대신했다. (반지름 2를 넣으면 둘레와 면적이 같은 값이 나온다.)

@@ -1,6 +1,5 @@
 # 3-3. 조건문 3: if 문 실습 · switch 문
 
-> 원본: `3-3 조건문3.pptx`
 > 관련 코드: [`examples/OddEven.java`](../examples/OddEven.java), [`examples/FruitType.java`](../examples/FruitType.java), [`examples/CalculatorSwitch.java`](../examples/CalculatorSwitch.java), [`examples/Month.java`](../examples/Month.java), [`quiz/ConditionalQuiz.java`](../quiz/ConditionalQuiz.java)
 
 ---
@@ -36,14 +35,14 @@ o
 축하합니다!!!
 ```
 
-> 참고: **난수(Random) 만들기**
+> 💡 **보충: 난수(Random) 만들기**
 > - `java.util.Random`을 `import`한 뒤 `new Random()`으로 객체를 만든다.
 > - `rnd.nextInt(n)`은 **0 이상 n 미만**의 정수를 돌려준다. `nextInt(100)`이면 0 ~ 99이다.
 > - 1 ~ 100을 원하면 `rnd.nextInt(100) + 1`로 쓴다.
 > - 다른 방법으로 `(int) (Math.random() * n)`이 있다. `Math.random()`은 0.0 이상 1.0 미만의 double이다. 이 방법은 [과제: 가위바위보](../assignment/conditionals2/RockPaperScissors.java)에서 썼다.
 > - 2주차에 배운 **조건 연산자 `?:`**로 정답 문자를 한 줄에 정했다.
->
-> ⚠ 슬라이드는 출력 문자열 `"짝수라 생각하면 e를, (줄바꿈) 홀수라고..."`를 두 줄에 걸쳐 썼다. 자바 문자열 리터럴은 줄을 넘길 수 없어 컴파일 에러가 난다. 한 줄로 합쳤다. 길면 `"..." + "..."`로 나눠 쓴다.
+
+> ⚠ **자주 틀리는 부분:** 큰따옴표로 연 문자열 리터럴은 줄을 넘길 수 없다. 안내문을 두 줄에 걸쳐 쓰면 컴파일 에러(`unclosed string literal`)가 난다. 길면 `"..." + "..."`로 나눠 쓴다.
 
 ---
 
@@ -92,9 +91,10 @@ else {
 }
 ```
 
-> 📝 **필기 (퀴즈 · 조건문 4번):** "`default :`로 else를 표현함."
-> 처음에는 `else`에 해당하는 출력문을 switch 밖에 두었다. 그래서 0, 1, 2일 때도 "그외"가 출력되어 **오답** 처리되었다. else 역할은 switch 안의 `default`가 맡는다.
+> 📝 **필기 (퀴즈 · 조건문 4번):** "`default :`로 else를 표현함." else 역할은 switch 안의 `default`가 맡는다.
 > → [`quiz/ConditionalQuiz.java`](../quiz/ConditionalQuiz.java)
+
+> ⚠ **자주 틀리는 부분:** `else`에 해당하는 출력문을 switch **밖에** 두면 0, 1, 2일 때도 "그외"가 함께 출력된다. switch 밖의 문장은 case와 상관없이 항상 실행되기 때문이다.
 
 ### break가 없으면? (fall-through)
 
@@ -138,7 +138,7 @@ switch (s) {            // 여기
 }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - switch 식에 쓸 수 있는 자료형은 `byte`, `short`, `char`, `int`, 그리고 각각의 래퍼 클래스, `String`, `enum`이다.
 > - **`long`, `float`, `double`, `boolean`은 쓸 수 없다.**
 > - String switch는 내부적으로 `==`가 아니라 **`equals()`**로 내용을 비교한다. 그래서 `sc.next()`로 입력받은 문자열도 제대로 비교된다.
@@ -157,7 +157,7 @@ case x > 5 : ...    // 조건식
 case x == 3 : ...   // 조건식
 ```
 
-> 참고:
+> 💡 **보충:**
 > - case 값은 **컴파일할 때 값이 정해지는 상수**여야 한다. 그래서 `final int MAX = 3;`처럼 상수로 선언한 이름이나 `case 1 + 2:`(상수식)는 허용된다.
 > - 같은 값을 가진 case가 두 개 있으면 컴파일 에러가 난다.
 > - "x가 5보다 크면"처럼 **범위 조건**은 switch로 표현할 수 없다. 이런 경우는 if-else if를 쓴다(예: 학점, 소득세 계산).

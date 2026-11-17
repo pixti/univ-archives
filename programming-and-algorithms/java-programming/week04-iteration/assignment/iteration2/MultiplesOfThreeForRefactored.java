@@ -5,7 +5,7 @@ import java.util.Scanner;
  * [4강 과제] 반복문2 - 1번 문제 (리팩터링 버전)
  * 📝 반복문2 과제는 for문으로 작성.
  *
- * MultiplesOfThreeFor.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * MultiplesOfThreeFor.java 를 리팩터링한 코드.
  *
  * 바뀐 점 (반복문1 리팩터링 버전과 비교)
  *  - 숫자뿐 아니라 안내 / 오류 문자열까지 상수로 분리 : PROMPT_INPUT, ERROR_NON_INTEGER, ERROR_NEGATIVE
@@ -19,7 +19,7 @@ import java.util.Scanner;
  *   Javadoc 의 "입력이 포기되면 null을 반환" 과 main 의 null 검사는 실제로 쓰이지 않는다.
  * ⚠ 0 을 넣어도 "오류: 음수는 허용되지 않습니다." 가 출력된다. (0 은 음수가 아니므로 메시지가 부정확)
  *
- * 내 코드 실행 예
+ * 실행 예
  *  정수를 입력하세요 : 20
  *  [3]
  *  [6]

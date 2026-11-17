@@ -3,7 +3,6 @@ import java.util.Scanner;
 /**
  * [2강 실습] 수식 - 3번 문제
  * 시, 분, 초를 입력받아 전체 몇 초인지 계산하는 프로그램
- * (Eclipse 에서는 Problem3.java 로 작성했던 코드)
  *
  * 전체 초 = 시 * 3600 + 분 * 60 + 초
  *  (강의 예제 IntegerToTime 의 반대 방향 변환)
@@ -26,8 +25,8 @@ public class TimeToSeconds {
         int sec = sc.nextInt();
         sc.close();
 
-        // 원래 코드: final int TIME = hour*3600 + min*60 + sec;
-        // final 을 붙이면 이후 값을 바꿀 수 없는 지역 상수가 된다.
+        // 💡 final int TIME = hour*3600 + min*60 + sec; 처럼 써도 컴파일은 된다.
+        //    final 을 붙이면 이후 값을 바꿀 수 없는 지역 상수가 된다.
         // 다만 입력에 따라 매번 달라지는 "계산 결과"이므로 일반 변수(소문자 이름)로 두는 편이 관례에 더 맞다.
         // 1시간 = 3600초, 1분 = 60초 처럼 고정된 값을 기호 상수로 만드는 것이 기호 상수의 원래 용도.
         final int SEC_PER_HOUR = 3600;

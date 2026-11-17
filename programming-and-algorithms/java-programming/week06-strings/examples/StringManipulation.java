@@ -16,12 +16,10 @@
  * 📝 필기 (퀴즈 5번) ★) String 객체는 한번 생성하면 변경 불가능 하다.
  *    str.replace(...), str.toUpperCase() 만 호출하고 str = ... 로 다시 대입하지 않으면 str 은 그대로다.
  *
- * ⚠ 슬라이드의 trim 예제 주석 // thisisatest*** 는 틀렸다. (교수님 정정 공지)
+ * ⚠ 자주 틀리는 부분 : trim 은 가운데 공백까지 지우지 않는다. (결과가 thisisatest*** 가 아니다, 교수님 정정 공지)
  *    "trim 메서드가 중간에 있는 공백도 제거한다고 했는데, 그렇지 않습니다. 앞과 뒤에 있는 공백만 제거합니다.
  *     즉, " abc def ".trim()을 실행하면 "abc def" 문자열이 반환됩니다."
  *    → " this is a test *** ".trim() 의 결과는 "this is a test ***"
- *
- * ⚠ 슬라이드의 ltrim / rtrim 예제는 s.replaceAll(...) 인데 s 라는 변수가 없다. 여기서는 str0 으로 고쳤다.
  *
  * 💡 정규식 " |,|:|\\." : 공백 또는 , 또는 : 또는 .
  *    . 은 정규식에서 "아무 문자 1개" 라는 뜻이라 진짜 마침표는 \. 로 써야 하고,
@@ -80,7 +78,7 @@ public class StringManipulation {
         // ---- trim : 문자열 "앞뒤" 의 공백 문자들을 제거 ----
         String str0 = " this is a test *** ";
         String str1 = str0.trim();
-        System.out.println("trim  : [" + str1 + "]");   // this is a test ***  (⚠ 슬라이드 주석 thisisatest*** 는 오류)
+        System.out.println("trim  : [" + str1 + "]");   // this is a test ***  (⚠ thisisatest*** 가 아니다)
         String str3 = str0.replaceAll("^\\s+", "");     // ltrim 예제
         String str4 = str0.replaceAll("\\s+$", "");     // rtrim 예제
         System.out.println("ltrim : [" + str3 + "]");

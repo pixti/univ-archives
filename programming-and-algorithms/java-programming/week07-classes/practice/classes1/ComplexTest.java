@@ -23,7 +23,7 @@ import java.util.Scanner;
  * 📝 필기 : 객체가 아닌 클래스를 기준으로 접근을 제어하므로 private 더라도 getReal()이 아닌
  *    this.real로 접근할 수 있다.
  *
- * 📝 필기 (AI 설명) 맞다. private 은 "같은 클래스" 안이면 다른 객체(c)의 private 필드에도 직접 접근할 수 있다.
+ * 📝 필기 : 맞다. private 은 "같은 클래스" 안이면 다른 객체(c)의 private 필드에도 직접 접근할 수 있다.
  *    그래서 add 를 이렇게 써도 된다. (sub 도 + 를 - 로 바꾸면 같다)
  *        public Complex add(Complex c) {
  *            Complex result = new Complex();
@@ -31,7 +31,7 @@ import java.util.Scanner;
  *            result.imagine = this.imagine + c.imagine;
  *            return result;
  *        }
- *    → 아래 코드에는 내가 작성한 getter / setter 버전을 남기고, 이 직접 접근 버전은 addDirect() 로 넣었다.
+ *    → 아래 코드에는 처음 작성한 getter / setter 버전을 남기고, 이 직접 접근 버전은 addDirect() 로 넣었다.
  *
  * 💡 뺄셈 결과의 허수부가 음수이면 "-4 + -2.1i" 처럼 + 와 - 가 같이 나온다.
  *    "-4 - 2.1i" 로 출력하고 싶다면 toString() 에서 부호를 따로 처리하면 된다. (아래 toString 의 주석 참고)
@@ -90,7 +90,7 @@ class Complex {
     public double getImagine() { return imagine; }
     public void setImagine(double imagine) { this.imagine = imagine; }
 
-    // 내가 작성한 코드 : getter / setter 로 계산
+    // 처음 작성한 코드 : getter / setter 로 계산
     public Complex add(Complex c) {
         Complex result = new Complex();
         result.setReal(this.real + c.getReal());
@@ -105,7 +105,7 @@ class Complex {
         return result;
     }
 
-    // 📝 AI 설명 버전 : 같은 클래스이므로 c 의 private 필드에 직접 접근
+    // 📝 필기 버전 : 같은 클래스이므로 c 의 private 필드에 직접 접근
     public Complex addDirect(Complex c) {
         Complex result = new Complex();
         result.real = this.real + c.real;

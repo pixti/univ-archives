@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  *  - \B : 단어 경계가 "아닌" 위치 = 단어 안쪽
  *  - \Bg\B : g 의 앞도 단어 안쪽, 뒤도 단어 안쪽 → 단어 "가운데" 의 g
  *
- * 📝 필기 (AI 설명) 문장별 결과
+ * 📝 필기 : 문장별 결과
  *      문장                          g 의 위치                       \Bg\B   \Bg\b
  *      ... lazy dog.                 dog 의 끝                        No      Yes
  *      Java Exercises.               g 없음                           No      No
@@ -66,9 +66,9 @@ public class MiddleG {
         for (String s : strs) {
             Matcher m = p.matcher(s);
             if (m.find()) {
-                System.out.println("Found a match!");   // 내 코드 : Yes
+                System.out.println("Found a match!");   // 처음 출력 : Yes
             } else {
-                System.out.println("Not matched!");     // 내 코드 : No
+                System.out.println("Not matched!");     // 처음 출력 : No
             }
         }
 

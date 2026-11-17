@@ -1,6 +1,5 @@
 # 9-2. 열거형 (Enumerations)
 
-> 원본: `9-2 Enumeration.pptx`
 > 관련 코드: [`examples/SuitEnumTest.java`](../examples/SuitEnumTest.java), [`practice/datetime-enum/`](../practice/datetime-enum/) (1~3번)
 
 ---
@@ -18,8 +17,8 @@ public static final int SUIT_HEARTS = 2;
 public static final int SUIT_SPADES = 3;
 ```
 
-> 참고:
-> - 💡 `static final`은 "클래스당 하나 + 값 변경 불가", 즉 **상수**다. (7강 8-2 `static final double PI`, 9-3 상수 필드 참고)
+> 💡 **보충:**
+> - 💡 `static final`은 "클래스당 하나 + 값 변경 불가", 즉 **상수**다. (7-2 `static final double PI`, 9-3 상수 필드 참고)
 
 ---
 
@@ -78,10 +77,10 @@ public void drawSuitOnCard(int suit) {
 public enum Suit { CLUBS, DIAMONDS, HEARTS, SPADES }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 열거형도 클래스처럼 **하나의 자료형**이다. `Suit`형 변수에는 `Suit.CLUBS`, `Suit.DIAMONDS`, `Suit.HEARTS`, `Suit.SPADES`(와 `null`)만 들어갈 수 있다.
 > - 💡 열거 상수 이름은 상수처럼 대문자로 짓는 것이 관례다.
-> - 💡 `public enum`은 `public class`처럼 파일 이름과 같아야 한다(`Suit.java`). 한 파일에 같이 넣으려면 `public`을 빼거나 클래스 **안에** 선언한다. 슬라이드의 이클립스 화면에 `Test.Suit`라고 나오는 것은 `Suit`가 `Test` 클래스 안에 선언되었기 때문이다.
+> - 💡 `public enum`은 `public class`처럼 파일 이름과 같아야 한다(`Suit.java`). 한 파일에 같이 넣으려면 `public`을 빼거나 클래스 **안에** 선언한다. 이클립스 화면에 `Test.Suit`라고 나오는 것은 `Suit`가 `Test` 클래스 안에 선언되었기 때문이다.
 
 ---
 
@@ -140,8 +139,8 @@ HEARTS
 SPADES
 ```
 
-> 참고:
-> - ⚠ 슬라이드 본문에는 `value()`라고 적혀 있지만 실제 메소드 이름은 **`values()`**(끝에 s)다. 슬라이드의 코드는 `values()`로 맞게 되어 있다.
+> 💡 **보충:**
+> - ⚠ **자주 틀리는 부분:** 모든 상수를 배열로 꺼내는 메소드 이름은 `value()`가 아니라 **`values()`**(끝에 s)다.
 
 ### 5-2. 열거형 값 비교 가능
 
@@ -153,7 +152,7 @@ if (suit == Suit.CLUBS) {
 }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 각 열거 상수는 프로그램 안에 **딱 하나의 객체**만 존재한다. 그래서 문자열(6강)과 달리 `equals()` 대신 `==`로 비교해도 안전하다.
 > - 💡 실습 Enum 2번(Shape)에서 `firstShape == secondShape`로 비교했다.
 
@@ -177,7 +176,7 @@ switch (suit) {
 }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `case`에는 `Suit.CLUBS`가 아니라 `CLUBS`처럼 **상수 이름만** 쓴다. (switch의 자료형이 이미 `Suit`라서)
 > - 💡 `case CLUBS:` 다음에 `break`가 없으므로 `CLUBS`와 `SPADES`는 같은 코드를 실행한다(검은색 무늬). `HEARTS`와 `DIAMONDS`도 마찬가지(빨간색 무늬). 3강 switch의 fall-through와 같다.
 
@@ -185,7 +184,7 @@ switch (suit) {
 
 ## 6. 💡 정리: 열거형에서 자주 쓰는 메소드
 
-슬라이드에는 없지만 실습에서 쓰거나 알아 두면 좋은 메소드다.
+강의에는 없지만 실습에서 쓰거나 알아 두면 좋은 메소드다.
 
 | 메소드 | 설명 | 예 (`Suit.HEARTS`) |
 |---|---|---|

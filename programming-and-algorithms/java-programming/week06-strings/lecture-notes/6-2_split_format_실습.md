@@ -1,6 +1,5 @@
 # 6-2. 문자열 2: 문자열 분리 (split) · 문자열 포맷 · String 실습
 
-> 원본: `6-2 문자열2.pptx`
 > 관련 코드: [`examples/SplitTest.java`](../examples/SplitTest.java), [`examples/FormatTest.java`](../examples/FormatTest.java), [`examples/IDPassword.java`](../examples/IDPassword.java), [`examples/SearchReplace.java`](../examples/SearchReplace.java), [`examples/VariableSum.java`](../examples/VariableSum.java), [`quiz/StringQuiz.java`](../quiz/StringQuiz.java)
 
 ---
@@ -24,9 +23,9 @@ for (String s : split) System.out.println("-"+s+"-");
 -two,three:four.five-
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 분리 문자가 공백 `" "` 하나뿐이라 쉼표·콜론·점에서는 나뉘지 않는다. 그래서 `two,three:four.five`가 한 덩어리로 남는다. (퀴즈 6번)
-> - 📝 **필기 (퀴즈 6번, AI 설명):** split의 인자는 **정규식**이다. `.`, `+`, `|` 같은 특수문자로 나누려면 `\\.`처럼 이스케이프해야 한다.
+> - 📝 **필기 (퀴즈 6번):** split의 인자는 **정규식**이다. `.`, `+`, `|` 같은 특수문자로 나누려면 `\\.`처럼 이스케이프해야 한다.
 >
 >   | 코드 | 결과 |
 >   |---|---|
@@ -61,7 +60,7 @@ System.out.println(fs);
 학과 컴퓨터공학 - 최대값 : 98, 최소값 : 72, 평균 : 85.333333
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 **서식 지정자:**
 >
 >   | 지정자 | 의미 |
@@ -73,8 +72,8 @@ System.out.println(fs);
 >   | `%5d` | 5칸 폭으로 오른쪽 정렬 |
 >   | `%n` | 줄바꿈 |
 > - 💡 `printf`는 줄을 바꾸지 않는다. 줄을 바꾸려면 서식 끝에 `%n`이나 `\n`을 붙인다.
-> - 💡 실행 결과의 값(depart, max, min, avg)은 슬라이드에 없어서 예제 코드에서 정했다.
-> - ⚠ 슬라이드는 `String formatStr`을 두 번 선언해서 그대로는 컴파일되지 않는다. 따옴표도 스마트 따옴표(`“ ”`)다.
+> - 💡 depart, max, min, avg의 값은 실행해 보려고 예제 코드에서 정했다.
+> - ⚠ **자주 틀리는 부분:** 같은 메소드 안에서 `String formatStr`을 두 번 선언하면 컴파일 에러(`variable already defined`)가 난다. 위 코드처럼 이름을 바꾸거나(`formatStr2`), 선언 없이 다시 대입한다.
 
 ---
 
@@ -111,7 +110,7 @@ public class IDPassword {
 }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `trim()`, `toLowerCase()`는 새 문자열을 돌려주므로 `login = login.trim();`처럼 **다시 대입**한다. (String 불변)
 > - 💡 `sc.next()`는 공백 앞까지만 읽기 때문에 이미 앞뒤 공백이 없다. 여기서 `trim()`은 사실상 필요 없다. `nextLine()`으로 읽을 때 의미가 있다.
 > - 💡 실제 서비스에서는 비밀번호를 소문자로 바꾸면 안 된다. `Koala`와 `koala`가 같은 비밀번호가 되어 버린다. 아이디만 대소문자를 무시하려면 `equalsIgnoreCase`를 쓰는 방법도 있다.
@@ -150,7 +149,7 @@ like
 I like you. You love me.
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `replaceFirst`는 **첫 번째로** 일치하는 부분만 바꾼다. 모두 바꾸려면 `replaceAll`이나 `replace`를 쓴다.
 > - 💡 `replaceFirst`/`replaceAll`의 첫 번째 인자는 **정규식**이다. 사용자가 `.`이나 `+`가 들어간 단어를 입력하면 의도와 다르게 동작한다. 글자 그대로 찾으려면 `Pattern.quote(sword)`로 감싸거나 `replace`를 쓴다.
 > - 💡 같은 프로그램을 StringBuilder로 다시 만든 버전이 6-3에 있다. → [`examples/SearchReplaceBuilder.java`](../examples/SearchReplaceBuilder.java)
@@ -161,7 +160,7 @@ I like you. You love me.
 
 ```java
 import java.util.Scanner;
-public class ConditionOperation {
+public class VariableSum {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("숫자들을 공백으로 구분하여 입력 : ");
@@ -182,7 +181,6 @@ public class ConditionOperation {
 10
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `Integer.parseInt(s)`는 문자열 `"12"`를 정수 `12`로 바꾼다. 숫자가 아닌 문자열이면 `NumberFormatException`이 발생한다.
-> - ⚠ 클래스 이름 `ConditionOperation`은 이전 슬라이드에서 그대로 복사한 것으로 보인다. 예제 파일은 내용에 맞게 `VariableSum`으로 이름을 바꿨다.
 > - ⚠ `split(" ")`은 공백이 **두 칸 이상**이거나 맨 앞에 공백이 있으면 빈 문자열 `""`이 생긴다. 그러면 `Integer.parseInt("")`에서 `NumberFormatException`이 발생한다. `statement.trim().split("\\s+")`로 쓰면 안전하다.

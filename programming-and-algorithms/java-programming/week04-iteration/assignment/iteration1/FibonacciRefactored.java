@@ -2,7 +2,7 @@
  * [4강 과제] 반복문1 - 3번 문제 (리팩터링 버전)
  * ※ 반복 시 while 이나 do while 문만 사용하시오.
  *
- * Fibonacci.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * Fibonacci.java 를 리팩터링한 코드.
  *
  * 바뀐 점
  *  - 상한 5000 → 상수 MAX_TERMINATION

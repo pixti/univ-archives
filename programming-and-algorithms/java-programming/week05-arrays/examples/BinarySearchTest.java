@@ -21,7 +21,6 @@ import java.util.Arrays;
  * 💡 중복정의 : binarySearch(int[], int), binarySearch(double[], double),
  *              binarySearch(int[], 시작, 끝, int) ... 이름은 같고 매개변수가 다르다.
  * 💡 같은 값이 여러 개면 그중 어느 위치가 반환될지 보장되지 않는다.
- * ⚠ 슬라이드의 세 번째 대입 I = ... 는 대문자 I 라서 컴파일 오류. 소문자 i 로 고쳤다.
  *
  * 실행 예
  *  2
@@ -36,7 +35,7 @@ public class BinarySearchTest {   // int idx = Arrays.binarySearch(배열, 키) 
         System.out.println(i);
         i = Arrays.binarySearch(a, 0);   // 찾는 값이 없음 -1 출력
         System.out.println(i);
-        i = Arrays.binarySearch(a, 6);   // 찾는 값이 없음 -6 출력  (⚠ 슬라이드는 I = ...)
+        i = Arrays.binarySearch(a, 6);   // 찾는 값이 없음 -6 출력
         System.out.println(i);
     }
 }

@@ -14,7 +14,7 @@ import java.util.Scanner;
  *      평문을 입력하시오: meet at midnight
  *      암호화된 문자열: qiix ex qmhrmklx
  *
- * 📝 필기 (AI 설명)
+ * 📝 필기
  *  - 변환표를 보면 모든 글자가 알파벳 순서로 "4칸씩 뒤로" 밀려 있다. → 시저 암호 (Caesar cipher, +4)
  *  - 암호화 : (c - 'a' + 4) % 26 + 'a'
  *      c - 'a'     : 'a'=0, 'b'=1, ..., 'z'=25 로 바꿈

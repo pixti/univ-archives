@@ -4,11 +4,11 @@ import java.util.regex.Pattern;
 /**
  * [6강 실습] 문자열(1) - 3번 문제를 풀면서 해 본 정규식 실험 (matches · replaceAll · Pattern/Matcher find)
  *
- * 📝 필기 (내가 작성한 실험 코드)
+ * 📝 필기 (직접 실험해 본 코드)
  *  - 처음에는 m.find() 를 세 번 직접 호출해서 위치를 출력했고,
  *    두 번째로 while (m.find()) 반복문으로 바꿨다. → 몇 개가 있든 끝까지 찾을 수 있다.
  *
- * 📝 필기 (AI 설명)
+ * 📝 필기
  *  - str.matches("c.t") 가 false 인 이유
  *      matches 는 문자열 "전체" 가 패턴과 100% 일치해야 true.
  *      "c.t" 는 c + (아무 문자 1개) + t, 즉 딱 세 글자짜리 문자열만 통과한다.

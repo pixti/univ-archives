@@ -1,6 +1,5 @@
 # 4-1. 반복문 1: while 문
 
-> 원본: `4-1 반복문1.pptx`
 > 관련 코드: [`examples/WhileTable.java`](../examples/WhileTable.java), [`examples/WhileSum.java`](../examples/WhileSum.java), [`examples/WhileProduct.java`](../examples/WhileProduct.java), [`examples/MultiplicationTableWhile.java`](../examples/MultiplicationTableWhile.java), [`examples/ContinueQuestion.java`](../examples/ContinueQuestion.java), [`examples/ScoreProcessing.java`](../examples/ScoreProcessing.java), [`examples/MenuCalculatorWhile.java`](../examples/MenuCalculatorWhile.java), [`examples/NumberGuessing.java`](../examples/NumberGuessing.java)
 
 이번 주(반복문)에서 배우는 것:
@@ -35,7 +34,7 @@ while (true) {   // 의도적인 무한루프
 |---|---|
 | `while (조건식) { ... }` | `while 조건식 :` + 들여쓰기 |
 
-> 참고: **무한루프**
+> 💡 **보충: 무한루프**
 > - `while (true)`는 조건이 항상 참이라 끝나지 않는다. 일부러 이렇게 쓰고 블록 안에서 `break`(4-4)나 `return`으로 빠져나오는 방식을 자주 쓴다.
 > - 반대로 조건식의 변수를 블록 안에서 바꾸지 않으면 **실수로** 무한루프가 된다. 예를 들어 아래 예제에서 `i++`를 빼먹으면 i가 계속 1이라 끝나지 않는다.
 
@@ -98,7 +97,7 @@ while (i <= 5) {        // while (i < 6) { 와 같다
 System.out.println("합 : " + sum);   // 합 : 15
 ```
 
-> 참고: **누적 변수의 초기값**
+> 💡 **보충: 누적 변수의 초기값**
 > - 합을 구할 때는 `sum = 0`에서 시작한다. 0은 덧셈의 항등원이다.
 > - 곱을 구할 때는 `1`에서 시작해야 한다. 0에서 시작하면 무엇을 곱해도 0이다. (다음 예제)
 > - 퀴즈 3번(Σ · Π)에서 이 차이가 그대로 나온다. Σ → `sum = 0`, Π → `prod = 1`.
@@ -116,9 +115,9 @@ while (i <= 5) {        // while (i < 6) {
 System.out.println("곱 : " + sum);   // 곱 : 120
 ```
 
-> ⚠ 슬라이드 코드는 `While( I <= 5)`로 되어 있다. 자바는 대소문자를 구분하므로 `While`(키워드 아님)과 `I`(선언 안 된 변수) 때문에 컴파일 에러가 난다. `while (i <= 5)`로 고쳤다.
->
-> ⚠ 슬라이드는 곱을 구하면서도 변수 이름을 `sum`, 출력 문구를 `"합 : "`으로 썼다. 위의 합 예제를 복사한 흔적이다. 코드에서는 출력을 `"곱 : "`으로 바꿨다. ([`examples/WhileProduct.java`](../examples/WhileProduct.java))
+> ⚠ **자주 틀리는 부분:** 자바는 대소문자를 구분한다. `While( I <= 5)`처럼 쓰면 `While`은 키워드가 아니고 `I`는 선언하지 않은 변수라서 컴파일 에러가 난다. 키워드는 모두 소문자(`while`)다.
+
+> 💡 **보충:** 위 코드는 합 예제의 변수 이름 `sum`을 그대로 썼지만 실제로는 곱을 담는다. 직접 짤 때는 `prod`처럼 의미에 맞는 이름을 쓰는 편이 읽기 좋다. 출력 문구도 `"곱 : "`이어야 한다. → [`examples/WhileProduct.java`](../examples/WhileProduct.java)
 
 ---
 
@@ -172,7 +171,7 @@ while (cont == 'y') {
 }
 ```
 
-> 참고:
+> 💡 **보충:**
 > - while은 **조건을 먼저 검사**한다. 그래서 첫 반복에 들어가려면 cont가 처음부터 `'y'`여야 한다.
 > - 지역 변수는 초기화하지 않으면 사용할 수 없다. `char cont;`만 쓰고 `while (cont == 'y')`를 쓰면 컴파일 에러(`variable cont might not have been initialized`)가 난다.
 > - 4-2의 **do-while**로 바꾸면 이 초기화가 필요 없어진다.
@@ -225,7 +224,7 @@ public class ScoreProcessing {
 최소값 : 30
 ```
 
-> 참고: **이 실습에서 볼 패턴**
+> 💡 **보충: 이 실습에서 볼 패턴**
 > - **입력 → 검사 → 처리 → 다시 입력**: 첫 값을 반복문 **밖에서** 한 번 읽고, 블록의 **마지막**에서 다음 값을 읽는다. 그래야 "종료 값"이 처리(합계 등)에 섞이지 않는다. 실습 1번(산술 평균)도 같은 구조다.
 > - **최대값/최소값 초기값**: max는 나올 수 있는 값보다 작은 `-1`, min은 큰 `101`로 시작한다. 그래야 첫 입력이 무조건 max와 min이 된다.
 > - **`(double) sum / cnt`**: 형변환이 나눗셈보다 먼저 일어나 실수 나눗셈이 된다. `(double)(sum / cnt)`로 쓰면 정수 나눗셈 결과를 바꾸는 것이라 소수점이 사라진다.
@@ -270,12 +269,10 @@ q
 프로그램을 종료하였습니다.
 ```
 
-> 참고:
+> 💡 **보충:**
 > - **boolean 플래그로 반복 제어**: `cont`가 true인 동안 돌다가 `q`가 들어오면 false로 바꾼다. 그러면 다음 조건 검사에서 빠져나온다.
-> - 실행 화면 캡처의 코드는 `while(true)` + `break;`(q일 때), `continue;`(잘못된 메뉴일 때)로 되어 있다. break와 continue는 4-4에서 배운다. 플래그 방식과 결과는 같다.
+> - **다른 풀이:** `while(true)`로 돌리면서 q일 때 `break;`, 잘못된 메뉴일 때 `continue;`를 써도 된다. break와 continue는 4-4에서 배운다. 플래그 방식과 결과는 같다.
 > - 생략된 부분(숫자 두 개 입력 → 계산 → 출력)은 [`examples/MenuCalculatorWhile.java`](../examples/MenuCalculatorWhile.java)에 채워 넣었다.
->
-> ⚠ 슬라이드의 `"휴효하지 않는 메뉴입니다."`와 주석의 `문한 루프`는 오타다. "유효", "무한"으로 고쳤다.
 
 ---
 
@@ -321,7 +318,7 @@ public class NumberGuessing {
 정답!!!
 ```
 
-> 참고:
+> 💡 **보충:**
 > - `(new Random()).nextInt(100)`은 0 ~ 99이므로 `+ 1`을 해서 1 ~ 100으로 만든다. (3주차 홀짝 맞히기에서 배운 방법)
 > - 몇 번 만에 맞힐지 모르므로 **반복 횟수가 정해지지 않은 경우**다. 그래서 while이 어울린다.
 > - 4-2에서 "게임을 계속할지"를 묻는 바깥 반복문(do-while)을 추가한다.

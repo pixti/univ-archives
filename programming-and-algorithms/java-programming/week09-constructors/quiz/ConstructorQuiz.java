@@ -3,13 +3,16 @@
  *
  *  0. 생성자와 소멸자의 개념, 메소드 중복정의(오버로딩)                             → concept()
  *  1. 다음 코드(Main + Cat)에 존재하는 모든 오류를 수정하라.                        → q1()
- *     + 📝 AI 질문 : 생성자와 게터 / 세터의 차이, 왜 세터가 따로 필요한가              → q1Extra()
+ *     + 📝 추가 질문 : 생성자와 게터 / 세터의 차이, 왜 세터가 따로 필요한가              → q1Extra()
  *  2. Dog 클래스 : private / public 필드, 생성자 중복 정의, getter / setter           → q2()
  *  3. Cube 클래스 : 일반 생성자 + 복사 생성자, 부피 계산                             → q3()
  *
  * 💡 퀴즈 문제지(hwp)의 문항 본문은 자료에 남아 있지 않아서, 필기와 답안 코드를 보고 문항을 정리했다.
  * 💡 한 파일 안에서 실행하려고 문제의 클래스들을 아래쪽에 public 없이 넣었다.
  *    이름이 겹치는 것은 바꿨다. (1번 Cat → Cat1, 1번 추가 Cat → CatGS)
+ *
+ * 표시
+ *   📝 필기 : 채점 후 정리한 내용 / ⚠ 자주 틀리는 부분 : 헷갈리기 쉬운 오답과 그 이유 / 💡 보충 설명
  *
  * 실행 결과
  *  ===== 0 =====
@@ -77,7 +80,7 @@ public class ConstructorQuiz {
      * 📝 필기 : 메소드를 여러 형태로 제공해주는 것. 파라미터의 개수나 타입이 다르게.
      *          중복정의(overloading) 라고 함.
      *
-     * 📝 필기 (AI 설명) 오버로딩 핵심 규칙
+     * 📝 필기 : 오버로딩 핵심 규칙
      *   - 메소드 이름이 완전히 같아야 한다.
      *   - 파라미터의 개수, 타입(자료형), 순서 중 하나 이상이 반드시 달라야 한다.
      *   - 반환(return) 타입만 다르게 설정하는 것은 오버로딩으로 인정되지 않는다.
@@ -121,7 +124,7 @@ public class ConstructorQuiz {
      *       }
      *   }
      *
-     * 📝 필기 (AI 답변) 오류 원인 및 수정 방법
+     * 📝 필기 : 오류 원인 및 수정 방법
      *   ① 접근 제어자 : 하나의 .java 파일에는 public class 가 하나만 있어야 한다 → Cat 의 public 제거
      *   ② 생성자의 반환형 : 생성자에는 반환형을 쓰지 않는다 → void 제거
      *   ③ this() 의 위치 : 다른 생성자 호출 this(...) 는 생성자의 첫 줄에 와야 한다 → MAX_WEIGHT = 100 위로 이동
@@ -138,11 +141,11 @@ public class ConstructorQuiz {
      * ⚠ ③ JDK 25 (JEP 513) 부터는 this(...) 앞에 this 를 쓰지 않는 문장이 허용된다.
      *   MAX_WEIGHT 는 static 필드(객체가 아니라 클래스 소속)라서 MAX_WEIGHT = 100; this("영순이", 50); 순서도
      *   JDK 25 에서는 컴파일된다. (JDK 21 : flexible constructors is not supported in -source 21)
-     *   시험은 교재 기준이므로 "this() 는 첫 줄" 로 답한다.
+     *   시험은 수업 기준이므로 "this() 는 첫 줄" 로 답한다.
      * 💡 MAX_WEIGHT 는 static 이므로 생성자에서 대입하면 객체를 만들 때마다 덮어쓴다.
      *   한 번만 초기화하려면 선언과 함께(= 100) 또는 static { MAX_WEIGHT = 100; } 블록. (9-3 6절, FieldInitTest.java)
-     * 💡 아래 Cat1 은 AI 가 고쳐 준 코드에 Cat(String) 도 this(...) 로 연결하고, 출력용 메소드를 덧붙였다.
-     *   AI 원본 : Cat(String name) { this.name = name; }  → 결과는 같음 (weight 는 기본값 0)
+     * 💡 아래 Cat1 은 고친 코드에서 Cat(String) 도 this(...) 로 연결하고, 출력용 메소드를 덧붙였다.
+     *   처음 고친 형태 : Cat(String name) { this.name = name; }  → 결과는 같음 (weight 는 기본값 0)
      */
     static void q1() {
         Cat1 cat1 = new Cat1();
@@ -154,9 +157,9 @@ public class ConstructorQuiz {
     }
 
     /**
-     * 1. (추가) 📝 AI 에게 질문 : 생성자와 게터 세터의 차이
+     * 1. (추가) 📝 추가 질문 : 생성자와 게터 세터의 차이
      *
-     * 📝 필기 (AI 답변)
+     * 📝 필기
      *   생성자는 객체가 처음 만들어질 때 "딱 한 번" 초기 상태를 세팅하고,
      *   게터 / 세터는 객체가 만들어진 "이후 필요할 때마다" 값을 안전하게 읽거나 수정한다.
      *
@@ -173,7 +176,7 @@ public class ConstructorQuiz {
      *     myCat.setWeight(4);                      // 세터 : 나중에 몸무게 변경
      *
      * 📝 질문 : 생성자로 초기화할 수 있는데 왜 굳이 세터(Setter) 메서드까지 따로 만들어야 하는지 이유를 알려줘.
-     * 📝 필기 (AI 답변) : 생성자는 "초기 상태"만 정할 수 있기 때문이다.
+     * 📝 필기 : 생성자는 "초기 상태"만 정할 수 있기 때문이다.
      *   - 상태 변화(업데이트) : 데스크톱을 조립할 때 RAM 을 48GB 로 정하는 것은 생성자의 일이다.
      *     나중에 RAM 을 바꾸고 싶을 때 PC 를 새로 사는(= 객체를 새로 만드는) 대신 부품만 교체하는 것이 세터다.
      *     게임 캐릭터의 레벨 업, HP 감소도 세터로 처리한다.
@@ -205,11 +208,11 @@ public class ConstructorQuiz {
      *     d2.setBreed("말티즈");
      *     (d1, d2, d3 출력)
      *
-     * 📝 필기 (AI 답변) : 전용 = private, 공용 = public.
+     * 📝 필기 : 전용 = private, 공용 = public.
      *   Dog() { this(null, null, 0); },  Dog(String name, int age) { this(name, null, age); },
      *   Dog(String name, String breed, int age) 에서 실제 초기화. 모든 필드에 getter / setter.
      *
-     * ⚠ 문제의 오타 (C++ 문법이 섞임)
+     * ⚠ 자주 틀리는 부분 : C++ 습관대로 쓰면 자바에서는 오류다. (문제 코드에 섞여 있던 부분)
      *   ❌ string        ✅ String          (자바의 문자열 클래스는 대문자 S)
      *   ❌ new Dog,      ✅ new Dog();      (자바는 괄호 생략 불가, 변수마다 Dog 선언)
      *   그리고 new Dog() 를 쓰려면 매개변수 없는 생성자 Dog() 도 만들어야 한다. (생성자를 하나라도 만들면 기본 생성자는 안 생김)
@@ -243,12 +246,12 @@ public class ConstructorQuiz {
      *     System.out.println("c1의 부      피 : " + c1.getVolume());  ← ⚠
      *
      * 📝 필기 : 부피는 새로운 필드로 정의할 필요가 없다. 한변의 길이 x 한변의 길이가 부피이므로.
-     * 📝 필기 (AI 답변) : 이 문제의 핵심은 일반 int 생성자와 복사 생성자 Cube(Cube c) 의 오버로딩.
+     * 📝 필기 : 이 문제의 핵심은 일반 int 생성자와 복사 생성자 Cube(Cube c) 의 오버로딩.
      *   Cube(Cube c) { this.side = c.side; }   getVolume() { return side * side * side; }
      *
      * ⚠ 필기의 "한변의 길이 x 한변의 길이" 는 넓이(side²)다. 정육면체의 부피는 side x side x side (side³).
      *   20 x 20 x 20 = 8000 이 실행 결과와 맞다. (20 x 20 = 400 이면 틀림)
-     * ⚠ 문제의 main 아래 두 줄은 c2 를 출력해야 하는데 c1 으로 되어 있다. AI 가 c2 로 고쳤다.
+     * ⚠ 자주 틀리는 부분 : 문제의 main 아래 두 줄은 c2 를 출력해야 하는데 c1 으로 되어 있다. 복사해서 붙여 넣은 뒤 이름을 안 바꾸기 쉽다. 아래 코드는 c2 로 고쳤다.
      * 💡 부피를 필드로 두지 않는 이유 : side 를 바꾸면 부피도 바뀌어야 하는데, 필드로 두면 두 값이 어긋날 수 있다.
      *   필요할 때 계산하면 항상 정확하다.
      * 💡 복사 생성자 : 같은 클래스의 객체를 받아 그 값을 복사한 "새" 객체를 만든다.
@@ -290,7 +293,7 @@ class Cat1 {                         // ① public 제거
     }
 }
 
-/** 1번 추가 : 생성자 vs 게터 / 세터 (AI 예시 코드, 원래 이름 Cat) */
+/** 1번 추가 : 생성자 vs 게터 / 세터 (예시 코드, 원래 이름 Cat) */
 class CatGS {
     private String name;
     private int weight;

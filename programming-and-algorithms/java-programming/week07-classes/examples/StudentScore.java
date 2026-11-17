@@ -1,11 +1,11 @@
 /**
- * [8-1 실습] 학생 성적 클래스 정의하기
+ * [7-1 실습] 학생 성적 클래스 정의하기
  *
  * 포인트
  *  - Student 클래스 = 필드(sname, sid, kor, eng, math) + 메소드(setInfo, getAverage, getInfo)
  *  - Student[] students = new Student[3];  → "레퍼런스 3칸" 만 생긴다. (객체는 아직 없음, 모두 null)
  *    students[0] = new Student();         → 각 칸마다 new 로 객체를 따로 만들어 넣어야 한다.
- *  - students[i].kor 처럼 필드에 직접 접근 (필드에 접근 수정자가 없어서 같은 패키지면 접근 가능, 8-3 참고)
+ *  - students[i].kor 처럼 필드에 직접 접근 (필드에 접근 수정자가 없어서 같은 패키지면 접근 가능, 7-3 참고)
  *  - korSum / (double) students.length : 정수 / 정수 는 소수점이 버려지므로 double 로 형변환
  *
  *      students ──▶ [ ● | ● | ● ]
@@ -13,8 +13,8 @@
  *                     │   └──────▶ Student{bmkim2, 2016002, 60, 70, 80}
  *                     └──────────▶ Student{bmkim1, 2016001, 70, 80, 90}
  *
- * ⚠ 슬라이드 첫 줄 주석은 "// StudentInfo.java 파일" 이지만 public class 이름이 StudentScore 이므로
- *    파일 이름은 StudentScore.java 여야 한다.
+ * ⚠ 자주 틀리는 부분 : public class 이름이 StudentScore 이면 파일 이름도 StudentScore.java 여야 한다.
+ *    (StudentInfo.java 처럼 다른 이름으로 저장하면 컴파일 오류)
  *
  * 실행 결과
  *  bmkim1, 2016001, 70, 80, 90

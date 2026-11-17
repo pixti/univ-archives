@@ -13,7 +13,7 @@
  *      public String getTitle() { return this.title; }
  *      public void setTitle(String newTitle) { this.title = newTitle; }
  *
- * 📝 필기 (AI 설명) this 키워드
+ * 📝 필기 : this 키워드
  *   - 같은 클래스로 만든 객체들은 메서드 코드를 객체마다 따로 갖지 않는다.
  *     메서드 코드는 메모리(Method Area)에 한 번만 올라가고 모든 객체가 공유한다.
  *   - 그래서 "어느 객체의 필드인지" 를 알려 줘야 하는데, 그것이 this 다.

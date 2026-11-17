@@ -5,9 +5,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * [6강 과제] 문자열(1) - 1번 문제 (AI 가 알려준 방법 2 : Pattern / Matcher, 가장 표준적인 방법)
+ * [6강 과제] 문자열(1) - 1번 문제 (다른 풀이 2 : Pattern / Matcher, 가장 표준적인 방법)
  *
- * 📝 필기 (AI 설명)
+ * 📝 필기
  *  - "자르는(split)" 대신 "단어를 찾는(find)" 발상
  *      \\S+ : 공백이 아닌 문자(\S) 가 1개 이상 이어지는 단어 패턴
  *  - while (matcher.find()) 로 매칭되는 단어만 하나씩 찾아 리스트에 추가

@@ -15,9 +15,9 @@ import java.util.Scanner;
  *   ==============================
  *   select menu ('i', 'o', 's' or 'q') :
  *
- * 이 파일은 내가 작성한 "실습 5번 1차원 버전" 이다.
+ * 이 파일은 "실습 5번 1차원 버전" 이다.
  *   - 2 차원 확장은 작성하지 않았다. → 💡 참고 답안 InventoryArray2D.java
- *   - AI 리팩터링 버전 → InventoryArray1DRefactored.java
+ *   - 리팩터링 버전 → InventoryArray1DRefactored.java
  *
  * 포인트
  *  - stock[위치 - 1] = 물품 번호  : 배열의 "인덱스" 가 저장 위치, "값" 이 물품 번호.

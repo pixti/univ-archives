@@ -8,7 +8,7 @@
  * | --a  | a 를 감소시킨 후 a 를 사용 (전위) |
  * | a--  | a 를 사용한 후 a 를 감소 (후위)   |
  *
- * 예시 (슬라이드 8)
+ * 예시
  *   int a = 3, b = 0, c;
  *   c = ++a + b;   →  a = a + 1;  c = a + b;
  *   c = a++ + b;   →  c = a + b;  a = a + 1;
@@ -37,7 +37,6 @@ public class IncDecOperation {
 
         a = 3; b = 5; c = 6;
         d = a++ + b++ - c--;
-        // 슬라이드는 "a=" + a + "b=" + ... 로 공백 없이 붙어서 출력됨 → 보기 좋게 공백 추가
         System.out.println("a=" + a + " b=" + b + " c=" + c + " d=" + d);
 
         a = 3; b = 5; c = 6;

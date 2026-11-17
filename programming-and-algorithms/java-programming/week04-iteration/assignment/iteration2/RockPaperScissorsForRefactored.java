@@ -6,7 +6,7 @@ import java.util.Scanner;
  * [4강 과제] 반복문2 - 4번 문제 (리팩터링 버전)
  * 📝 반복문2 과제는 for문으로 작성.
  *
- * RockPaperScissorsFor.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * RockPaperScissorsFor.java 를 리팩터링한 코드.
  *
  * 바뀐 점 (반복문1 리팩터링 버전과 비교)
  *  - 상수 이름 SHAPE_SCISSOR / SHAPE_ROCK / SHAPE_PAPER
@@ -21,7 +21,7 @@ import java.util.Scanner;
  * ⚠ OUTPUT_FORMAT ("%d : %d : %d") 은 사용되지 않는다. (Eclipse 노란 경고)
  *   피타고라스 문제의 상수가 잘못 섞여 들어온 것으로 보인다.
  *
- * 내 코드 실행 예
+ * 실행 예
  *  가위(1), 바위(2), 보(3) : 2
  *  컴퓨터 : 가위
  *  이겼습니다.

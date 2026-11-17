@@ -1,6 +1,5 @@
 # 2-1. 변수와 자료형 1: 프로그램 구성 · 콘솔 입출력 · import
 
-> 원본: `2-1 변수와 자료형1.pptx`
 > 관련 코드: [`examples/ProgramBasic.java`](../examples/ProgramBasic.java), [`practice/variables/Literal.java`](../practice/variables/Literal.java)
 
 ---
@@ -26,13 +25,18 @@ public class ProgramBasic {
 public static void main(String[] args)
 ```
 
-> ⚠ 슬라이드에는 `public static int main(...)`으로 적혀 있지만 오타다. 자바의 main 메소드는 반드시 **`void`** 를 반환한다.
-
 | 키워드 | 의미 |
 |---|---|
-| `public` | 외부에서 호출할 수 있다 |
+| `public` | 외부(JVM)에서 호출할 수 있다 |
 | `static` | 객체를 만들지 않고 호출할 수 있다 |
+| `void` | 돌려주는 값이 없다 |
 | `String[] args` | 실행 파일명과 함께 주어지는 인라인 인수(명령행 인수)를 받아서 쓸 수 있게 한다 |
+
+> ⚠ **자주 틀리는 부분:** main의 반환형은 반드시 **`void`** 다. C처럼 `int main`으로 쓰면 컴파일은 되지만 JVM이 시작점으로 인식하지 못해 실행되지 않는다(`Main method not found`).
+
+> 💡 **보충: JDK 25의 인스턴스 main 메소드 (JEP 512)**
+> JDK 25부터는 `static`이나 `public`이 없는 `void main()`도 실행된다. JVM이 객체를 먼저 만든 뒤 main을 호출한다.
+> 하지만 수업과 시험의 기준은 **`public static void main(String[] args)`** 이다. 퀴즈에서 "main에 static이 빠졌다"는 오류로 답한다. → [`quiz/VariableQuiz.java`](../quiz/VariableQuiz.java) 5번
 
 ```bash
 java Hello2030 aaa bbb    # args[0] = "aaa", args[1] = "bbb"
@@ -58,11 +62,12 @@ java Hello2030 aaa bbb    # args[0] = "aaa", args[1] = "bbb"
 두 메소드 모두 출력할 내용을 인수로 받는다.
 
 ```java
-// "자바만 잡아도" 출력 후 줄바꿈
-java.lang.System.out.println("자바만 잡아도");
+// "Hello, Java!" 출력 후 줄바꿈 (패키지 이름까지 붙인 풀네임으로 호출)
+java.lang.System.out.println("Hello, Java!");
 ```
 
 > 📝 **필기:** `System.out`은 `PrintStream` 객체이고, 여기에 저장된 것을 출력하는 형태다.
+
 > 📝 **필기: 교수님이 언급하신 서식 지정자 `printf`**
 > ```java
 > System.out.printf("%s, %d, %.1f, %.2f\n", name, age, height, weight);
@@ -105,7 +110,7 @@ int i = sc.nextInt();   // int형 읽기
 >    - 넘겨받은 입력을 문자열, 실수 등 개발자가 다루기 쉬운 형태로 변환해 준다.
 >    - 그래서 스캐너를 만들 때 `System.in`을 꼭 넘겨야 한다. `new Scanner()`처럼 비워 두면 에러가 난다.
 >    - Scanner의 메소드를 호출해도 최종적으로는 `System.in`을 통해 로우 레벨에서 읽는다.
->
+
 > 📝 **필기:** 입력받을 값의 타입에 맞는 메소드를 써야 한다. 예를 들어 `double db = sc.next();`는 에러다. `next()`는 String을 반환하므로 `sc.nextDouble()`을 써야 한다.
 
 ### Scanner 닫기
@@ -122,7 +127,7 @@ sc.close();   // 사용 후 꼭 닫아 자원을 환원!
 > 📝 **필기: 자원 관리 규칙**
 > - 스캐너는 프로그램 안에서 **한 번만 생성**하고 재사용하는 것이 좋다. 같은 이름으로 다시 선언하면 중복 선언 에러도 난다.
 > - 메모리와 자원 낭비를 막기 위해 다 쓴 뒤 `sc.close();`로 닫는다.
->
+
 > 💡 닫은 뒤에는 그 스캐너를 다시 쓸 수 없다. `close()`를 먼저 호출한 다음 `nextInt()`를 부르면 `IllegalStateException`이 발생한다(과제 Test1의 오류 중 하나). → [`assignment/variables/Test1.java`](../assignment/variables/Test1.java)
 
 ---
@@ -134,9 +139,9 @@ sc.close();   // 사용 후 꼭 닫아 자원을 환원!
 ```java
 import java.lang.System;
 // ...
-System.out.println("자바만 잡아도");
+System.out.println("Hello, Java!");     // java.lang.System 대신 System 만 써도 된다
 // ...
-System.out.println("자바만 Java도");
+System.out.println("Bye, Java!");
 ```
 
 - **`java.lang` 패키지에 있는 모든 클래스는 자동으로 import된다.** 그래서 위 예제의 `import java.lang.System;`은 생략할 수 있다.

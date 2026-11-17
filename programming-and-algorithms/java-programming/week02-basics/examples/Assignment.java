@@ -29,7 +29,7 @@ public class Assignment {
         char c2 = (char) i; // 강제 형변환 필요
         System.out.println("문자 : " + c2);
 
-        // 슬라이드 7, 8 의 추가 예시
+        // 자동 형변환과 강제 형변환 비교
         int x;
         x = 6;            // 자료형 일치, OK
         // x = 3.7;       // 자료형 불일치 에러 - 우측(double)이 더 크다

@@ -20,9 +20,6 @@
  *      문자    I  ' '  L   o   v   e  ' '  Y   o   u
  *    2번 첨자(L)부터 "4개" → "Love"   (세 번째 인자는 끝 인덱스가 아니라 개수!)
  *
- * ⚠ 슬라이드의 주석 // str2 = new String("Hi, Byeong Man“); 은 닫는 따옴표가 “ (스마트 따옴표)라 그대로는 컴파일되지 않는다.
- *    "I lobe You" 예제의 “ ” ‘ ’ 도 모두 일반 따옴표 " ' 로 고쳤다.
- *
  * 실행 결과
  *  Hi, Byeong ManHi, Byeong ManI Love YouLove
  *  Hi, Byeong Man

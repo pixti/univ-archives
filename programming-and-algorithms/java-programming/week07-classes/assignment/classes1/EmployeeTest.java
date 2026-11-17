@@ -7,7 +7,7 @@
  *
  * 포인트
  *  - private 필드는 클래스 밖(main)에서 emp.name 처럼 직접 쓸 수 없다. → setName() / getName() 으로 접근
- *  - setter 의 매개변수 이름이 필드 이름과 같으므로 this.name = name; 으로 구분한다. (8-2 this)
+ *  - setter 의 매개변수 이름이 필드 이름과 같으므로 this.name = name; 으로 구분한다. (7-2 this)
  *  - getter 이름 규칙 : get + 필드 이름 (첫 글자 대문자) / setter : set + 필드 이름
  *
  * 💡 int 범위는 약 ±21억이므로 급여 3000000 은 int 로 충분하다.

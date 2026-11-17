@@ -12,7 +12,7 @@
  *    capacity() : 현재 확보된 저장 공간의 크기
  *  - ensureCapacity(n) : "현 용량 x 2 + 2" 와 "요구한 용량 n" 중 큰 용량으로 재할당
  *
- * 📝 필기 (퀴즈 9번, AI 설명)
+ * 📝 필기 (퀴즈 9번)
  *  - length 는 "물이 담긴 양", capacity 는 "컵의 크기" 로 생각하면 쉽다.
  *  - 내부 계산식 : newCapacity = (value.length << 1) + 2  (= 현재 용량 x 2 + 2)
  *                 이 값이 minCapacity(요구한 용량)보다 작으면 minCapacity 를 쓴다.

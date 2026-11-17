@@ -1,21 +1,24 @@
 # Week 09: DateTime · 열거형 · 생성자와 소멸자
 
 자바프로그래밍(GA1001) 9주차 정리입니다.
-교재는 『자바만 잡아도』입니다.
 
-- 강의 자료(.pptx)는 Markdown으로 정리했습니다. 강의 자료 파일 이름은 `9-1 ~ 9-3`입니다.
-- 실습, 퀴즈, 과제는 `.java` 코드로 정리했습니다. 실습은 **생성자**와 **DateTime · Enum** 두 묶음입니다.
-- 수업 중 필기와 AI에게 받은 설명은 **📝 필기** 표시로 주석과 노트에 넣었습니다.
-- 💡 표시는 정리하면서 덧붙인 설명입니다. 직접 풀지 않은 문제는 💡 참고 답안으로 채웠습니다.
-- ⚠ 표시는 원본 자료의 오타나 버그, 내 답안의 틀린 부분, AI가 알려 준 코드의 문제점을 바로잡은 곳입니다. 바로잡은 코드는 ❌ 원본 / ✅ 수정으로 나란히 두었습니다.
-- 이 저장소는 **JDK 25**로 실행을 확인했습니다. 교재(Java 24 이하)와 동작이 다른 부분(`this()` 앞에 문장 허용, `finalize()` 경고)은 ⚠로 표시했습니다.
+- 강의 내용은 `lecture-notes/`에 Markdown으로 정리했습니다.
+- 강의 예제, 실습, 퀴즈, 과제는 `.java` 코드로 정리했습니다.
+- 모든 코드는 **JDK 25**로 실행을 확인했습니다. 수업 기준(JDK 21 이하)과 동작이 다른 부분(`this()` 앞에 문장 허용, `finalize()` 경고)은 ⚠로 표시했습니다.
+
+| 표시 | 의미 |
+|---|---|
+| 📝 **필기** | 수업 중 필기한 내용, 질문하며 정리한 설명 |
+| 💡 **보충** | 정리하면서 덧붙인 설명, 참고 답안 |
+| ⚠ **주의** | 자주 틀리는 부분, 헷갈리기 쉬운 부분 |
+| ❌ / ✅ | 틀린 코드 / 고친 코드 |
 
 ## 📁 구조
 
 ```
 week09-constructors/
-├── lecture-notes/          강의 자료 (.pptx → .md)
-├── examples/               강의 슬라이드 속 예제 코드
+├── lecture-notes/          강의 노트
+├── examples/               강의 예제 코드
 ├── practice/               실습
 │   ├── constructors/       ├ 생성자
 │   └── datetime-enum/      └ DateTime · Enum
@@ -46,7 +49,7 @@ week09-constructors/
 | [ConstructorExample.java](examples/ConstructorExample.java) | 9-3 | 생성자 기본. 💡 기본 생성자가 자동으로 생기지 않는 경우 |
 | [StudentScoreTest.java](examples/StudentScoreTest.java) | 9-3 | [실습] 학생 성적 클래스를 생성자로. ⚠ `class` 누락 수정 |
 | [CatOverloading.java](examples/CatOverloading.java) | 9-3 | 생성자 중복 정의, `this("영순이", 50)`, `name = name` 버그 vs `this.name = name` (⚠ JDK 25) |
-| [MyRectangleTest.java](examples/MyRectangleTest.java) | 9-3 | [실습] 생성자 중복 (`MyPoint` 2개, `MyRectangle` 3개). ⚠ 스마트 따옴표 수정 |
+| [MyRectangleTest.java](examples/MyRectangleTest.java) | 9-3 | [실습] 생성자 중복 (`MyPoint` 2개, `MyRectangle` 3개) |
 | [MyRectangleThisTest.java](examples/MyRectangleThisTest.java) | 9-3 | [실습] 다른 생성자 호출하기: 위 예제를 `this(...)`로 수정 |
 | [FieldInitTest.java](examples/FieldInitTest.java) | 9-3 | `final` 필드(선언 · 생성자), `static` 필드(선언 · static 블록). ⚠ 생성자에서 `static` 필드 대입 |
 | [FinalizeTest.java](examples/FinalizeTest.java) | 9-3 | 소멸자 `finalize`, `null` 대입과 `System.gc()`. ⚠ `finalize` deprecated |
@@ -72,7 +75,7 @@ week09-constructors/
 
 | 파일 | 내용 |
 |---|---|
-| [ConstructorQuiz.java](quiz/ConstructorQuiz.java) | 생성자와 소멸자 개념, 📝 오버로딩 규칙, 1번 Cat 코드의 오류 4가지 고치기(⚠ `void Cat()`은 일반 메소드, JDK 25), 📝 생성자와 getter / setter의 차이(AI 질문), 2번 Dog(⚠ `string` 오타), 3번 Cube 복사 생성자(⚠ 부피는 side³) |
+| [ConstructorQuiz.java](quiz/ConstructorQuiz.java) | 생성자와 소멸자 개념, 📝 오버로딩 규칙, 1번 Cat 코드의 오류 4가지 고치기(⚠ `void Cat()`은 일반 메소드, JDK 25), 📝 생성자와 getter / setter의 차이(추가 질문), 2번 Dog(⚠ `String`은 대문자), 3번 Cube 복사 생성자(⚠ 부피는 side³) |
 
 ### 과제 (`assignment/`)
 
@@ -111,7 +114,7 @@ java -Dstdout.encoding=UTF-8 -Dstdin.encoding=UTF-8 -Dfile.encoding=UTF-8 assign
 > `FinalizeTest`의 "고양이가 소멸됨"은 가비지 컬렉터가 결정하므로 순서가 바뀌거나 출력되지 않을 수도 있습니다.
 
 > ⚠ **JDK 버전에 따른 차이**
-> - `this(...)` 앞에 문장 쓰기: JDK 25부터 허용됩니다(JEP 513). JDK 21 이하에서는 컴파일 오류입니다. 시험은 교재 기준인 "**`this()`는 생성자의 첫 문장**"으로 답합니다.
+> - `this(...)` 앞에 문장 쓰기: JDK 25부터 허용됩니다(JEP 513). JDK 21 이하에서는 컴파일 오류입니다. 시험은 수업 기준인 "**`this()`는 생성자의 첫 문장**"으로 답합니다.
 > - `finalize()`: JDK 18부터 삭제 예정(for removal)이라 컴파일 경고가 나옵니다. `FinalizeTest.java`는 `@SuppressWarnings("removal")`로 경고를 숨겼습니다.
 
 이클립스에서는 `src`의 default package에 파일을 넣고 실행하면 됩니다. 단, 보조 클래스 이름이 겹치는 파일은 같은 프로젝트(패키지)에 함께 넣지 말고 하나씩 넣어서 실행합니다.

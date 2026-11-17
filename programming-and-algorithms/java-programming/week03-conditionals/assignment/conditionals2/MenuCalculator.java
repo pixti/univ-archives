@@ -21,7 +21,7 @@ import java.util.Scanner;
  *
  * 문제의 실행 예 : 실습 버전(SimpleCalculatorSwitch.java) 주석 참고
  *
- * 내 코드 실행 예
+ * 이 코드 실행 예
  *  연산 선택 : +
  *  두 수를 공백으로 분리하여 입력하시오 : 6 4
  *  10

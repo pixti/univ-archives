@@ -1,6 +1,5 @@
 # 6-3. 문자열 3: StringBuilder 클래스
 
-> 원본: `6-3 문자열3.pptx`
 > 관련 코드: [`examples/StringBuilderCapacity.java`](../examples/StringBuilderCapacity.java), [`examples/StringBuilderMethods.java`](../examples/StringBuilderMethods.java), [`examples/SearchReplaceBuilder.java`](../examples/SearchReplaceBuilder.java), [`quiz/StringQuiz.java`](../quiz/StringQuiz.java) (8, 9, 11번)
 
 ---
@@ -24,9 +23,9 @@ sb.replace(2, 5, "love");
   sb ────▶ [ h e l o v e ]    ← 같은 객체의 내용이 직접 바뀜
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 📝 **필기 (퀴즈 8번):** `str1.replace("llo", "love");`만 쓰면 "재대입하지 않아서 그대로" `hello`가 나온다. StringBuilder의 `replace(2, 5, "love")`는 원본이 바뀌어 `helove`가 나온다.
-> - 📝 **필기 (퀴즈 8번, AI 설명) 비교표:**
+> - 📝 **필기 (퀴즈 8번) 비교표:**
 >
 >   | 구분 | `String.replace("llo", "love")` | `StringBuilder.replace(2, 5, "love")` |
 >   |---|---|---|
@@ -37,7 +36,6 @@ sb.replace(2, 5, "love");
 >   예: `s = s.replace("World", "Java")`는 `"Hello Java"`, `sb.replace(0, 5, "Hi")`는 `"Hi World"`
 > - 💡 반복문에서 `str = str + "a"`를 여러 번 하면 그때마다 새 String 객체가 생긴다. 문자열을 조금씩 붙여 만들 때는 StringBuilder의 `append`가 훨씬 효율적이다. (과제 문자열1 4번 암호화)
 > - 💡 **StringBuffer**도 사용법은 같다. 여러 스레드에서 동시에 써도 안전한 대신 조금 느리다. 일반적인 경우에는 StringBuilder를 쓴다.
-> - ⚠ 슬라이드의 "Stirng 클래스"는 String의 오타다.
 
 ---
 
@@ -78,8 +76,8 @@ Old Capacity = 16
 New Capacity = 40
 ```
 
-> 참고:
-> - 📝 **필기 (퀴즈 9번, AI 설명):** length는 "물이 담긴 양", capacity는 "컵의 크기"다.
+> 💡 **보충:**
+> - 📝 **필기 (퀴즈 9번):** length는 "물이 담긴 양", capacity는 "컵의 크기"다.
 > - 📝 **내부 계산식:** `newCapacity = (value.length << 1) + 2`, 즉 현재 용량 × 2 + 2다. 이 값이 요구한 용량(minCapacity)보다 작으면 요구한 용량을 쓴다.
 >
 >   | 현재 | 요청 | 판단 | 결과 |
@@ -107,7 +105,7 @@ StringBuilder str = new StringBuilder("Tutorial");
 str.insert(8, 's');             // Tutorials
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `append`와 `insert`는 int, double, char, boolean 등 무엇이든 받아 **문자열로 바꿔** 붙인다.
 > - 💡 `insert(8, 's')`에서 8은 "Tutorial"의 길이다. 길이와 같은 위치에 넣으면 맨 뒤에 붙는다. 길이보다 크면 `StringIndexOutOfBoundsException`이 발생한다.
 > - 💡 `append`는 자기 자신(StringBuilder)을 돌려준다. 그래서 `sb.append("a").append(1).append('b');`처럼 이어 쓸 수 있다. (메소드 체이닝)
@@ -135,10 +133,9 @@ sb.replace(2, 7, "Love");
 "Tutols".replace(2, 7, "Love")   인덱스 2 ~ 끝을 "Love"로  → "TuLove"
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `(시작, 끝)` 범위에서 **끝은 포함하지 않는다.** substring과 같은 규칙이다.
 > - 💡 `replace`의 끝 인덱스가 길이보다 크면 문자열 끝까지로 처리된다. 위 예에서 "Tutols"의 길이는 6인데 7을 줘도 동작한다.
-> - ⚠ 슬라이드의 `“Love”`는 스마트 따옴표다.
 
 ---
 
@@ -153,10 +150,10 @@ String s1 = sb.substring(3);      // 인덱스 3번부터 끝까지의 문자들
 String s2 = sb.substring(3, 5);   // 인덱스 3번부터 4번까지의 문자들로 구성된 부분 문자열
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `reverse()`는 원본을 바꾸지만, `substring()`은 **String을 새로 돌려줄 뿐** sb는 그대로다.
 > - 💡 회문 검사에 `new StringBuilder(str).reverse().toString()`을 쓸 수 있다. (실습 문자열1 2번 💡)
-> - ⚠ 슬라이드는 `String s`를 두 번 선언해서 그대로는 컴파일되지 않는다. 예제 코드에서는 s1, s2로 나눴다.
+> - ⚠ **자주 틀리는 부분:** 한 메소드 안에서 `String s`를 두 번 선언하면 컴파일되지 않는다. 위 코드처럼 s1, s2로 나눈다.
 
 ---
 
@@ -178,7 +175,7 @@ sb.deleteCharAt(11);         // 인덱스 11번째 위치의 문자를 제거   
 String result = sb.toString();
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `String`에는 `setCharAt`이 없다. 한 글자를 고치려면 6-1처럼 `toCharArray()`로 배열을 만들어 고친 뒤 `new String(t)`를 하거나, StringBuilder를 쓴다.
 > - 💡 StringBuilder끼리는 `equals`가 **내용을 비교하지 않는다.** (Object의 equals 그대로라 `==`와 같다.) 내용을 비교하려면 `sb1.toString().equals(sb2.toString())`처럼 String으로 바꿔서 비교한다.
 > - 📝 **필기 (퀴즈 11번):** 메소드를 연속으로 호출한 결과
@@ -194,7 +191,7 @@ String result = sb.toString();
 >   | `setCharAt(3, 'o')` | `333o.lleh` |
 >   | `deleteCharAt(3)` | `333.lleh` |
 >
->   AI 설명의 번호 매기기에서는 charAt 단계(6번)가 빠져 있었다.
+>   💡 `charAt(3)`도 출력이 있는 단계라 따로 세어야 한다. 단계를 셀 때 빠뜨리기 쉽다.
 
 ---
 
@@ -219,7 +216,7 @@ statement.replace(start, end, rword);   // 원본 문자열이 변경됨
 System.out.println(statement);
 ```
 
-> 참고:
+> 💡 **보충:**
 > - 💡 `start + sword.length()`는 찾은 단어 **바로 다음** 인덱스다. replace의 끝 인덱스는 포함하지 않으므로 단어만 정확히 바뀐다.
 > - 💡 String 버전과 달리 정규식이 아니라 **글자 그대로** 찾는다. 그래서 `.`이나 `+`가 들어간 단어도 문제없다.
 > - ⚠ 찾는 단어가 없으면 `indexOf`가 **-1**을 돌려준다. 그러면 `replace(-1, ...)`에서 `StringIndexOutOfBoundsException`이 발생한다. 예제 코드에는 `if (start != -1)` 검사를 추가했다.

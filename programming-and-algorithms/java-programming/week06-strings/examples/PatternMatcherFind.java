@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  *
  * 💡 end() 는 일치한 부분 "다음" 인덱스를 돌려준다. 그래서 마지막 글자 위치를 보여주려고 m.end()-1 로 출력한다.
  * 💡 Pattern / Matcher 는 java.lang 이 아니라 java.util.regex 패키지에 있어서 import 가 필요하다.
- *    (과제 문자열2 4번 📝 AI 설명 참고)
+ *    (과제 문자열2 4번 📝 필기 참고)
  *
  * 실행 결과
  *  ---- "I have a cat, but I like my dog better." / (cat|dog) ----

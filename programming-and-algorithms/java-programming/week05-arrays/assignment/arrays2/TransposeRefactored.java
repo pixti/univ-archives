@@ -1,7 +1,7 @@
 /**
  * [5강 과제] 배열(2) - 3번 문제 (리팩터링 버전)
  *
- * Transpose.java 를 AI 의 도움을 받아 리팩터링한 코드. (주석은 원본 그대로)
+ * Transpose.java 를 리팩터링한 코드.
  *
  * 바뀐 점
  *  - 변수 이름 arr, transpose → originalMatrix, transposedMatrix

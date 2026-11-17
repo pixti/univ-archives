@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  *  - Pattern.compile("[aeiouAEIOU]") : 모음 한 글자
  *  - while (m.find()) count++;        : 찾을 때마다 1 증가 → 일치한 개수
  *
- * 📝 필기 (AI 설명) 왜 이 문제에서만 import 가 필요한가?
+ * 📝 필기 : 왜 이 문제에서만 import 가 필요한가?
  *  - String 클래스에는 "정규식에 일치하는 개수를 세는" 메소드가 없다.
  *    → find() 를 반복할 수 있는 Pattern / Matcher 가 필요한데, 이 클래스들은 java.lang 이 아니라
  *      java.util.regex 패키지에 있어서 import 해야 한다.
@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
  *      용도        전체 일치 검사, 자르기, 치환                  find / group 반복 → 개수 · 위치 찾기
  *      성능        호출할 때마다 정규식을 새로 컴파일            한 번 compile 한 패턴을 재사용 → 반복 검사에 유리
  *
- * 📝 필기 (AI 팁) import 없이 세는 방법
+ * 💡 보충 : import 없이 세는 방법
  *  - 모음이 "아닌" 문자를 모두 지운 뒤 남은 길이를 재면 된다.
  *      str.replaceAll("[^aeiouAEIOU]", "").length()
  *      "MID-CENTRALIZED" → "IEAIE" → 5
@@ -61,7 +61,7 @@ public class VowelCount {
             System.out.println("New string: " + count);
         }
 
-        // 📝 AI 팁 : 모음이 아닌 문자를 지우고 길이 재기
+        // 💡 모음이 아닌 문자를 지우고 길이 재기
         System.out.println("---- replaceAll 로 세기 (import 없이) ----");
         for (String s : strs) {
             System.out.println(s + " : " + s.replaceAll("[^aeiouAEIOU]", "").length());

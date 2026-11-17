@@ -6,7 +6,6 @@ import java.util.Scanner;
  * 먼저 사용자로부터 하나의 연산 문자 (+, -, *, /, Q) 를 입력받는다.
  * 이어서 사용자로부터 2개의 숫자를 입력 받는다.
  * 연산 문자에 맞는 계산을 한 후 그 결과를 출력한다. 연산 문자 중 Q 는 프로그램 종료를 의미한다.
- * (Eclipse 에서는 Problem.java 로 작성했던 코드)
  *  → switch 버전 : SimpleCalculatorSwitch.java (이쪽을 먼저 작성했음)
  *
  * 포인트
@@ -14,7 +13,7 @@ import java.util.Scanner;
  *  - switch 의 default ↔ if 의 마지막 else
  *  - 나눗셈 안의 if-else 는 "중첩 if" 이다.
  *
- * 💡 슬라이드 예제(examples/Calculator.java)는 0 으로 나누는 경우를 처리하지 않았지만
+ * 💡 강의 예제(examples/Calculator.java)는 0 으로 나누는 경우를 처리하지 않았지만
  *    여기서는 if (y != 0) 으로 막았다.
  *
  * 실행 예

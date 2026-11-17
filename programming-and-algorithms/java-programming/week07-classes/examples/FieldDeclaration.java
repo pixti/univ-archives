@@ -1,5 +1,5 @@
 /**
- * [8-1] 필드 선언 - 객체마다 고유의 필드가 따로 존재한다
+ * [7-1] 필드 선언 - 객체마다 고유의 필드가 따로 존재한다
  *
  * 포인트
  *  - 필드 선언부는 객체들이 유지해야 할 데이터를 저장하는 변수들을 선언하는 곳
@@ -16,9 +16,8 @@
  *      └─────┘       │ x=5 y=5 width=15 height=10 │
  *                    └─────────────────────────┘
  *
- * ⚠ 슬라이드 코드의 스마트 따옴표(“ ”)는 컴파일 오류가 나므로 일반 따옴표(" ")로 바꿨다.
- * ⚠ 슬라이드는 MyRectangle 을 public class 로 적었지만, 한 파일에 public class 는 하나만 둘 수 있어서
- *    public 을 뺐다. (퀴즈 5번 📝 필기 참고)
+ * ⚠ 자주 틀리는 부분 : 한 파일에 public class 는 하나만 둘 수 있다. 그래서 MyRectangle 은
+ *    public 을 빼고 같은 파일에 넣었다. (퀴즈 5번 📝 필기 참고)
  *
  * 실행 결과
  *  위치 : 0, 0 폭 : 10 높이 : 10
@@ -36,7 +35,7 @@ public class FieldDeclaration {
         System.out.println("위치 : " + ob2.x + ", " + ob2.y + " 폭 : "
                 + ob2.width + " 높이 : " + ob2.height);
 
-        // 💡 레퍼런스 필드 (슬라이드 5) : origin 이 가리키는 MyPoint 객체의 필드를 다시 . 으로 접근
+        // 💡 레퍼런스 필드 : origin 이 가리키는 MyPoint 객체의 필드를 다시 . 으로 접근
         MyRectangle2 r = new MyRectangle2();
         r.origin.x = 3; r.origin.y = 4; r.width = 20; r.height = 30;
         System.out.println("origin : " + r.origin.x + ", " + r.origin.y
@@ -48,12 +47,12 @@ class MyRectangle {
     int x, y, width, height;
 }
 
-// 슬라이드 5 : 필드에 객체의 레퍼런스를 저장
+// 필드에 객체의 레퍼런스를 저장
 class MyPoint {
     int x, y; // 좌표값
 }
 
-class MyRectangle2 {          // 슬라이드에서는 이름이 MyRectangle (위 클래스와 겹쳐서 2 를 붙임)
+class MyRectangle2 {          // 강의 코드에서는 이름이 MyRectangle (위 클래스와 겹쳐서 2 를 붙임)
     MyPoint origin = new MyPoint();
     int width, height; // 폭과 높이
 }

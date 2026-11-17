@@ -9,11 +9,11 @@ import java.time.Instant;
  *  ② System.nanoTime()          : 나노초(1/1,000,000,000초)
  *  ③ Instant.now() + Duration.between(start, finish)
  *
- * 💡 슬라이드에는 System. nanoTime() 처럼 점 뒤에 공백이 있다. 컴파일은 되지만 보통 붙여 쓴다.
+ * 💡 System. nanoTime() 처럼 점 뒤에 공백이 있어도 컴파일은 되지만 보통 붙여 쓴다.
  * 💡 currentTimeMillis() 는 "지금이 몇 시인지"(벽시계)라서 컴퓨터 시계가 바뀌면 측정값이 틀어질 수 있다.
  *    nanoTime() 은 경과 시간 측정 전용이라 영향이 없다. 단, 값 자체는 날짜와 관계없어 차이만 의미가 있다.
  * 💡 Duration 은 toMillis() 외에도 toNanos(), toSeconds(), toMinutes() 로 원하는 단위를 꺼낼 수 있다.
- * 💡 측정 대상으로 1 ~ 1억 합계 계산(work 메소드)을 넣었다. 슬라이드는 "// ..." / "// CODE HERE" 로 비워 둠.
+ * 💡 측정 대상으로 1 ~ 1억 합계 계산(work 메소드)을 넣었다. 강의 코드는 "// ..." / "// CODE HERE" 로 비워 둠.
  *
  * 실행 결과 (컴퓨터에 따라 다름)
  *  ① currentTimeMillis : 35 ms

@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  *        duration.toNanos()   → 나노초 (1/1,000,000,000초)
  *  - isRunning (boolean) 으로 상태를 기억해서 start 를 두 번, stop 을 먼저 부르는 잘못된 사용을 막는다.
  *        if (isRunning) { 메시지; return; }   ← return 으로 메서드를 바로 끝냄 (아래 코드 실행 X)
- *  - getElapsedTime() 과 getElapsedTime(TimeUnit) 은 이름이 같고 매개변수가 다른 메서드 오버로딩 (8-3)
+ *  - getElapsedTime() 과 getElapsedTime(TimeUnit) 은 이름이 같고 매개변수가 다른 메서드 오버로딩 (7-3)
  *  - getDuration() 은 두 getElapsedTime 이 같이 쓰는 private 도우미 메서드 (중복 코드 제거)
  *        - 아직 start 하지 않았으면 Duration.ZERO
  *        - 측정 중이면 지금까지, 멈췄으면 stop 한 시각까지

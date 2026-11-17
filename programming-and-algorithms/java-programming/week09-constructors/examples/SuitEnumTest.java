@@ -8,9 +8,9 @@
  *  - enum : 가능한 값을 쉼표로 나열한 "자료형". Java 5 부터.
  *  - 기타 이점 : values() 로 모든 값 꺼내기, == 비교, switch 문에서 사용
  *
- * 💡 슬라이드의 이클립스 화면에 Test.Suit 라고 나오는 것은 Suit 가 Test 클래스 "안에" 선언되었기 때문이다.
+ * 💡 이클립스 화면에 Test.Suit 라고 나오는 것은 Suit 가 Test 클래스 "안에" 선언되었기 때문이다.
  *    여기서도 SuitEnumTest 안에 선언했다. (public enum 을 따로 두려면 Suit.java 파일이 필요)
- * 💡 ⚠ 슬라이드 본문의 value() 는 values() 의 오타.
+ * ⚠ 자주 틀리는 부분 : 모든 상수를 꺼내는 메소드 이름은 value() 가 아니라 values() 다.
  * 💡 enum 상수는 프로그램 안에 딱 하나의 객체만 존재 → 문자열과 달리 == 로 비교해도 안전.
  * 💡 switch 의 case 에는 Suit.CLUBS 가 아니라 CLUBS 처럼 상수 이름만 쓴다.
  *
