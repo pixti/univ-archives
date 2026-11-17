@@ -123,8 +123,8 @@ java examples/CommandLineTest.java aaa bbb
 ```
 
 > ⚠ **파일마다 독립된 프로그램입니다.**
-> 각 파일에는 `public class` 하나와 그 파일에서 쓰는 보조 클래스(`Point`, `Circle`, `Book`, `MyRectangle`, `MyInteger` 등)가 함께 들어 있습니다. 같은 폴더의 여러 파일에 이름이 같은 보조 클래스가 있습니다. 예를 들어 `CircleTest.java`와 `CircleInnerPointTest.java`에는 둘 다 `Circle`이 있습니다.
-> 그래서 `javac *.java`로 폴더 전체를 한 번에 컴파일하면 `duplicate class` 오류가 납니다. 위처럼 `java 파일이름.java`로 **한 파일씩** 실행하세요.
+> 각 파일에는 `public class` 하나와 그 파일에서 쓰는 보조 클래스(`Point`, `Circle`, `Book`, `MyRectangle`, `MyInteger` 등)가 함께 들어 있습니다. IntelliJ 모듈(`examples`+`quiz`, `practice`, `assignment`) 안에서는 보조 클래스 이름이 겹치지 않도록 바꿔 두었기 때문에 모듈 단위로 빌드해도 오류가 나지 않습니다. 이름을 바꾼 파일은 머리말에 강의 코드의 원래 이름을 적어 두었습니다.
+> 단, `practice/`와 `assignment/`처럼 **서로 다른 모듈**에는 같은 이름의 보조 클래스가 있을 수 있습니다. 주차 폴더 전체를 `javac`로 한 번에 컴파일하면 `duplicate class` 오류가 날 수 있으니, 위처럼 `java 파일이름.java`로 **한 파일씩** 실행하세요.
 
-이클립스에서는 `src`의 default package에 파일을 넣고 실행하면 됩니다. 단, 보조 클래스 이름이 겹치는 파일은 같은 프로젝트(패키지)에 함께 넣지 말고 하나씩 넣어서 실행합니다.
+이클립스에서는 `src`의 default package에 파일을 넣고 실행하면 됩니다. 단, 서로 다른 폴더(예: 실습과 과제)의 파일은 보조 클래스 이름이 겹칠 수 있으니 같은 프로젝트(패키지)에 함께 넣지 말고 하나씩 넣어서 실행합니다.
 실습·과제는 원래 이클립스에서 `Main.java` 등으로 작성했던 코드입니다. 여기서는 문제 내용에 맞게 클래스 이름을 바꿨습니다.

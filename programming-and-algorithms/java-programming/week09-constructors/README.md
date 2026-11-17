@@ -106,8 +106,8 @@ java -Dstdout.encoding=UTF-8 -Dstdin.encoding=UTF-8 -Dfile.encoding=UTF-8 assign
 ```
 
 > ⚠ **파일마다 독립된 프로그램입니다.**
-> 각 파일에는 `public class` 하나와 그 파일에서 쓰는 보조 클래스(`Cat`, `MyPoint`, `MyRectangle`, `Point` 등)가 함께 들어 있습니다. 같은 폴더의 여러 파일에 이름이 같은 보조 클래스가 있습니다. 예를 들어 `examples/`의 `ConstructorExample.java`, `CatOverloading.java`, `FinalizeTest.java`에는 모두 `Cat`이 있습니다.
-> 그래서 `javac *.java`로 폴더 전체를 한 번에 컴파일하면 `duplicate class` 오류가 납니다. 위처럼 `java 파일이름.java`로 **한 파일씩** 실행하세요.
+> 각 파일에는 `public class` 하나와 그 파일에서 쓰는 보조 클래스(`Cat`, `MyPoint`, `MyRectangle`, `Point` 등)가 함께 들어 있습니다. IntelliJ 모듈(`examples`+`quiz`+`assignment`, `practice`) 안에서는 보조 클래스 이름이 겹치지 않도록 바꿔 두었기 때문에 모듈 단위로 빌드해도 오류가 나지 않습니다. 이름을 바꾼 파일은 머리말에 강의 코드의 원래 이름을 적어 두었습니다.
+> 단, `practice/`와 `examples/`처럼 **서로 다른 모듈**에는 같은 이름의 보조 클래스가 있을 수 있습니다. 주차 폴더 전체를 `javac`로 한 번에 컴파일하면 `duplicate class` 오류가 날 수 있으니, 위처럼 `java 파일이름.java`로 **한 파일씩** 실행하세요.
 
 > 💡 **실행할 때마다 결과가 다른 파일**
 > DateTime 예제와 실습(`InstantTest`, `LocalDateTimeTest`, `NowInfo`, `LastDayOfMonth` 등)은 현재 날짜와 시각을 쓰므로 실행할 때마다 결과가 다릅니다. 파일 머리말의 실행 결과는 실행 예시입니다.
@@ -117,5 +117,5 @@ java -Dstdout.encoding=UTF-8 -Dstdin.encoding=UTF-8 -Dfile.encoding=UTF-8 assign
 > - `this(...)` 앞에 문장 쓰기: JDK 25부터 허용됩니다(JEP 513). JDK 21 이하에서는 컴파일 오류입니다. 시험은 수업 기준인 "**`this()`는 생성자의 첫 문장**"으로 답합니다.
 > - `finalize()`: JDK 18부터 삭제 예정(for removal)이라 컴파일 경고가 나옵니다. `FinalizeTest.java`는 `@SuppressWarnings("removal")`로 경고를 숨겼습니다.
 
-이클립스에서는 `src`의 default package에 파일을 넣고 실행하면 됩니다. 단, 보조 클래스 이름이 겹치는 파일은 같은 프로젝트(패키지)에 함께 넣지 말고 하나씩 넣어서 실행합니다.
+이클립스에서는 `src`의 default package에 파일을 넣고 실행하면 됩니다. 단, 서로 다른 폴더(예: 실습과 과제)의 파일은 보조 클래스 이름이 겹칠 수 있으니 같은 프로젝트(패키지)에 함께 넣지 말고 하나씩 넣어서 실행합니다.
 실습·과제는 원래 이클립스에서 `Main.java` 등으로 작성했던 코드입니다. 여기서는 문제 내용에 맞게 클래스 이름을 바꿨습니다.
