@@ -24,6 +24,11 @@
       <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week06-strings/week06-strings.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week06-strings/week06-strings.iml" />
       <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week07-classes/week07-classes.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week07-classes/week07-classes.iml" />
       <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week09-constructors/week09-constructors.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week09-constructors/week09-constructors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/week10-inheritance.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/week10-inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/practice/inheritance1/practice8.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/practice/inheritance1/practice8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/practice/inheritance2/practice9.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/practice/inheritance2/practice9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/assignment/inheritance1/assignment7.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/assignment/inheritance1/assignment7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/assignment/inheritance2/assignment8.iml" filepath="$PROJECT_DIR$/programming-and-algorithms/java-programming/week10-inheritance/assignment/inheritance2/assignment8.iml" />
     </modules>
   </component>
 </project>
